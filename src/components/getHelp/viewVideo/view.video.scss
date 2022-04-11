@@ -1,0 +1,28 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-view-video {
+    &__breadcrumb {
+        margin-bottom: spacing(small);
+        color: general(text, light);
+        display: block;
+    }
+
+    &__header {
+        margin: spacing(small) 0;
+    }
+
+    &__intro {
+        margin-bottom: spacing(large);
+    }
+
+    &__player {
+        width: calc(#{$mq-large-start} - #{spacing(large)});
+        border: 1px solid general(border, dark);
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        &__player {
+            width: 100%;
+        }
+    }
+}

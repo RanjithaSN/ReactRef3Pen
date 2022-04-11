@@ -1,0 +1,147 @@
+@import '~react-table/react-table';
+@import '../../_variables.scss';
+
+.c-data-table {
+    &__header {
+        &.c-data-table__header--sortable {
+            cursor: pointer;
+        }
+        .c-data-table__header-content {
+          padding-left: spacing(small);
+        }
+    }
+
+    &__header:first-child .c-data-table__header-content {
+        padding-left: spacing(medium);
+        @media screen and (max-width: $mq-medium-start) {
+          padding-left: spacing(small);
+        }
+    }
+
+    &__header-content {
+        text-align: left;
+
+        &:focus {
+            outline: none;
+            border: 1px solid general(accent, secondary);
+        }
+
+        &.c-data-table__header-content--center {
+            text-align: center;
+        }
+
+        &.c-data-table__header-content--right {
+            text-align: right;
+
+            &:last-child {
+                padding-right: spacing(medium);
+            }
+
+            @media screen and (max-width: $mq-medium-start) {
+                text-align: initial;
+            }
+        }
+
+        svg {
+            height: rhythm(delta);
+            width: rhythm(delta);
+        }
+    }
+
+    &__row {
+        padding: spacing(small) 0;
+        @media screen and (max-width: $mq-medium-start) {
+          padding: spacing(extra_small) 0;
+        }
+    }
+
+    &__cell {
+        display: flex;
+        align-items: center;
+        font-size: rhythm(gamma);
+
+        &:first-child {
+            padding-left: spacing(medium);
+            @media screen and (max-width: $mq-medium-start) {
+              padding-left: spacing(small);
+            }
+        }
+
+        &.c-data-table__cell--center {
+            justify-content: center;
+        }
+
+        &.c-data-table__cell--right {
+            justify-content: flex-end;
+
+            &:last-child {
+                padding-right: spacing(medium);
+            }
+
+            @media screen and (max-width: $mq-medium-start) {
+                justify-content: initial;
+            }
+        }
+    }
+
+    &__expand-icon {
+        color: general(accent, secondary);
+        svg {
+            height: 0.5rem;
+            width: 0.5rem;
+        }
+    }
+
+    &__subcomponent {
+        display: grid;
+        grid-template: none / 30px 2fr 2fr;
+        grid-gap: spacing(small);
+        padding: spacing(medium) 0;
+        background-color: general(canvas, light);
+    }
+
+    &__subcomponent-cell--right {
+        display: flex;
+        justify-self: right;
+        padding-right: spacing(medium);
+       
+
+        @media screen and (max-width: $mq-medium-start) {
+            justify-self: initial;
+        }
+    }
+}
+
+// Selector specificity required to override default react-table styles
+.s-data-table.c-data-table {
+    border: none;
+
+    .c-data-table__head {
+        box-shadow: none;
+        padding-bottom: spacing(extra_small);
+    }
+
+    .c-data-table__header {
+        padding: 0px;
+        border: none;
+    }
+
+    .c-data-table__cell {
+        border: none;
+    }
+
+    .c-data-table__body {
+        border: solid general(border, dark);
+        border-width: 1px 0;
+    }
+
+    .c-data-table__row-group {
+        border: solid general(border, dark);
+        border-width: 0 1px 1px 1px;
+    }
+
+    &.-highlight .c-data-table__body .c-data-table__row-group:hover {
+        background-color: general(canvas, light);
+        cursor: pointer;
+    }
+}

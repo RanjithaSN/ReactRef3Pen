@@ -1,0 +1,64 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-payment-history {
+    &__heading {
+        margin-bottom: spacing(medium);
+    }
+
+    &__filters {
+        margin: spacing(medium) 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &__filter-space {
+        flex-grow: 1;
+    }
+
+    &__filter-label {
+        margin-right: spacing(small);
+        text-transform: none;
+        color: general(text, light);
+    }
+
+    &__filter-select-content {
+        color: general(text, light);
+    }
+
+    &__dispute-link {
+        padding-left: spacing(small);
+    }
+
+    &--truncate-cell-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__discount {
+        margin-right: spacing(extra_small);
+        text-decoration: line-through;
+    }
+
+    &__discount-notice {
+        margin-top: spacing(medium);
+        font-size: rhythm(gamma);
+    }
+}
+
+@media screen and (max-width: $mq-medium-start) {
+    .c-payment-history {
+        &__filters {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__filter-label {
+            margin-bottom: spacing(small);
+        }
+
+        &__filter-select {
+            margin-bottom: spacing(medium);
+        }
+    }
+}

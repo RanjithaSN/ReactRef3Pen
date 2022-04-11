@@ -1,0 +1,229 @@
+@import '../../selfcare-ui/src/variables';
+/* DayPicker styles */
+
+.DayPicker {
+  display: inline-block;
+  font-size: main(heading, minorQuietSize);
+}
+
+.DayPicker-wrapper {
+  position: relative;
+
+  flex-direction: row;
+  padding: 1.5rem 1rem;
+
+  -webkit-user-select: none;
+
+     -moz-user-select: none;
+
+      -ms-user-select: none;
+
+          user-select: none;
+}
+
+.DayPicker-Months {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.DayPicker-Month {
+  display: table;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  -webkit-user-select: none;
+
+     -moz-user-select: none;
+
+      -ms-user-select: none;
+
+          user-select: none;
+}
+
+.DayPicker-NavBar {
+}
+
+.DayPicker-NavButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  left: auto;
+
+  display: inline-block;
+  margin-top: 0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: $text-light;
+  cursor: pointer;
+}
+
+.DayPicker-NavButton:hover {
+  opacity: 0.8;
+}
+
+.DayPicker-NavButton--prev {
+  margin-right: 2.5em;
+  background-image: url('../../selfcare-ui/src/icons/arrow-thin-left.svg');
+}
+
+.DayPicker-NavButton--next {
+  background-image: url('../../selfcare-ui/src/icons/arrow-thin-right.svg')
+}
+
+.DayPicker-NavButton--interactionDisabled {
+  display: none;
+}
+
+.DayPicker-Caption {
+  display: table-caption;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+  text-align: left;
+}
+
+.DayPicker-Caption > div {
+  font-weight:  weight(bold);
+  font-size: main(heading, majorQuietSize);
+  margin-bottom: 0.75rem;
+}
+
+.DayPicker-Weekdays {
+  display: table-header-group;
+  margin-top: 1em;
+}
+
+.DayPicker-WeekdaysRow {
+  display: table-row;
+}
+
+.DayPicker-Weekday {
+  display: table-cell;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 87.5%;
+}
+
+.DayPicker-Weekday abbr[title] {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.DayPicker-Body {
+  display: table-row-group;
+}
+
+.DayPicker-Week {
+  display: table-row;
+}
+
+.DayPicker-Day {
+  display: table-cell;
+  padding: 0.5rem 0.5rem;
+  border-radius: 50%;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  width: 20px;
+}
+
+.DayPicker-WeekNumber {
+  display: table-cell;
+  padding: 0.5rem;
+  min-width: 1rem;
+  border-right: 1px solid $info;
+  color: $text-light;
+  vertical-align: middle;
+  text-align: right;
+  font-size: 75%;
+  cursor: pointer;
+}
+
+.DayPicker--interactionDisabled .DayPicker-Day {
+  cursor: default;
+}
+
+.DayPicker-Footer {
+  padding-top: 0.5rem;
+}
+
+.DayPicker-TodayButton {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: #4A90E2;
+  font-size: 87.5%;
+  cursor: pointer;
+}
+
+/* Default modifiers */
+.DayPicker-Day--today {
+  padding-bottom: 0.1rem;
+  &:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+    padding-top: 0.4rem;
+    border-bottom: $text-light 1px solid;
+  }
+}
+
+.DayPicker-Day--outside {
+  color: $text-light;
+  cursor: default;
+}
+
+.DayPicker-Day--disabled {
+  color: $text-light;
+  cursor: default;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+
+  background-color: $accent-secondary;
+  color: $text-white;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background-color: $accent-secondary;
+  color: $text-white;
+}
+
+.DayPicker:not(.DayPicker--interactionDisabled)
+  .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: $accent-secondary;
+  color: $text-white;
+}
+
+/* DayPickerInput */
+
+.DayPickerInput {
+  display: inline-block;
+  width: 100%;
+
+  .c-input:read-only {
+    background-color: $canvas-white;
+    border-color: $border-light;
+    color: $text-dark;
+    cursor: pointer;
+  }
+}
+
+.DayPickerInput-OverlayWrapper {
+  position: relative;
+}
+
+.DayPickerInput-Overlay {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}

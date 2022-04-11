@@ -1,0 +1,197 @@
+@import '../../_variables.scss';
+
+.c-carousel {
+    position: relative;
+    outline: none;
+
+    .c-carousel__content-wrapper {
+        overflow: hidden;
+        position: relative; // Simplifies offset calculations
+    }
+
+    // Note, scroll-snap-type, scroll-behavior, & scroll-snap-align are part of the latest scroll snap spec: https://www.w3.org/TR/css-scroll-snap-1/
+    .c-carousel__content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        padding: 0 spacing(medium);
+
+        > * {
+            scroll-snap-align: center;
+            margin-right: spacing(small);
+
+            &:last-child {
+                padding-right: spacing(medium);
+            }
+        }
+
+        .c-card {
+            &__body {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    }
+
+    & &__nav-arrows {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        top: 50%;
+        box-sizing: border-box;
+        overflow: visible;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .c-carousel__nav-arrow {
+        opacity: 0;
+        transition: opacity 0.25s;
+
+        svg {
+            margin-top: -#{spacing(small)};
+        }
+    }
+
+    .c-button:disabled.c-carousel__nav-arrow {
+        opacity: 0;
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        &--simple {
+            .c-carousel__nav-arrow {
+                opacity: 1;
+            }
+
+            .c-button:disabled.c-carousel__nav-arrow {
+                opacity: 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: $mq-large-start) {
+        &:hover {
+            .c-carousel__nav-arrow {
+                opacity: 1;
+            }
+
+            .c-button:disabled.c-carousel__nav-arrow {
+                opacity: 0.5;
+            }
+        }
+
+        &--simple {
+            &:hover {
+                .c-carousel__nav-arrow {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        .c-carousel__content {
+            overflow-x: scroll;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .c-carousel__content::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE and Edge */
+        .c-carousel__content {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        &__nav-dots {
+            display: block;
+        }
+    }
+
+    .c-carousel__nav-arrow--left svg {
+        margin-left: -#{spacing(small)};
+    }
+
+    .c-carousel__nav-arrow--right svg {
+        margin-right: -#{spacing(small)};
+    }
+
+    .c-carousel__nav-dots {
+        margin-top: spacing(small);
+        text-align: center;
+    }
+
+    &--simple {
+        .c-carousel {
+            &__nav-arrows {
+                .c-filled-button {
+                    &--standard {
+                        background-color: transparent;
+                        border: none;
+
+                        &:hover:not(:disabled) {
+                            background-color: transparent;
+                        }
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
+
+                    .c-icon-button__icon>svg {
+                        fill: general(canvas, white);
+                    }
+                }
+
+                .c-filled-button:disabled {
+                    color: general(canvas, light);
+                }
+
+                &.is-inverted .c-filled-button .c-icon-button__icon>svg {
+                    fill: general(canvas, black);
+                }
+            }
+
+            &__nav-dots {
+                display: none;
+            }
+
+            @media screen and (max-width: $mq-large-start) {
+                &__nav-dots {
+                    display: block;
+                }
+
+                &__counter {
+                    font-size: main(heading, minorQuietSize);
+                    letter-spacing: $penny-letter-spacing-normal;
+                    line-height: spacing(small);
+                    
+                > *{
+                    padding-top: spacing(extra_small);
+                }
+
+                &:first-of-type {
+                    padding-right: spacing(small);
+                }
+
+                &:last-of-type {
+                    padding-left: spacing(small);
+                }
+            }
+
+        }
+    }
+
+    &:hover .c-button:disabled.c-carousel__nav-arrow {
+        opacity: 0;
+    }
+}
+}

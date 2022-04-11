@@ -1,0 +1,90 @@
+# Default values for tele2.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+clusterName: "tele2-nonprod"
+region: "eu-central-1"
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations:
+     kubernetes.io/ingress.class: alb
+     alb.ingress.kubernetes.io/scheme: internet-facing
+     alb.ingress.kubernetes.io/target-type: ip
+     alb.ingress.kubernetes.io/ip-address-type: ipv4
+     alb.ingress.kubernetes.io/load-balancer-attributes: routing.http2.enabled=true
+     alb.ingress.kubernetes.io/load-balancer-attributes: deletion_protection.enabled=true
+     alb.ingress.kubernetes.io/tags: Environment=nonprod,Customer=tele2
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 20
+  targetCPUUtilizationPercentage: 50
+  targetMemoryUtilizationPercentage: 50
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+penny:
+  image:
+    repository: ""
+    tag: ""
+    pullPolicy: IfNotPresent
+  env: {}
+  securityContext:
+    privileged: false
+    readOnlyRootFilesystem: false
+    allowPrivilegeEscalation: false
+  ports:
+    name: ""
+    containerPort: ""
+    protocol: TCP
+  
+#fluentd configuration
+fluentd:
+  enabled: false
+  image: ''
+  env: {}
+  volumeMounts: {}
+  applicationLoggingName: ""
+  resources:
+    limits:
+      memory: 400Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
+
+#logrotate configuration
+logrotate:
+  image: 'realz/logrotate'
+  env: {}
+  volumeMounts: {}
+
+#penny configuration
+penny:  
+  image:
+    repository: ''
+    tag: ''
+  env: {}
+  volumeMounts: {}

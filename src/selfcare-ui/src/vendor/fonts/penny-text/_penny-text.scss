@@ -1,0 +1,23 @@
+@mixin embed-penny-text() {
+    @font-face {
+        font-family: 'PennyText';
+        font-weight: 400;
+        src: url('./PennyText-Regular.woff2') format('woff2'),
+            url('./PennyText-Regular.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'PennyText';
+        font-weight: 500;
+        src: url('./PennyText-Medium.woff2') format('woff2'),
+            url('./PennyText-Medium.woff') format('woff');
+    }
+
+
+    @font-face {
+        font-family: 'PennyText';
+        font-weight: 600;
+        src: url('./PennyText-Bold.woff2') format('woff2'),
+            url('./PennyText-Bold.woff') format('woff');
+    }
+}

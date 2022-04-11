@@ -1,0 +1,36 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-faq-card {
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__toggle {
+    font-size: rhythm(delta);
+
+    svg {
+      height: rhythm(gamma, em);
+      width: rhythm(gamma, em);
+      fill: general(accent,primary);
+    }
+  }
+
+  &__body {
+    &:not(.c-faq-card__body--open) {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+  }
+
+  &__action-button {
+    margin-top: spacing(large);
+    padding: spacing(extra_small);
+    font-size: rhythm(gamma);
+  }
+}

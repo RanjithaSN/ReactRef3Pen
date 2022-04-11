@@ -1,0 +1,19 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-support-request-details-header {
+    width: 100%;
+    
+    .c-support-request-details-header__heading {
+        display: flex;
+        justify-content: space-between;
+        padding: spacing(medium) 0;
+    }
+
+    .c-support-request-details-header__need-assistance {
+        font-size: rhythm(delta);
+    }
+
+    @media screen and (max-width: $mq-medium-start) {
+        padding-left: spacing(small);
+    }
+}

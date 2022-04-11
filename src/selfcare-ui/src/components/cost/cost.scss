@@ -1,0 +1,50 @@
+@import '../../_variables.scss';
+
+.c-cost {
+    .c-cost__main {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+
+    .c-cost__cost {
+        display: flex;
+        justify-content: center;
+    }
+
+    &.c-cost--alternate {
+        .c-cost__before-discount {
+            margin-right: spacing(extra_small);
+        }
+
+        .c-cost__main {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+
+    &__before-discount, &__note {
+        color: general(text, light);
+    }
+
+    &__before-discount {
+        position: relative;
+
+        &::after {
+            border-bottom: 1px solid general(text, light); // This is used for a gray strikethrough
+            content: "";
+            left:0;
+            margin-top: calc(1px / 2 * -1);
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+    }
+
+    &__quantity {
+        &::after {
+            content: '\2009\2715\2009';
+        }
+    }
+
+}

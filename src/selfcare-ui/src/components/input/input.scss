@@ -1,0 +1,102 @@
+@import '../../_variables.scss';
+
+.c-input {
+    appearance: none;
+    display: block;
+    font-family: inherit;
+    background-color: general(canvas, white);
+    border-radius: radius(small);
+    border: 1px solid main(form, borderColor);
+    box-shadow: 0 0 0 0 main(form, borderColor);
+    line-height: 1;
+    padding: spacing(small);
+    font-size: .9375rem;
+
+    ::placeholder,
+    &::placeholder {
+        color: general(text, light);
+    }
+
+    ::-ms-clear,
+    &::-ms-clear {
+        display: none;
+    }
+
+    &:focus:not(:read-only):not(:disabled) {
+        outline: 0;
+        border-color: general(accent, primary);
+    }
+
+    &:read-only {
+        background-color: general(canvas, light);
+        border-color: general(canvas, light);
+        color: general(text, light);
+        cursor: default;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &[error] {
+        border-color: general(system, error);
+    }
+}
+
+.c-input-group {
+    position: relative;
+    width: 100%;
+}
+
+.c-input-control-placeholder {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    padding: spacing(small) 4px 0 4px;
+    transition: all 200ms;
+    opacity: 0.5;
+    color: general(text, light);
+    font-size: .9375rem;
+}
+
+.c-input-control:focus+.c-input-control-placeholder,
+.c-input-control:not(.c-input-null)+.c-input-control-placeholder {
+    font-size: 75%;
+    transform: translate3d(0, -75%, 0);
+    opacity: 1;
+    background: general(accent, tertiary);
+    color: general(accent, primary);
+    padding-top: 0;
+    margin-top: radius(large);
+}
+
+.c-input-control:not(.c-input-null)+.c-input-control-placeholder {
+    font-size: .75rem;
+    transform: translate3d(0, -75%, 0);
+    opacity: 1;
+    background: general(accent, tertiary);
+    color: general(text, light);
+    padding-top: 0;
+    margin-top: radius(large);
+}
+
+.c-input[error]~ .c-input-control-placeholder {
+    color: general(system, error);
+}
+
+.c-input-control:focus+.c-input-control-placeholder {
+    font-size: .75rem;
+    transform: translate3d(0, -75%, 0);
+    opacity: 1;
+    background: general(accent, tertiary);
+    color: general(accent, primary);
+    padding-top: 0;
+    margin-top: radius(large);
+}
+
+.c-input__calendar {
+    margin-right: 2.5em;
+    background: url('../../icons/calendar.svg') no-repeat center right 1rem;
+    background-size: 1.25rem;
+}

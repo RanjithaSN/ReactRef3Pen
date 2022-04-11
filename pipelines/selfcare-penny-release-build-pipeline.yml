@@ -1,0 +1,59 @@
+# Selfcare Penny build pipeline
+# The pipeline performs following below 5 tasks in a sequential order
+#  1. Build docker image.
+#  2. Push image to non prod ECR repository. The image is tagged with build id.
+#  3. Push image to prod ECR repository. The image is tagged with build id.
+#  4. Archive environment variable files which are checked in to repository.
+#  5. Publish archive as artifact to be used in release pipeline.
+# https://aka.ms/yaml
+
+# Variables.
+variables:
+    imageName: 'penny'
+    archiveFileName: 'variables.zip'
+    artifactName: 'environment-files'
+    AWSCredentials: 'selfcare-sbx'
+    regionName: 'eu-central-1'
+    environmentFilesRootFolder: 'pipelines/env-variables'
+    ecrRepositoryName: 'tele2-nonprod-ecr-repository'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  #Task 1 to create docker image
+  - script: |
+      echo Starting docker build
+      docker build -f Dockerfile --build-arg buildId=$(Build.BuildId) -t $(imageName):$(Build.BuildId) .
+    displayName: Build Docker Image  
+
+  #Task 2 to push docker image to non prod repository
+  - task: ECRPushImage@1
+    displayName: Push docker image to non prod
+    inputs:
+      awsCredentials: '$(AWSCredentials)'
+      regionName: '$(regionName)'
+      imageSource: 'imagename'
+      sourceImageName: '$(imageName)'
+      sourceImageTag: '$(Build.BuildId)'
+      repositoryName: '$(ecrRepositoryName)'
+      pushTag: '$(Build.BuildId)'
+      autoCreateRepository: true
+  
+  #Task 4 to archive folder which contains environment variable files.
+  - task: ArchiveFiles@1
+    displayName: Archive environment files
+    inputs:
+      rootFolder: $(environmentFilesRootFolder)
+      includeRootFolder: true
+      archiveType: 'default'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/$(archiveFileName)'
+      replaceExistingArchive: true
+  
+  #Task 5 to publish the archive file to be used in release pipeline.
+  - task: PublishBuildArtifacts@1
+    displayName: Publish environment files
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(archiveFileName)'
+      ArtifactName: '$(artifactName)'
+      publishLocation: 'Container'

@@ -1,0 +1,7 @@
+@import '../../_variables.scss';
+
+.c-banner {
+    padding: spacing(small);
+    border-radius: radius(small);
+    background-color: general(canvas, light);
+}

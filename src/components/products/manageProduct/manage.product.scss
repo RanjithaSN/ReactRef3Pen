@@ -1,0 +1,112 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-manage-product {
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+
+        button:last-child {
+            margin-left: spacing(medium);
+        }
+    }
+
+    &__sub-heading {
+        margin-top: spacing(large);
+        margin-bottom: spacing(medium);
+    }
+
+    &__description {
+        margin-top: spacing(medium);
+        margin-bottom: spacing(large);
+    }
+
+    &__port-in-disclaimer {
+        margin-top: spacing(medium);
+        margin-bottom: spacing(medium);
+        max-width: 625px;
+
+        @media screen and (max-width: $mq-large-start) {
+            max-width: 100%;
+        }
+    }
+
+    &__date-input {
+        margin-top: spacing(large);
+    }
+
+    .c-notice {
+        .c-notice__heading {
+            margin-left: 0;
+        }
+    }
+
+    &__button-actions {
+        display: flex;
+
+        &.pending-port-in {
+            flex-direction: column;
+
+            .action {
+                padding-bottom: spacing(extra_large);
+            }
+        }
+    }
+
+    &__primary-action {
+        margin-top: spacing(large);
+
+        @media screen and (max-width: $mq-large-start) {
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        &:disabled {
+            color: general(text, white);
+        }
+    }
+
+    &__secondary-action {
+        margin-top: spacing(large);
+        width: fit-content;
+
+        &.c-link{
+            margin-top: spacing(extra_large);
+        }
+    }
+
+    &__card-selection .c-card-selection__primary-content {
+        margin-left: - spacing(medium);
+        margin-right: - spacing(medium);
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        &__actions {
+            width: 100%;
+        }
+    }
+
+    .c-manage-product__return-reason{
+        margin-left:0;
+        margin-top: spacing(medium);
+    }
+
+    &__pending-description {
+        margin-top: spacing(medium);
+        margin-bottom: spacing(large);
+    }
+
+    &__section-data {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-row-gap: spacing(large);
+    }
+
+    &__section-header{
+        color: general(text, light);
+    }
+
+    &__update-return {
+        padding-bottom: spacing(extra_large);
+    }
+}

@@ -1,0 +1,61 @@
+@import '../../_variables.scss';
+
+.c-button {
+    display: inline-block;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    line-height: 1;
+    cursor: pointer;
+
+    &[type="button"],
+    &[type="reset"],
+    &[type="submit"] {
+        appearance: none;
+    }
+
+    &:disabled {
+        cursor: default;
+    }
+    
+    > * {
+        
+        vertical-align: middle;
+    }
+
+    &.c-button--min {
+      min-width: 0;
+    }
+
+    &.c-button--full {
+        width: 100%;
+
+        + .c-button--full {
+            margin-top: spacing(small);
+        }
+    }
+
+    &.c-button--flex {
+        flex: 0 1 auto;
+        @media screen and (max-width: $mq-medium-start) {
+            flex: 1 1 auto;
+        }
+    }
+    
+    @media screen and (min-width: $mq-medium-start) {
+            min-width: $single-button-min-width;
+    }
+
+    &-double{
+        @media screen and (min-width: $mq-large-start) {
+          min-width: $double-button-min-width;
+        }
+        min-width: 46%;
+        &+.c-button-double {
+            margin-left: spacing(medium);
+        }
+     }
+}

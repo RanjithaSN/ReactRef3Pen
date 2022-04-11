@@ -1,0 +1,19 @@
+[
+  {
+    "relation": ["delegate_permission/common.get_login_creds"],
+    "target": {
+      "namespace": "web",
+      "site": "https://www.penny.se/"
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.get_login_creds"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.selfcare.penny",
+      "sha256_cert_fingerprints": [
+        "8B:BD:03:EC:DD:01:2D:42:AB:F0:DD:EE:90:45:10:E5:AD:D8:62:FA:ED:9C:C6:3F:E9:53:5B:B1:D2:A7:35:33"
+      ]
+    }
+  }
+]

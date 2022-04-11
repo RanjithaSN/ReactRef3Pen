@@ -1,0 +1,16 @@
+@import '~selfcare-ui/src/variables';
+
+.c-dashboard {
+    position: relative;
+    height: auto;
+
+    &__no-account-message {
+        text-align: center;
+    }
+
+    @media screen and (min-width: $mq-large-start) {
+        &__main {
+            padding-top: initial;
+        }
+    }
+}

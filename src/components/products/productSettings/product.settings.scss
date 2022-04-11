@@ -1,0 +1,21 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-product-settings {
+    &__definition-value {
+        justify-content: space-between;
+    }
+
+    &__intro {
+        padding-bottom: spacing(large);
+    }
+
+    &__change-button,
+    &__port-number,
+    &__replace-sim {
+        margin-top: spacing(medium);
+
+        @media screen and (max-width:$mq-medium-start) {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@import '../../_variables.scss';
+
+.c-ledger {
+
+    .c-ledger__section {
+        border-bottom: 1px solid general(border, light);
+        padding-top: spacing(medium);
+        padding-bottom: spacing(medium);
+
+        /* Rather than needing to provide jsx logic to conditionally hide
+         * empty sections, we can allow the sections to manage themselves
+        **/
+        &:empty {
+            visibility: hidden;
+            display: none;
+        }
+    }
+
+    .c-ledger__section--borderless {
+        border-bottom: none;
+    }
+
+    .c-ledger__row {
+        display: flex;
+
+        + .c-ledger__row {
+            margin-top: spacing(medium);
+        }
+    }
+
+    .c-ledger__row-name {
+        flex-grow: 1;
+        font-weight: weight(bold);
+    }
+
+    .c-ledger__row-subtext {
+        color: general(text, light);
+        font-weight: weight(light);
+        margin-left: spacing(small);
+    }
+
+    .c-ledger__row-amount {
+        display: flex;
+        flex-shrink: 0;
+        align-content: flex-end;
+        align-items: center;
+    }
+
+    .c-ledger__row-discount {
+        text-decoration: line-through;
+    }
+
+    .c-ledger__row-note {
+        color: general(text, light);
+        font-weight: weight(light);
+        text-align: right;
+
+        + .c-ledger__row-amount,
+        + .c-ledger__row-note {
+            margin-left: spacing(small);
+        }
+    }
+
+    .c-ledger__total {
+        .c-ledger__row-amount {
+            font-weight: weight(bold);
+        }
+    }
+
+    @media screen and (min-width: $mq-medium-start) {
+        .c-ledger__row,
+        .c-ledger__title {
+            padding-left: spacing(medium);
+        }
+    }
+}

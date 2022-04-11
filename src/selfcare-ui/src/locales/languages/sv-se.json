@@ -1,0 +1,103 @@
+{
+    "cardinality": {
+        "exact": "Välja {{number}}",
+        "no_min": "Välj upp till {{number}}",
+        "range": "Välj minst och upp till {{ min }} {{max}}"
+    },
+    "component_error": {
+        "description": "Det gick inte att läsa in komponenten på grund av felet. Överväg att uppdatera sidan",
+        "elevated_description": "Hoppsan! Det ser ut som att något gick snett. Försök gärna att ladda om sidan och börja om.",
+        "unable_to_load": "Det går inte att ladda"
+    },
+    "continue": "Fortsätta",
+    "data_table": {
+        "per_page": "per sida",
+        "results": "{{results}} Resultat (n)",
+        "view_more": "Se mer"
+    },
+    "expandable_section": {
+        "hide": "Dölja",
+        "show": "Visa"
+    },
+    "form_errors": {
+        "heading": "Korrigera följande fel"
+    },
+    "main_menu": "Huvud meny",
+    "na": "EJ TILLÄMPLIGT",
+    "need_assistance": {
+        "chat": "Chatt",
+        "name": "Behöver du hjälp"
+    },
+    "optional": "valfritt",
+    "page": "Sida",
+    "prompt": {
+        "accept": "Acceptera",
+        "apply": "Tillämpa",
+        "cancel": "Avbryt",
+        "confirm": "Bekräfta"
+    },
+    "rich_stepper": {
+        "apply": "Tillämpa",
+        "bulk_flat": "Platt prissättning",
+        "bulk_unit": "Prissättning för enhet",
+        "remaining": "{{number}} Återstående",
+        "service_change": "Ändring av plan eller tjänst"
+    },
+    "search_placeholder": "Sök...",
+    "snack_bar": {
+        "add_ons": "Tillägg",
+        "all_add_ons": "Alla tillägg",
+        "you_might_like": "Tillägg du kanske gillar"
+    },
+    "statuses": {
+        "active": "Aktiva",
+        "added_to_plan": "Tillagd i din plan",
+        "cancelled": "Annullerat",
+        "completed": "Avslutade",
+        "expired": "Löpt ut",
+        "new": "Nya",
+        "open": "Öppna",
+        "payment_complete": "Betalning slutförd",
+        "pending": "Väntande",
+        "pending_activation": "Väntande aktivering",
+        "pending_active": "Inväntar aktivering",
+        "pending_first_usage": "Väntar på att aktiveras",
+        "pending_pause": "Väntande paus",
+        "pending_removal": "Väntande borttagning",
+        "removed": "Bort",
+        "removed_from_plan": "Borttagen från din plan",
+        "resolved": "Löst",
+        "suspended": "Avslutad"
+    },
+    "vertical_pager": {
+        "page_info": "Visning {{ start }} - {{ end }} av {{max}}",
+        "single_page_info": "Visning {{ start }} av {{max}}"
+    },
+    "with_docs": {
+        "code_sample": {
+            "toggle_code": "Växla kod"
+        },
+        "examples_heading": "Exempel",
+        "note": {
+            "heading": "Observera"
+        },
+        "prop_types": {
+            "enum_description": "Värdet för den här egenskapen måste vara något av följande:",
+            "heading": "Egenskaper",
+            "no_props": "Inga egenskaper",
+            "required": "Krävs"
+        },
+        "usage": {
+            "copied": "Kopieras",
+            "copy_to_clipboard": "Kopiera till Urklipp",
+            "heading": "Användning",
+            "message": "Den här komponenten kan importeras med syntaxen nedan:",
+            "relative_path_notice": "Sökvägen ovan är relativ till din komponents arbets katalog och kan behöva ändras beroende på när den används."
+        }
+    },
+    "zero_state": {
+        "filtered": {
+            "title": "Det finns ingen {{ title }} att Visa"
+        }
+    }
+}

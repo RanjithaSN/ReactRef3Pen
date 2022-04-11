@@ -1,0 +1,52 @@
+@import '../../_variables.scss';
+
+$CARD_Footer_action-height: 54px; // Based on standard button height plus padding
+
+.c-card {
+    min-width: 100px;
+    background-color: general(canvas, white);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid general(border, light);
+
+    &.c-card--seamless {
+        border: none;
+        border-radius: 0;
+    }
+
+    &.c-card--simple {
+        padding: spacing(small);
+    }
+
+    &.c-card--stacked {
+        border: 1px solid general(border, light);
+        border-bottom: none;
+
+        &:last-child {
+            border-bottom: 1px solid general(border, light);
+        }
+    }
+
+    &__body,
+    &__header,
+    &__footer {
+        margin: spacing(medium);
+    }
+
+    &__header {
+        &.c-card__header--normal {
+            border-bottom: 1px solid general(border, light);
+        }
+    }
+
+    &__footer {
+        &.c-card__footer--normal {
+            border-top: 1px solid general(border, light);
+        }
+
+        &.c-card__footer--action {
+            display: flex;
+            min-height: $CARD_Footer_action-height;
+        }
+    }
+}

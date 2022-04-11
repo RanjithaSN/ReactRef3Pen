@@ -1,0 +1,7 @@
+# all bots
+
+User-agent: *
+Crawl-delay: 100
+Disallow: /account/
+Disallow: /about/benifydeals
+Disallow: /troubleshooter/

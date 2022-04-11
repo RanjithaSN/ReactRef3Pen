@@ -1,0 +1,56 @@
+@import '../../_variables.scss';
+
+.c-expandable-card {
+    border-color: general(accent,primary);
+    .c-expandable-card__toggle {
+            svg {
+                fill: general(accent,primary);
+            }
+    }
+    
+    .c-expandable-card__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .c-expandable-card__toggle {
+        font-size: rhythm(beta);
+
+        svg {
+            height: rhythm(delta, em);
+            width: rhythm(delta, em);
+            margin-right: -9px;
+            fill: general(accent,primary);
+        }
+    }
+
+    .c-expandable-card__body {
+        padding-top: 0;
+        color: general(text, light);
+
+        &:not(.c-expandable-card__body--open) {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &--top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: spacing(small);
+        }
+    }
+    .c-expandable-card__content--header {
+        margin: auto 0;
+        color: general(accent,primary);
+    }
+}

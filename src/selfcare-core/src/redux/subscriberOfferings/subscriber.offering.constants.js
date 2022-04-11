@@ -1,0 +1,34 @@
+/** dbss offering statuses */
+export const OFFERING_STATUS = {
+  ACTIVE: 1,
+  REMOVED: 2,
+  PENDING_ACTIVE: 3,
+  PENDING_REMOVED: 4,
+  EXPIRED: 5,
+  SUSPENDED: 6
+};
+
+/** itv offering statuses */
+export const OFFERING_SUBSCRIPTION_STATUS = {
+  ACTIVE: 1,
+  REMOVED: 2,
+  SUSPENDED: 3,
+  PENDING_APPROVAL: 4,
+  PENDING_ACTIVE: 5,
+  PENDING_REMOVED: 6
+};
+
+/** The enum represents dbss and itv offering statuses combined */
+export const OFFERING_OVERALL_STATUS = {
+  ACTIVE: 1,
+  REMOVED: 2,
+  ORDER_PENDING: 3,
+  PENDING_REMOVAL: 4,
+  PLAN_SUSPENDED: 5,
+  SUSPENDED: 6,
+  PENDING_PRIMARY_DOWNGRADE: 33,
+  PENDING_PRIMARY_PAUSE: 35,
+  PENDING_PRIMARY_REMOVAL: 44
+};
+
+export const IMMEDIATE_ACTIVATION_DATE = '0000-00-00';

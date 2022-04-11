@@ -1,0 +1,30 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-notification-list {
+    padding-bottom: spacing(extra_large);
+
+    .c-notification:not(:last-child) {
+        margin-bottom: spacing(medium);
+    }
+
+    .c-notification-list__expand-bar {
+        width: 100%;
+        background-color: transparent;
+        justify-content: flex-end;
+        padding: rhythm(delta);
+        text-align: center;
+        display: flex;
+        align-items: center;
+
+        svg {
+            fill: main(action, default);
+        }
+    }
+
+    @media screen and (min-width: $mq-medium-start) {
+        .c-notification-list__expand-bar {
+            justify-content: center;
+            background-color: general(canvas, light);
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-login-info-form {
+    & &__password-requirement-list {
+        padding-left: spacing(small);
+        margin-top: 0;
+    }
+}

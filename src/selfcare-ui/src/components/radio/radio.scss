@@ -1,0 +1,166 @@
+@import '../../_variables.scss';
+
+.c-radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: spacing(medium);
+    color: general(text, light);
+
+    & &__label {
+        display: inline-block;
+        padding-left: spacing(medium);
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            border-style: solid;
+        }
+
+        &:before {
+            $radio-height: rhythm(eta);
+            left: 0;
+            top: 50%;
+            margin-top: calc(-1 * (#{$radio-height} / 2));
+            height: $radio-height;
+            width: $radio-height;
+            border: 1px solid main(form, borderColor);
+            background-color: general(canvas, white);
+            border-radius: radius(round);
+        }
+    
+
+    &:after {
+        $radio-height: rhythm(mu);
+        $radio-line-size: 0.125rem;
+        $radio-width: calc(#{ $radio-height} / 2);
+        border-width: 0 $radio-line-size $radio-line-size 0;
+        border-color: transparent;
+        transform: rotate(45deg);
+        left: calc((#{$radio-height} / 2));
+        top: calc((#{$radio-height} / 2) - #{$radio-line-size});
+        height: $radio-height;
+        width: $radio-width;
+        margin-top: calc(-1 * (#{ $radio-height} / 1.5));
+        
+    }
+}
+
+    & &__content {
+        flex: 1 auto;
+        color: general(text, dark);
+        cursor: pointer;
+    }
+
+    & &__input {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+
+        &:focus {
+            + .c-radio__label {
+                &:before {
+                    border-color: general(accent, primary);
+                }
+            }
+        }
+
+        &:disabled {
+            &:not([readonly]) {
+                + .c-radio__label {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+            }
+            &[readonly] {
+                + .c-radio__label {
+                    cursor: default;
+
+                    &:before {
+                        background-color: main(form, borderColor);
+                    }
+                }
+            }
+        }
+
+        &:checked {
+            &:not([readonly]),
+            &[readonly] {
+                + .c-radio__label {
+                    &:before {
+                        border-color: general(border, white);
+                        background-color: general(canvas, red);
+                    }
+                    &:after {
+                        border-color: general(border, white);
+                    }
+                }
+            }
+        }
+
+        &[error],
+        &[error]:checked {
+            + .c-radio__label {
+                &:before {
+                    border-color: general(system, error);
+                }
+            }
+        }
+    }
+
+    &.c-radio--emphasis {
+        color: general(text, dark);
+        font-weight: weight(medium);
+        margin-left: spacing(small);
+    }
+
+    &.secondary {
+        padding-left: 0;
+
+        .c-radio__label{
+            margin-right: spacing(extra_small);
+            padding-left: 0;
+        }
+
+        .c-radio__content {
+            color: general(text, white);
+        }
+
+        .c-radio__input {
+            background-color: general(canvas, dark);
+
+            &:checked + .c-radio__label:before,
+            &:not(checked) + .c-radio__label:before {
+                background-color: general(canvas, black);
+                height: 1.25rem;
+                position: relative;
+                width: 1.25rem;
+                margin-top: 0;
+            }
+
+            &:checked + .c-radio__label {
+                position: relative;
+                padding-left: 0;
+                
+                &:after {
+                    background-color: white;
+                    border-radius: 50%;
+                    border-width: unset;
+                    bottom: 0;
+                    height: 10px;
+                    left: 0;
+                    margin: auto;
+                    right: 0;
+                    top: 0;
+                    transform: unset;
+                    width: 10px;
+                }
+            }
+        }       
+    }
+}

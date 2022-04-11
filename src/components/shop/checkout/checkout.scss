@@ -1,0 +1,130 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-checkout {
+    .c-checkout__section {
+        margin-bottom: spacing(extra_large);
+
+        &-link {
+            padding-top: spacing(small);
+            padding-left: calc(2 * #{spacing(medium)});
+            padding-bottom: spacing(small);
+            text-align: left;
+        }
+
+        &-error {
+            color: general(system, error);
+            padding-bottom: spacing(small);
+            padding-left: spacing(extra_large);
+        }
+    }
+
+    .c-checkout__heading {
+        padding-bottom: spacing(large);
+    }
+
+    .c-checkout__heading__heading__title {
+        font-size: 12px;
+        letter-spacing: 0px;
+        line-height: 24px;
+        margin-top: 0;
+    }
+
+    .c-checkout__heading_subtitle_logotypes_wrapper {
+        display: flex;
+
+        .c-checkout__heading__heading__card_notice {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            line-height: 24px;
+            margin-right: 12px;
+        }
+
+        .c-trusted-cards__logotype {
+            height: 26px;
+            width: auto;
+        }
+
+        .c-trusted-cards__logotype:not(:first-child) {
+            margin-left: 5px;
+        }
+    }
+
+    .c-payment-method-form__section__notice {
+        margin-bottom: 36px;
+    }
+
+    .c-checkout__spacer {
+        height: 100%;
+        flex-grow: 1;
+    }
+
+    @media screen and (max-width: $mq-medium-start) {
+        .c-checkout__button {
+            width: 100%;
+        }
+    }
+
+    .c-checkout__divider {
+        margin-top: spacing(small);
+    }
+
+    .c-checkout__header {
+        padding-bottom: spacing(medium);
+    }
+
+    .c-checkout__spacer {
+        height: 100%;
+        flex-grow: 1;
+    }
+
+    .c-checkout-description {
+        padding-bottom: spacing(small);
+    }
+
+    .c-checkout__info-line {
+        color: general(text, light);
+        padding-bottom: spacing(small);
+    }
+
+    &__section-header {
+        color: general(text, dark);
+        font-weight: 500;
+    }
+
+    .c-checkout__order-button {
+        width: fit-content;
+
+        @media screen and (max-width: $mq-medium-start) {
+                width: 100%;
+        }
+    }
+
+    .c-checkout__order-notification {
+        margin-bottom: spacing(large);
+    }
+
+    .c-checkout__line-item:not(:first-child) {
+        padding-top: spacing(large);
+    }
+
+    .c-checkout__one-time-total,
+    .c-checkout__monthly-total {
+        padding-top: spacing(large);
+    }
+
+    .c-checkout__monthly-total h4:last-child {
+        font-weight: bold;
+    }
+
+    .c-checkout__line-item,
+    .c-checkout__one-time-total,
+    .c-checkout__monthly-total {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .c-checkout__monthly-total {
+        color: general(accent, secondary);
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "cardinality": {
+        "no_min": "Choose up to {{number}}",
+        "exact": "Choose {{number}}",
+        "range": "Choose at least {{min}} and up to {{max}}"
+    },
+    "component_error": {
+        "description": "Component failed to load because of error. Consider refreshing page",
+        "elevated_description": "Oops! It looks like something went wrong. Feel free to reload the page and start over.",
+        "unable_to_load": "Unable to load"
+    },
+    "continue": "Continue",
+    "data_table": {
+        "per_page": "per page",
+        "results": "{{results}} Result(s)",
+        "view_more": "View More"
+    },
+    "expandable_section": {
+        "show": "Show",
+        "hide": "Hide"
+    },
+    "form_errors": {
+        "heading": "Please correct the following errors"
+    },
+    "main_menu": "Main Menu",
+    "na": "N/A",
+    "need_assistance": {
+        "chat": "Chat",
+        "name": "Need Assistance"
+    },
+    "optional": "(optional)",
+    "page": "Page",
+    "prompt": {
+        "accept": "Accept",
+        "apply": "Apply",
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+    },
+    "rich_stepper": {
+        "apply": "Apply",
+        "bulk_flat": "Flat Pricing",
+        "bulk_unit": "Unit Pricing",
+        "remaining": "{{number}} remaining",
+        "service_change": "Plan or service change"
+    },
+    "search_placeholder": "Search...",
+    "snack_bar": {
+        "add_ons": "Add-ons",
+        "all_add_ons": "All Add-ons",
+        "you_might_like": "Add-ons You Might Like"
+    },
+    "statuses": {
+        "active": "Active",
+        "added_to_plan": "Added To Your Plan",
+        "cancelled": "Cancelled",
+        "completed": "Completed",
+        "expired": "Expired",
+        "new": "New",
+        "open": "Open",
+        "payment_complete": "Payment Complete",
+        "pending": "Pending",
+        "pending_activation": "Pending Activation",
+        "pending_active": "Pending Active",
+        "pending_first_usage": "Pending First Usage",
+        "pending_pause": "Pending Pause",
+        "pending_removal": "Pending Removal",
+        "removed": "Removed",
+        "removed_from_plan": "Removed From Your Plan",
+        "resolved": "Resolved",
+        "suspended": "Suspended"
+    },
+    "vertical_pager": {
+        "single_page_info": "Showing {{start}} of {{max}}",
+        "page_info": "Showing {{start}} - {{end}} of {{max}}"
+    },
+    "with_docs": {
+        "code_sample": {
+            "toggle_code": "Toggle Code"
+        },
+        "examples_heading": "Examples",
+        "note": {
+            "heading": "Note"
+        },
+        "prop_types": {
+            "enum_description": "The value of this property must be one of the following:",
+            "heading": "Properties",
+            "no_props": "No Properties",
+            "required": "required"
+        },
+        "usage": {
+            "copied": "Copied",
+            "copy_to_clipboard": "Copy to Clipboard",
+            "heading": "Usage",
+            "message": "This component can be imported using the syntax below:",
+            "relative_path_notice": "The path above is relative to your component's working directory and may need to be changes depending when used."
+        }
+    },
+    "zero_state": {
+        "filtered": {
+            "title": "There are no {{title}} to display"
+        }
+    }
+}

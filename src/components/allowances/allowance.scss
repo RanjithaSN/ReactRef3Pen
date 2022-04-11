@@ -1,0 +1,10 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-allowance {
+  &__heading {
+    margin-bottom: spacing(medium);
+  }
+  &__table {
+    margin: spacing(medium) 0;
+  }
+}

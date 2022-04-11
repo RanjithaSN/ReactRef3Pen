@@ -1,0 +1,34 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-authenticationPanel {
+    position: relative;
+
+    .c-authenticationPanel-heading {
+        margin-top: spacing(large);
+        margin-bottom: spacing(large);
+    }
+
+    .c-authenticationPanel-bannerNotification {
+        margin-bottom: spacing(large);
+    }
+
+    .c-authenticationPanel-bannerMessage {
+        font-weight: weight(light);
+        margin-bottom: spacing(medium);
+        text-align: center;
+    }
+
+    .c-authenticationPanel-card {
+        padding: spacing(large) spacing(large) spacing(extra_extra_large);
+    }
+
+    .c-authenticationPanel-card__no-padding {
+        padding: spacing(small) 0;
+    }
+
+    @media screen and (min-width: $mq-medium-start) {
+        .c-authenticationPanel-card {
+            padding-bottom: spacing(large) spacing(large) spacing(extra_large);
+        }
+    }
+}

@@ -1,0 +1,118 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-payment-method-form {
+    &__expiry-cvv {
+        clear: both;
+        display: flex;
+        &--first {
+            width: 50%;
+            margin-right: 8px;            
+        }
+        &--last {
+            width: 50%;
+            margin-left: 8px;
+        }
+    }
+
+    &__card-field {
+        display: block;
+        padding: 16px 0;
+        &__label {
+            position: relative;
+            left: 10px;
+            top: 35px;
+            color:  main(form, borderColor);
+            line-height: inherit;
+            left: 10px;
+            background: general(canvas, white);
+            display: inline-flex;
+            transition: all 200ms;
+            padding-left: radius(large);
+            padding-right: radius(large);
+            z-index: -1;
+        }
+        &__input{
+            display: flex;
+            border: 1px solid main(form, borderColor);
+            height: 50px;
+            padding: 0 spacing(small);
+        }
+
+        &__info {
+            padding-top: spacing(extra_small);
+            padding-left: spacing(extra_small);
+            color: general(text, light);
+        }
+
+        &--focused {
+            .c-payment-method-form__card-field__label {
+                color: general(accent, primary);
+            }
+            .c-payment-method-form__card-field__input {
+                color: general(accent, primary);
+                border-color: general(accent, primary);
+            }
+        } 
+        
+        &--filled {
+            .c-payment-method-form__card-field__label {
+                color: main(form, borderColor);
+            }
+            .c-payment-method-form__card-field__input {
+                color: main(form, borderColor);
+            }
+        }
+
+        &--focused, &--filled {
+          .c-payment-method-form__card-field__label {
+            left: spacing(small_minus);
+            top: 9px;
+            z-index: 1;
+            font-size:75%;
+          }            
+        }
+
+        &--error {
+            .c-payment-method-form__card-field__label {
+                left: spacing(small_minus);
+                top: 9px;
+                z-index: 1;
+                font-size:75%;
+                color: general(system, error);
+            } 
+            .c-payment-method-form__card-field__input {
+                left: spacing(small_minus);
+                top: 9px;
+                z-index: 1;
+                font-size:75%;
+                border-color: general(system, error);
+            } 
+        }
+
+        &--default {
+            .c-payment-method-form__card-field__label {
+                color: main(form, borderColor);
+            } 
+            .c-payment-method-form__card-field__input {
+                border-color: main(form, borderColor);
+            }
+        }
+
+        &__error-text {
+            padding-top: spacing(small);
+            color: general(system, error);
+            font-size: inherit;
+            font-weight: inherit;
+        }
+    }
+
+    &__brand-logo {
+        float: right;
+        position: relative;
+        bottom: 41px;
+        right: spacing(small);
+        height: 18px;
+        width: 27px;
+        border-radius: radius(small);
+    }
+}

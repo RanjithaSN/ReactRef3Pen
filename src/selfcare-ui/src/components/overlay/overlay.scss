@@ -1,0 +1,28 @@
+@import '../../_variables.scss';
+
+.c-overlay {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: layer(overlay);
+    justify-content: center;
+    align-items: center;
+
+    .c-overlay-content {
+        display: flex;
+        z-index: layer(above);
+        width: 80%;
+    }
+
+    @media screen and (min-width: $mq-medium-start) {
+        .c-overlay-content {
+            height: auto;
+            width: auto;
+            max-height: calc(100% - #{spacing(large)});
+            max-width: calc(100% - #{spacing(large)});
+        }
+    }
+}

@@ -1,0 +1,11 @@
+dist
+dist-widget
+node_modules
+blueprint-templates
+config
+selfcare-core/node_modules
+selfcare-ui/node_modules
+src/selfcare-ui/src/icons/react-icons/*.jsx
+src/selfcare-ui/src/icons/react-icons/utils/*.jsx
+*.scss
+

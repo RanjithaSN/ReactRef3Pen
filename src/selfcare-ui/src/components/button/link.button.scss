@@ -1,0 +1,18 @@
+@import '../../_variables.scss';
+
+.c-link-button {
+    display: inline-block;
+    font-family: inherit;
+    color: main(action, default);
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: underline;
+    min-width: unset;
+
+    &:hover:not {
+        color: shade(main(action, default), 10%);
+    }
+}

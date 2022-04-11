@@ -1,0 +1,21 @@
+@import '../../_variables.scss';
+
+.c-numerical-badge {
+    align-items: center;
+    display: flex;
+    font-size: rhythm(beta);
+    justify-content: center;
+    text-align: center;
+    height: rhythm(alpha);
+    width: rhythm(alpha);
+    padding: spacing(medium);
+    border: 1px solid general(border, dark);
+    border-radius: radius(round);
+
+    &--small {
+        font-size: rhythm(delta);
+        height: rhythm(beta);
+        width: rhythm(beta);
+        padding: spacing(small);
+    }
+}

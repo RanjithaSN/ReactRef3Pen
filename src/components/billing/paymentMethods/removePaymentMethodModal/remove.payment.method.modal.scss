@@ -1,0 +1,24 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-remove-payment-method-modal {
+    &__card-header {
+        padding: spacing(extra_small) spacing(medium) spacing(small) 0;
+    }
+
+    &__card-body {
+        padding: 0 spacing(medium) 0 0;
+    }
+
+    &__content {
+        padding-top: 0;
+    }
+
+    &__header {
+        padding-bottom: spacing(large);
+    }
+
+    &__radio-card {
+        margin-top: spacing(medium);
+        height: auto;
+    }
+}

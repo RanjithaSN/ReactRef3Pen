@@ -1,0 +1,96 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-search-offers__offer-summary--overlay-container{
+    background-color: general(canvas, red);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+}
+
+.c-offer-summary-preview {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding: spacing(small);
+    border: 1px solid general(border, white);
+
+    &.c-search-offers__offer-summary--overlay{
+        color: general(text,white);
+        background-color: general(canvas, red);
+        border: none;
+
+        .c-offer-summary-preview{
+            color: general(text,white);
+
+            &__meta,&__total,&__item-label {
+                color: general(text, white);
+            }
+
+            &__equals {
+                fill: general(text, white);
+            }
+        }
+    }
+
+    .c-offer-summary-preview{
+        &__meta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: spacing(small);
+        }
+
+        &__total {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: general(accent, secondary);
+            padding: 0 spacing(medium);
+        }
+
+        &__next-button {
+            align-self: center;
+
+            &:disabled {
+                color: general(text, white);
+            }
+        }
+
+        &__cost-list {
+            display:flex;
+
+            &-wrapper {
+                display: flex;
+                justify-content: space-around;
+                flex-grow: 2;
+                padding: 0 spacing(medium);
+            }
+
+            &-plus {
+                fill: general(text, white);
+                align-self: center;
+                padding: spacing(medium);
+            }
+        }
+
+        &__item-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 spacing(small);
+        }
+
+        &__item-label {
+            color: general(text, light);
+        }
+
+        &__equals {
+            align-self: center;
+            fill: general(accent, secondary);
+        }
+    }
+    &__select-button{
+        min-width: $selet-buton-min-width;
+    }
+}

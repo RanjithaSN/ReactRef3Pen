@@ -1,0 +1,88 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-cart-summary {
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 spacing(small);
+    }
+
+    &__conditions {
+        margin-top: spacing(medium);
+    }
+
+    &__notes {
+        color: general(text, light);
+        line-height: $rhythm-delta;
+    }
+
+    &__item + &__item {
+        border-top: 1px solid general(border, light);
+        margin-top: spacing(medium);
+        padding-top: spacing(medium);
+    }
+
+    &__actions {
+        margin-top: spacing(small);
+        margin-left: spacing(medium);
+    }
+
+    &__action-separator {
+        margin: 0 spacing(small);
+    }
+
+    &__item-totals {
+        font-size: rhythm(delta, em);
+        margin-bottom: spacing(medium);
+
+        .c-cost-with-label__note {
+            color: general(text, medium);
+        }
+    }
+
+    &__item {
+        padding: 0 spacing(small);
+    }
+
+    &__item-heading.c-cart-summary__item-heading {
+        &--disabled {
+            color: general(text, light);
+        }
+    }
+
+    &__item-details {
+        margin-bottom: spacing(medium);
+    }
+
+    &__item-detail-flag  + &__item-detail-flag {
+        margin-top: spacing(small);
+    }
+
+    &__item-action {
+        font-size: rhythm(delta);
+        position: relative;
+        padding-right: spacing(small);
+        padding-left: spacing(small);
+        color: main(action, default);
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 1px;
+            background-color: general(text, light);
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child:after {
+            content: none;
+        }
+    }
+}

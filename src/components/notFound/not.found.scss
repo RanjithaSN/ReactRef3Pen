@@ -1,0 +1,13 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-not-found {
+  padding-top: spacing(extra_extra_large);
+  padding-bottom: spacing(extra_large);
+  padding-left: spacing(medium);
+  padding-right: spacing(medium);
+
+  &__heading {
+    max-width: 400px;
+    padding-bottom: spacing(medium);
+  }
+}

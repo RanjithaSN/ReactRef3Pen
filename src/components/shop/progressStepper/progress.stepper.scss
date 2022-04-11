@@ -1,0 +1,37 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-progress-stepper {
+    background-color: general(canvas, white);
+    display: flex;
+    padding: spacing(small) spacing(medium) spacing(small) spacing(medium);
+
+    &__block {
+        display: flex;
+        align-items: center;
+        padding-right: spacing(medium);
+    }
+
+    &__block-label {
+        line-height: rhythm(beta);
+        align-items: center;
+    }
+
+    &__step {
+        width: spacing(small);
+        height: spacing(small);
+        border-radius: radius(round);
+        z-index: layer(above);
+    }
+
+    .c-progress-stepper__step--completed {
+        background-color: tint(main(masthead, backgroundColor), 50%);
+    }
+
+    .c-progress-stepper__step--current {
+        background-color: main(masthead, backgroundColor);
+    }
+
+    .c-progress-stepper__step--uncompleted {
+        border: 1px solid general(canvas, black);
+    }
+}

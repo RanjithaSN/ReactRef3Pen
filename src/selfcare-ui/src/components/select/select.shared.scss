@@ -1,0 +1,48 @@
+@import '../../_variables.scss';
+
+// Exported primarily for face-plating
+%select-appearance {
+    appearance: none;
+    font-family: inherit;
+    background-color: general(canvas, white);
+    border-radius: radius(small);
+    border: 1px solid main(form, borderColor);
+    line-height: 1.125;
+    width: 100%;
+    padding: spacing(small) spacing(large) spacing(small) spacing(small);
+    cursor: pointer;
+
+    ::-ms-expand,
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: main(form, activeColor);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    &[error]:not(:focus) {
+        border-color: general(system, error);
+    }
+}
+
+// Exported primarily for face-plating
+%select-icon-appearance {
+    $svgSize: 16px;
+    position: absolute;
+    top: 50%;
+    margin-top: -#{$svgSize / 2}; // Half the height of the icon
+    right: spacing(small);
+    pointer-events: none;
+    svg {
+        display: block;
+        height: $svgSize;
+        width: $svgSize;
+    }
+}

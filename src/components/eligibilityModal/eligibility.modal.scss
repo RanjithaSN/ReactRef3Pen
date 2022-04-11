@@ -1,0 +1,22 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-eligibility-modal {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__section {
+        margin-top: spacing(large);
+    }
+    
+    &__icon {
+        color: general(accent, secondary);
+        font-size: rhythm(delta);
+        margin-right: spacing(extra_small);
+    }
+
+    &__change {
+        padding-left: spacing(extra_small);
+    }
+}

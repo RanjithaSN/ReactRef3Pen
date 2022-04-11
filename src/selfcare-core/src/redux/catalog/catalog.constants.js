@@ -1,0 +1,11 @@
+export const SEARCH_ENTITIES = {
+  PRODUCT: 1
+};
+
+export const PRODUCT_SORT_BY = {
+  NAME: 1,
+  REFERENCE_DATE: 2,
+  PEER_RATING: 3,
+  RELEVANCE: 4,
+  RECENT_VIEW_COUNT: 5
+};

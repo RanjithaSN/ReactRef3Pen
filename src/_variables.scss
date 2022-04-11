@@ -1,0 +1,9 @@
+$APP_Header_heightMqSmall: 50px;
+$APP_Footer_heightMqMedium: 42px;
+$header-sideButtonSize: rhythm(omega, em);
+
+// brandMark height can be inspected or computed using the image's height/width ratio and max-height/max-width
+$header-brandMarkImgHeight: 24px;
+$header-height: calc(2 * #{spacing(medium)} + #{$header-brandMarkImgHeight});
+
+$APP_Image_defaultSize: 400px;

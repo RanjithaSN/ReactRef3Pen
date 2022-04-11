@@ -1,0 +1,38 @@
+@import '~selfcare-ui/src/variables';
+
+.c-allowance {
+    &__heading {
+        padding-bottom: spacing(small);
+    }
+
+    &__content{
+        &__desktop{
+            padding-bottom: spacing(large);
+        }
+    }
+
+    &__sub-heading {
+        padding-bottom: spacing(large);
+    }
+
+    &__amount {
+        padding-left: spacing(extra_small);
+        font-weight: $weight-bold;
+    }
+
+    &__quote-information {
+        margin-bottom: spacing(large);
+    }
+
+    &__notice {
+        margin-top: spacing(medium);
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        border: 1px solid general(border, dark);
+
+        &__action {
+            width: 100%;
+        }
+    }
+}

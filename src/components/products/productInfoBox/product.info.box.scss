@@ -1,0 +1,14 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-product-info-box {
+  display: flex;
+  padding-bottom: spacing(small);
+  margin-top: spacing(large);
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: spacing(large);
+  }
+}

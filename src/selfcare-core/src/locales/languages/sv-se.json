@@ -1,0 +1,95 @@
+{
+    "address": {
+        "billing": "Betalning",
+        "home": "Hem",
+        "postal": "Post",
+        "service": "Tjänst",
+        "shipping": "Frakt",
+        "work": "Arbete"
+    },
+    "fault": {
+        "0": "Ett oväntat fel har uppstått. Vi beklagar eventuella besvär.",
+        "4": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "53": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "54": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "101": "Åtkomsten för den här användaren har avbrutits, kontakta ",
+        "113": "Denna mejl är redan registrerad på ett befintligt konto. Vänligen logga in eller använd en annan mejl.",
+        "115": "Lösenordet är inte tillräckligt komplext.",
+        "117": "Användarnamn eller lösenord är ogiltigt",
+        "118": "Förtillfället kan du inte lägga till ett kort som har samma kortnummer eller samma fyra sista siffror som det redan tillagda kortet. Prova att uppdatera det redan befintliga kortet istället eller prova ett annat VISA eller Mastercard. Vi ledsna för besväret det medför.",
+        "217": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "460": "Vi hittar inte det personnumret, försök igen.",
+        "614": "Det gick inte att hitta inköps ordern med ett matchande order-ID.",
+        "617-6170410": "Vi beklagar, ett okänt tekniskt fel uppstod. Chatta med oss och berätta hur vi kan hjälpa dig. Felkod: 00",
+        "617-6170417": {
+          "content": "Vi kan inte genomföra din betalning. Vänligen dubbelkolla dina kortuppgifter och försök igen. Kvarstår problemet, testa med ett annat kort eller ta kontakt med din bank <0>{{linkText}}</0>",
+          "linkText": "Mer info här.",
+          "ref": "https://www.penny.se/hj%C3%A4lp/artikel/1362"
+        },
+        "617-6170408": {
+            "content": "Vi kan inte dra pengar från ditt kort. Vänligen registrera ett nytt kort på ditt konto, läs hur du gör det <0>{{linkText}}</0>. Kvarstår problemet, kontakta din bank. Felkod: 02",
+            "linkText": "här",
+            "ref": "https://www.penny.se/hj%C3%A4lp/artikel/1274"
+        },
+        "617-6170445": "Vi beklagar, ett okänt tekniskt fel uppstod. Chatta med oss och berätta hur vi kan hjälpa dig. Felkod: 03",
+        "617-6170411": {
+            "content": "Vi kan inte genomföra din betalning. Vänligen dubbelkolla dina kortuppgifter och försök igen. Kvarstår problemet, testa med ett annat kort eller ta kontakt med din bank. <0>{{linkText}}</0>.",
+            "linkText": "Mer info här.",
+            "ref": "https://www.penny.se/hj%C3%A4lp/artikel/1362"
+        },
+        "617-6170403": "Vi beklagar, ett okänt tekniskt fel uppstod. Chatta med oss och berätta hur vi kan hjälpa dig. Felkod: 07",
+        "617-6170419": {
+            "content": "Vi får inte kontakt med din bank. Vänligen försök igen eller <0>{{linkText}}</0>. Kvarstår problemet, kontakta din bank. Felkod: 09",
+            "linkText": "lägg till ett nytt kort",
+            "ref": "https://www.penny.se/hj%C3%A4lp/artikel/1274"
+        },
+        "617-6170409": "Vi beklagar, ett okänt tekniskt fel uppstod. Chatta med oss och berätta hur vi kan hjälpa dig. Felkod: 10",
+        "617-6170429": {
+            "content": "Vi kan inte dra pengar från ditt kort. Vänligen registrera ett nytt kort på ditt konto, läs hur du gör det <0>{{linkText}}</0>. Felkod: 28",
+            "linkText": "här",
+            "ref": "https://www.penny.se/hj%C3%A4lp/artikel/1274"
+        },
+        "1068": "Dubblerade tjänstkonfigurationer upptäcktes. Konfigurera om de valda tjänsterna.",
+        "1083-108301": "Det valda erbjudandet är inte kompatibelt med andra erbjudanden på prenumerantens konto.",
+        "11024": "Vi kunde inte lägga till kortet som betalningsmedel, kontakta gärna din bank för mer information",
+        "11027": "För manga upphämtningsställen är valda, välj ett istället.",
+        "11096": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "1117": "Det postnumret du har angivit finns inte, prova igen.",
+        "1121": "Tyvärr är inte Penny tillgängligt på din adress än, men vi lägger till nya adresser hela tiden, så testa gärna igen om några veckor.",
+        "1124-112403": "Den här adressen används för närvarande för en betalnings metod och kan inte tas bort.",
+        "1123": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "1125": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "1127": "Just nu kan vi inte erbjuda bredband på din adress, men vi jobbar hårt på att kunna erbjuda uppkoppling på fler adresser. Prova igen om ett tag.",
+        "1149": "Det gick inte att hitta det valda erbjudandet.",
+        "117-11701": "Användarnamn eller lösenord är ogiltigt",
+        "117-11702": "Åtkomsten för den här användaren har avbrutits, kontakta ",
+        "1193": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "1194": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "1244-124401": "Ogiltig kombination av stad och post nummer.",
+        "1262": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "1265": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "1268": "Tjänsten väntar aktivering och går därför inte att uppdatera.",
+        "1302": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "131": "Du måste vara privatperson för att ha Penny.",
+        "227": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "606-60603": "Operationsföljdsnumret är ogiltigt",
+        "606-60616": "Felaktigt kort nummer som angetts för vald korttyp",
+        "9026": "Det blev något fel när kontot skulle skapas, prova igen så funkar det kanske bättre.",
+        "9026-902615": "Det valda erbjudandet är inte tillgängligt för kunden på grund av motstridiga valuta typer."
+    },
+    "general_error": "Ett fel uppstod när din begäran bearbetats.",
+    "select_placeholder": "Välj...",
+    "support_request": {
+        "description": "Beskrivning",
+        "device_name": "Enhetens namn",
+        "device_number": "Enhetens nummer",
+        "dispute_amount": "Tvist belopp",
+        "invoice_number": "Faktura nummer",
+        "statuses": {
+            "cancelled": "Annullerat",
+            "new": "Nya",
+            "open": "Öppna",
+            "resolved": "Löst"
+        }
+    }
+}

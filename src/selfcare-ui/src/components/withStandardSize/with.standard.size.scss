@@ -1,0 +1,84 @@
+@import '../../variables';
+
+.c-with-standard-size--full {
+    width: 100%
+}
+
+.c-with-standard-size--large {
+    width: calc(66% - 1px);
+}
+
+.c-with-standard-size--medium {
+    width: calc((100% - #{spacing(medium)}) / 2);
+}
+
+.c-with-standard-size--small {
+    width: calc((100% - (2 * #{spacing(medium)})) / 3);
+}
+
+.c-with-standard-size--x-small {
+    width: calc(((66% - 1px) - (2 * #{spacing(medium)})) / 3);
+}
+
+.c-with-standard-size--xx-small {
+    width: calc((100% - (5 * #{spacing(medium)})) / 6);
+}
+
+.c-with-standard-size--large,
+.c-with-standard-size--medium,
+.c-with-standard-size--small,
+.c-with-standard-size--x-small,
+.c-with-standard-size--xx-small {
+    @media screen and (max-width: $mq-medium-start) {
+        width: 100%;
+    }
+}
+
+// Combined width greater than 100% will naturally break when composed, add top margin
+.c-with-standard-size--full + .c-with-standard-size--full,
+.c-with-standard-size--full + .c-with-standard-size--large,
+.c-with-standard-size--full + .c-with-standard-size--medium,
+.c-with-standard-size--full + .c-with-standard-size--small,
+.c-with-standard-size--full + .c-with-standard-size--x-small,
+.c-with-standard-size--full + .c-with-standard-size--xx-small,
+.c-with-standard-size--large + .c-with-standard-size--full,
+.c-with-standard-size--large + .c-with-standard-size--large,
+.c-with-standard-size--large + .c-with-standard-size--medium,
+.c-with-standard-size--medium + .c-with-standard-size--full,
+.c-with-standard-size--medium + .c-with-standard-size--large,
+.c-with-standard-size--small + .c-with-standard-size--full,
+.c-with-standard-size--x-small + .c-with-standard-size--full,
+.c-with-standard-size--xx-small + .c-with-standard-size--full {
+    margin-top: spacing(medium);
+}
+
+// All the ways fields can be composed without breaking
+.c-with-standard-size--large + .c-with-standard-size--small,
+.c-with-standard-size--large + .c-with-standard-size--x-small,
+.c-with-standard-size--large + .c-with-standard-size--xx-small,
+.c-with-standard-size--medium + .c-with-standard-size--medium,
+.c-with-standard-size--medium + .c-with-standard-size--small,
+.c-with-standard-size--medium + .c-with-standard-size--x-small,
+.c-with-standard-size--medium + .c-with-standard-size--xx-small,
+.c-with-standard-size--small + .c-with-standard-size--large,
+.c-with-standard-size--small + .c-with-standard-size--medium,
+.c-with-standard-size--small + .c-with-standard-size--small,
+.c-with-standard-size--small + .c-with-standard-size--x-small,
+.c-with-standard-size--small + .c-with-standard-size--xx--small,
+.c-with-standard-size--x-small + .c-with-standard-size--large,
+.c-with-standard-size--x-small + .c-with-standard-size--medium,
+.c-with-standard-size--x-small + .c-with-standard-size--small,
+.c-with-standard-size--x-small + .c-with-standard-size--x-small,
+.c-with-standard-size--x-small + .c-with-standard-size--xx-small,
+.c-with-standard-size--xx-small + .c-with-standard-size--large,
+.c-with-standard-size--xx-small + .c-with-standard-size--medium,
+.c-with-standard-size--xx-small + .c-with-standard-size--small,
+.c-with-standard-size--xx-small + .c-with-standard-size--x-small,
+.c-with-standard-size--xx-small + .c-with-standard-size--xx-small  {
+    margin-left: spacing(medium);
+
+    @media screen and (max-width: $mq-medium-start) {
+        margin-left: 0;
+        margin-top: spacing(medium);
+    }
+}

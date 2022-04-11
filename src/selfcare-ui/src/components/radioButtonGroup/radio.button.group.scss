@@ -1,0 +1,11 @@
+@import '../../_variables.scss';
+
+.c-radio-button-group {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template: none / repeat(auto-fit, minmax(5rem, 1fr)); // Change related variable in `radio.button.group.jsx` if modifying
+
+    .c-radio-group__radio + .c-radio-group__radio {
+        margin-top: 0;
+    }
+}

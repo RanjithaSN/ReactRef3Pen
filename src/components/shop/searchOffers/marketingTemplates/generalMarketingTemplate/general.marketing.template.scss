@@ -1,0 +1,44 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-general-marketing-template {
+    width: 100%;
+
+    .c-general-marketing-template__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: spacing(medium);
+    }
+    .c-general-marketing-template__price-description {
+        color: general(text, light);
+    }
+    .c-general-marketing-template__body {
+        color: general(text, light);
+        margin: spacing(small);
+    }
+
+    @media screen and (max-width: $mq-medium-start) {
+        .c-general-marketing-template__header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .c-general-marketing-template__price {
+            margin-top: spacing(small);
+        }
+    }
+
+    @media screen and (min-width: $mq-medium-start) and (max-width: $mq-large-start) {
+        .c-general-marketing-template__price {
+            font-size: rhythm(beta);
+            font-weight: weight(light);
+        }
+    }
+
+    @media screen and (min-width: $mq-large-start) {
+        .c-general-marketing-template__price {
+            font-size: rhythm(beta);
+            font-weight: weight(light);
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import '../../_variables.scss';
+
+.c-paragraph {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    text-transform: initial;
+    font-family: $font-nonBrandSecondary;
+    font-weight: $weight-regular;
+    letter-spacing: $penny-letter-spacing-small;
+    font-size: main(heading, minorNormalSize);
+    line-height: 1.25rem;
+
+    max-width: $paragraph-max-width;
+
+    +.c-paragraph {
+        margin-top: spacing(medium);
+    }
+}

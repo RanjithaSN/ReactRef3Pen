@@ -1,0 +1,187 @@
+@import '../../_variables.scss';
+
+.c-card-selection {
+    align-items: center;
+
+    &.c-card-selection--simple {
+        padding: spacing(medium) 0;
+        background-color: general(canvas, white);
+
+        .c-card-selection__primary-content {
+            flex-basis: 100%;
+        }
+
+        .c-card-list-body {
+            width: 100%;
+            flex-basis: initial;
+            margin: 0;
+        }
+    }
+
+    &__primary-content {
+        flex-basis: 60%;
+    }
+
+    &__zero-state {
+        margin: spacing(large);
+    }
+
+    & &__grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: spacing(small);
+
+        .c-card-selection-card {
+            &:nth-child(even) .c-card-selection-card__button {
+                margin-right: 0;
+            }
+
+            &:nth-child(odd) .c-card-selection-card__button {
+                margin-left: 0;
+            }
+
+            &--selected {
+                .c-card-selection-card__button {
+                    background-color: general(accent, secondary);
+                    color: general(canvas, white);
+                }
+            }
+        }
+
+        .c-card-selection-card__button {
+            .c-card__body {
+                align-items: center;
+            }
+        }
+    }
+
+    & &__stacked-container {
+        margin-top: spacing(large);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(calc(#{$product-card-min-width-height} + #{spacing(small)} * 2), 1fr));
+        grid-template-rows: 1fr;
+        grid-gap: spacing(small);
+
+        @media screen and (min-width: $mq-large-start){
+            grid-template-columns: repeat(auto-fill, calc(#{$product-card-min-width-height} + #{spacing(small)} * 2));
+        }
+        .c-card-selection-card {
+            display: flex;
+            position: relative;
+
+            @media screen and (min-width: $mq-large-start){
+                max-width: calc(#{$product-card-min-width-height} + #{spacing(small)} * 2);
+            }
+            &__button {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+            &__body {
+                box-sizing: border-box;
+                height: calc(100% - #{spacing(small)} * 2);
+            }
+            &__cost {
+                font-weight: weight(regular);
+            }
+        }
+        .c-card-selection-card:before {
+            content: "";
+            display: block;
+            height: 0;
+            width: 0;
+            padding-bottom: 100%;
+        }
+    }
+
+    .c-card-list-body {
+        display: flex;
+        flex-direction: column;
+
+        &__carousel-item:last-child {
+            border-right: none;
+        }
+    }
+
+    &-card__body {
+        margin: spacing(small);
+    }
+
+    &-card {
+        border: 1px solid general(border, light);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        &__header-description {
+            padding: spacing(extra_small) 0 spacing(large);
+        }
+
+        &__button {
+            height: 100%;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &__heading {
+            flex: 1 0 auto;
+        }
+
+        &__cost {
+            font-weight: weight(bold);
+        }
+
+        &--selected, &:hover{
+            color: general(canvas, white);
+            border: 1px solid general(accent, secondary);
+
+            .c-card-selection-card__button,
+            .c-cost__before-discount,
+            .c-product__status .c-status-indicator_icon{
+                color: general(canvas, white);
+                background-color: general(canvas, red);
+            }
+
+            .c-cost__before-discount::after {
+                border-bottom: 1px solid general(text, white);
+
+                &:hover {
+                    border-bottom: 1px solid general(text, white);
+                }
+            }
+        }
+
+        .c-card__body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+
+    &-body {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: $mq-large-start) {
+    .c-card-selection {
+        flex-wrap: wrap;
+
+        .c-card-list-body {
+            flex-basis: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        &__primary-content {
+            overflow-x: hidden;
+            flex-basis: 100%;
+        }
+    }
+}

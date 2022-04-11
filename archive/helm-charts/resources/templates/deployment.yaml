@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "resource.fullname" . }}
+  namespace: {{ .Release.namespace }}
+  labels:
+    {{- include "resource.labels" . | nindent 4 }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  selector:
+    matchLabels:
+      {{- include "resource.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        {{- include "resource.labels" . | nindent 8 }}
+    spec:
+      volumes:
+        - name: fluentdconf
+          configMap:
+            name: {{ .Values.fluentd.applicationLoggingName }}-config-{{ .Release.Namespace }}
+        - name: app-logs
+          emptyDir: {}
+      serviceAccountName: {{ include "resource.fullname" . }}
+      serviceAccount: {{ include "resource.fullname" . }}
+      containers:
+        - name: {{ include "resource.fullname" . }}
+          image: "{{ .Values.penny.image.repository }}:{{ .Values.penny.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.penny.image.pullPolicy }}
+          ports:
+            - name: {{ .Values.penny.ports.name }}
+              containerPort: {{ .Values.penny.ports.containerPort }}
+              protocol: {{ .Values.penny.ports.protocol }}
+          env:
+            {{- range $key, $value := .Values.penny.env }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+            {{- end }}
+          volumeMounts:
+          {{- range $key, $value := .Values.penny.volumeMounts }}
+          - name: {{ $key }}
+            mountPath: "{{ $value }}"
+          {{- end }} 
+          securityContext:
+            privileged: {{ .Values.penny.securityContext.privileged }}
+            readOnlyRootFilesystem: {{ .Values.penny.securityContext.readOnlyRootFilesystem }}
+            allowPrivilegeEscalation: {{ .Values.penny.securityContext.allowPrivilegeEscalation }}
+        {{- if .Values.fluentd.enabled }}
+        - name: logrotate
+          image: {{ .Values.logrotate.image }}
+          volumeMounts:
+          {{- range $key, $value := .Values.logrotate.volumeMounts }}
+          - name: {{ $key }}
+            mountPath: "{{ $value }}"
+          {{- end }}
+          env:
+            {{- range $key, $value := .Values.logrotate.env }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+            {{- end }}
+        - name: fluentd
+          image: {{ .Values.fluentd.image }}
+          env:
+            {{- range $key, $value := .Values.fluentd.env }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+            {{- end }}
+          resources:
+            limits:
+              memory: {{ .Values.fluentd.resources.limits.memory }}
+            requests:
+              cpu: {{ .Values.fluentd.resources.requests.cpu }}
+              memory: {{ .Values.fluentd.resources.requests.memory }}
+          volumeMounts:
+          {{- range $key, $value := .Values.fluentd.volumeMounts }}
+          - name: {{ $key }}
+            mountPath: "{{ $value }}"
+          {{- end }}  
+        {{- end }}

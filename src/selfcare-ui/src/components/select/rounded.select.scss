@@ -1,0 +1,39 @@
+@import '../../_variables.scss';
+
+.c-rounded-select {
+    border-width: 2px;
+    border-style: solid;
+    border-color: general(text, dark);
+    color: general(text, dark); 
+    border-radius: main(action, buttonRadius);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 6px 2px 10px;
+
+    &__affix {
+        display: flex;
+        align-items: center;
+        color: general(text, dark);
+        margin-right: spacing(small);
+
+        &-svg {
+            height: rhythm(delta);
+            width: rhythm(delta);
+        }
+    }
+
+    &__selected {
+        font-size: rhythm(delta);
+    }
+
+    &__arrow {
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        svg {
+            height: rhythm(beta);
+            width: rhythm(beta);
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__shop {
+        padding-top: spacing(extra_large);
+        &-wrapper {
+            background-color: general(canvas, black);
+            color: general(canvas, white);
+            display: flex;
+            justify-content: center;
+            padding: spacing(extra_large) 0;
+        }
+        &-container {
+            width: 100%;
+            max-width: $spacing-max-width;
+            padding: 0 spacing(medium);
+        }
+    }
+
+    &__section {
+        margin: 0;
+    }
+
+    &__section-heading {
+        margin-bottom: spacing(medium);
+    }
+
+    &__section-paragraph {
+        margin-top: spacing(medium);
+    }
+
+    &__hero {
+        flex-basis: $spacing-max-width;
+        max-width: $spacing-max-width;
+        padding: 0 spacing(medium);
+
+        &-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            max-width: 100%;
+        }
+
+        &> *:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__marketing-callout-link {
+        color: inherit;
+    }
+
+    &__faq {
+        &-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: spacing(extra_large) 0;
+        }
+        &-container {
+            width: 100%;
+            max-width: $spacing-max-width;
+            padding: 0 spacing(medium);
+        }
+    }
+}
+
+@media screen and (max-width: $mq-large-start) {
+    .c-landing-page {
+        &-button {
+            width: 100%;
+        }
+    }
+}

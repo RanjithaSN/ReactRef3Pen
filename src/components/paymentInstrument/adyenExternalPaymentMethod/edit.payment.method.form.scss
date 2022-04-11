@@ -1,0 +1,32 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-edit-pay-method-form {
+
+  &__heading {
+    margin-bottom: spacing(extra_large);
+  }
+
+  &__label {
+    margin-top: spacing(small);
+    margin-bottom: spacing(extra_small);
+  }
+
+  &__remove {
+    padding-top: spacing(medium);
+  }
+
+}
+
+
+@media screen and (max-width: $mq-medium-start) {
+  .c-edit-pay-method-form__field-row {
+    justify-content: space-between;
+
+    .c-edit-pay-method-form__input-field {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      width: 48%
+    }
+  }
+}

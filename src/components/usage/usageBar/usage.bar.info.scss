@@ -1,0 +1,29 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-usage-bar-info {
+    display: grid;
+    width: 100%;
+    &:not(:first-of-type) {
+        padding-top: spacing(large);
+    }
+    &__expiration-title {
+        color: general(text, light);
+    }
+    &__expiration-date {
+        color: general(text, light);
+        align-self: right;
+    }
+    &__usage {
+        display: flex;
+        &-label {
+            flex-grow: 5;
+            &--consumed {
+                color: general(text, dark);
+            }
+
+            &--available {
+                color: general(text, light);
+            }
+        }
+    }
+}

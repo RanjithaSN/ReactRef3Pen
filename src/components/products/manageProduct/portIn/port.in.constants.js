@@ -1,0 +1,14 @@
+export const PortInConstants = {
+  ENTER_NUMBER: 'ENTER_NUMBER',
+  PORT_IN_RESPONSE: 'PORT_IN_RESPONSE',
+  PORT_IN_CANCEL: 'PORT_IN_CANCEL',
+  PORT_IN_CANCEL_PENDING: 'PORT_IN_CANCEL_PENDING',
+  PORT_IN_UPDATE: 'PORT_IN_UPDATE'
+};
+
+//port-in values
+export const PORTIN_VALUES = {
+  DEFAULT: 5,
+  MIN: 5,
+  MAX: 45
+};

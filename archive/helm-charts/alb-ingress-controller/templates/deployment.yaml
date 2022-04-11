@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "aws-alb-ingress-controller.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "aws-alb-ingress-controller.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "aws-alb-ingress-controller.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "aws-alb-ingress-controller.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ include "aws-alb-ingress-controller.name" . }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - --cluster-name={{ required "specify clusterName via --set clusterName=YourClusterName" .Values.clusterName }}
+          {{- with .Values.scope.ingressClass }}
+            - --ingress-class={{ . }}
+          {{- end }}
+          {{- if .Values.scope.singleNamespace }}
+            - --watch-namespace={{ default .Release.Namespace .Values.scope.watchNamespace }}
+          {{- end }}
+          {{ if not .Values.autoDiscoverAwsRegion }}
+            - --aws-region={{ .Values.awsRegion }}
+          {{- end }}
+          {{- if not .Values.autoDiscoverAwsVpcID }}
+            - --aws-vpc-id={{ .Values.awsVpcID }}
+          {{- end }}
+          {{- range $key, $value := .Values.extraArgs }}
+            - --{{ $key }}={{ $value }}
+          {{- end }}
+          env:
+          {{- range $key, $value := .Values.extraEnv }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+          {{- end }}
+      serviceAccountName: {{ include "aws-alb-ingress-controller.name" . }}

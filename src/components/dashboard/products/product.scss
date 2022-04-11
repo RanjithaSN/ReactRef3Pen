@@ -1,0 +1,58 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-product {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #c6c6c6;
+    cursor: pointer;
+
+    &__body {
+        height: 100%;
+    }
+
+    &:hover {
+        color: #fff;
+        border: 1px solid #e4002b;
+        background-color: #e4002b;
+    }
+
+    &__selection-card {
+        flex: 1 1 auto;
+    }
+
+    &__identifier {
+        padding-bottom: spacing(small);
+    }
+
+    &__balance {
+        // To keep uniformity, we want around 3 lines worth of brand text plus the padding at a minimum
+        min-height: calc(#{line-height(brand-normal)} * 4 + #{spacing(extra_large)});
+    }
+
+    &__attribute {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        padding-right: spacing(extra_small);
+        text-align: left;
+
+        &-item {
+            align-self: left;
+        }
+
+        &-item:nth-child(2) {
+            padding-top: spacing(small);
+        }
+    }
+
+    &__arrow {
+        padding-right: spacing(small);
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        &__card {
+            margin-bottom: spacing(large);
+        }
+    }
+}

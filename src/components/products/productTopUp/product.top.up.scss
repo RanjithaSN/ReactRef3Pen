@@ -1,0 +1,16 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-product-top-up {
+
+  &__default-method {
+    padding-bottom: spacing(large);
+  }
+
+  &__purchase-button {
+    @media screen and (max-width:$mq-medium-start) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+}

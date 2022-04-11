@@ -1,0 +1,73 @@
+# Default values for aws-alb-ingress-controller.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+## Resources created by the ALB Ingress controller will be prefixed with this string
+## Required
+clusterName: tele2-nonprod
+
+## AWS region of k8s cluster, required if ec2metadata is unavailable from controller pod
+## Required if autoDiscoverAwsRegion != true
+awsRegion: "eu-central-1"
+
+## Auto Discover awsRegion from ec2metadata, set this to true and omit awsRegion when ec2metadata is available.
+autoDiscoverAwsRegion: false
+
+## VPC ID of k8s cluster, required if ec2metadata is unavailable from controller pod
+## Required if autoDiscoverAwsVpcID != true
+awsVpcID: "vpc-0c522b1a6a2e2cf1a"
+
+## Auto Discover awsVpcID from ec2metadata, set this to true and omit awsVpcID: " when ec2metadata is available.
+autoDiscoverAwsVpcID: false
+
+scope:
+  ## If provided, the ALB ingress controller will only act on Ingress resources annotated with this class
+  ## Ref: https://github.com/kubernetes-sigs/aws-alb-ingress-controller/blob/master/docs/guide/controller/config.md#limiting-ingress-class
+  ingressClass: alb
+
+  ## If true, the ALB ingress controller will only act on Ingress resources in a single namespace
+  ## Default: false; watch all namespaces
+  singleNamespace: false
+
+podAnnotations: {}
+  # iam.amazonaws.com/role: alb-ingress-controller
+
+podLabels: {}
+
+# whether configure readinessProbe on controller pod
+enableReadinessProbe: false
+
+# How often (in seconds) to check controller readiness
+readinessProbeInterval: 60
+
+# How long to wait before timeout (in seconds) when checking controller readiness
+readinessProbeTimeout: 3
+
+# How long to wait (in seconds) before checking the readiness probe
+readinessProbeInitialDelay: 30
+
+# whether configure livenessProbe on controller pod
+enableLivenessProbe: false
+
+# How long to wait (in seconds) before checking the liveness probe
+livenessProbeInitialDelay: 30
+
+# How long to wait before timeout (in seconds) when checking controller liveness
+livenessProbeTimeout: 1
+
+rbac:
+  create: true
+  serviceAccount:
+    create: false
+    name: default
+    ## Annotations for the Service Account
+    annotations: {}
+
+image:
+  repository: docker.io/amazon/aws-alb-ingress-controller
+  tag: "v1.1.8"
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+nameOverride: "alb-ingress-controller"
+fullnameOverride: "alb-ingress-controller"

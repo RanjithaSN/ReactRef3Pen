@@ -1,0 +1,23 @@
+{
+  "defaultEnvironment": "sbx1",
+  "defaultSystemId": "d1f56a11-8888-41ad-ac31-acc007755313",
+  "allowSystemIdChange": true,
+  "defaultCountry": "USA",
+  "defaultLocale": "en-US",
+  "locales": [
+    "en-US",
+    "fr-CA"
+  ],
+  "environments": [
+    "sbx1"
+  ],
+  "businessUnits": [
+    {
+      "id": "d1f56a11-8888-41ad-ac31-acc007755313",
+      "name": "Ascendon PM",
+      "env": [
+        "sbx1"
+      ]
+    }
+  ]
+}

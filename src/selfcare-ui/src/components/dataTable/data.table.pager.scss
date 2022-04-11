@@ -1,0 +1,66 @@
+@import '../../_variables.scss';
+
+.c-data-table-pager {
+    width: unset;
+    margin-top: spacing(medium);
+    padding: 0;
+    display: flex;
+    color: general(text, light);
+
+    @media screen and (max-width: $mq-medium-start) {
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+
+    &__button-bar {
+        width: unset;
+        @media screen and (max-width: $mq-medium-start) {
+            width: 100%;
+        }
+    }
+
+    &__total-results {
+        @media screen and (max-width: $mq-medium-start) {
+            margin-top: spacing(small);
+            margin-right: spacing(small);
+        }
+    }
+
+    &__page-size-selector {
+        margin-right: spacing(medium);
+        display: flex;
+        align-items: center;
+    }
+
+    &__page-size-label {
+        margin-left: spacing(medium);
+        min-width: 5rem;
+    }
+
+    &__page-number-list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__page-number {
+        margin-left: spacing(small);
+        margin-right: spacing(small);
+        color: general(accent, secondary);
+        font-size: rhythm(delta);
+
+        &.c-data-table__page-number--disabled {
+            color: general(text, light);
+        }
+    }
+
+    &__page-arrow {
+        height: rhythm(beta);
+        width: rhythm(beta);
+        color: general(accent, secondary);
+
+        &.c-data-table__page-arrow--disabled {
+            color: general(text, light);
+        }
+    }
+}

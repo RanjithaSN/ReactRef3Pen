@@ -1,0 +1,19 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-subscriber-form {
+    .c-subscriber-fields {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: spacing(small);
+    }
+    .c-subscriber-form__required {
+        margin: spacing(medium);
+        width: auto;
+    }
+    .c-subscriber-form__errors {
+        margin-bottom: spacing(medium);
+    }
+    @media screen and (min-width: $mq-large-start) {
+        margin-top: 0;
+    }
+}

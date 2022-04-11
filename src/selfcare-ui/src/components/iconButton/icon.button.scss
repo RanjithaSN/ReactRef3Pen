@@ -1,0 +1,88 @@
+@import '../../_variables.scss';
+
+.c-icon-button {
+    text-align: left;
+    
+    .c-icon-button__icon {
+        svg {
+            height: rhythm(gamma);
+            width: rhythm(gamma);
+            float: right;
+        }
+    }
+
+    &:not(.c-icon-button--square) {
+        .c-icon-button__icon {
+            padding-right: spacing(small);
+        }
+
+        &.c-icon-button--reversed {
+            flex-direction: row-reverse;
+
+            .c-icon-button__icon {
+                padding-right: 0;
+                padding-left: spacing(small);
+            }
+        }
+    }
+
+    &.c-icon-button--dark {
+        border-color: general(border, dark);
+        color: general(text, dark);
+
+        &:hover:not(:disabled) {
+            background-color: transparent;
+            border-color: tint(main(action, standardMain), 10%);
+            color: general(text, dark);
+        }
+    }
+
+    &.c-icon-button--light {
+        border-color: general(border, white);
+        color: general(text, white);
+
+        &:hover:not(:disabled) {
+            background-color: transparent;
+            border-color: tint(main(masthead, backgroundColor), 75%);
+            color: tint(main(masthead, backgroundColor), 75%);
+        }
+    }
+
+    &.c-icon-button--light,
+    &.c-icon-button--dark {
+
+        .c-icon-button__icon {
+            display: flex;
+            align-items: center;
+            padding-right: spacing(extra_small);
+        }
+    }
+
+    &.c-icon-button--square {
+        min-width: auto;
+        width: rhythm(beta);
+        height: rhythm(beta);
+        padding: 0;
+
+        .c-icon-button__icon {
+            display: flex;
+
+            svg {
+                height: auto;
+                width: auto;
+            }
+        }
+    }
+}
+
+.c-icon-button--transparent {
+    border-width: 0;
+}
+
+.c-icon-button--transparent:disabled {
+    .c-icon-button__icon {
+        svg {
+            fill: general(text, light);
+        }
+    }
+}

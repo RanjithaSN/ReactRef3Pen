@@ -1,0 +1,90 @@
+{
+    "comment": "Downloaded from https://tele2-benefits-sync-nonprod-stg-kyapgxnfotxrgjhs.s3.eu-central-1.amazonaws.com/benefitConfigurationFile.txt",
+    "benefit":
+    {
+        "benefitProduct": "BONUS_DATA",
+        "eligibility": [
+            {
+                "eligibleProduct": "BROADBAND",
+                "minCount": 1
+            }
+        ],
+        "applicability": {
+            "applicableProduct": "MOBILE",
+            "applicablePlans": [
+                {
+                    "plan": "DATA_3G",
+                    "benefitPlan": "BONUS_DATA_3G"
+                },
+                {
+                    "plan": "DATA_6G",
+                    "benefitPlan": "BONUS_DATA_6G"
+                },
+                {
+                    "plan": "DATA_8G",
+                    "benefitPlan": "BONUS_DATA_8G"
+                },
+                {
+                    "plan": "DATA_15G",
+                    "benefitPlan": "BONUS_DATA_15G"
+                },
+                {
+                    "plan": "DATA_40G",
+                    "benefitPlan": "BONUS_DATA_40G"
+                },
+                {
+                    "plan": "FDO_DATA_3G",
+                    "benefitPlan": "BONUS_DATA_3G"
+                },
+                {
+                    "plan": "FDO_DATA_6G",
+                    "benefitPlan": "BONUS_DATA_6G"
+                },
+                {
+                    "plan": "FDO_DATA_15G",
+                    "benefitPlan": "BONUS_DATA_15G"
+                },
+                {
+                    "plan": "FDO_DATA_40G",
+                    "benefitPlan": "BONUS_DATA_40G"
+                },
+                {
+                    "plan": "TEST_DATA_3G",
+                    "benefitPlan": "BONUS_DATA_3G"
+                },
+                {
+                    "plan": "TEST_DATA_6G",
+                    "benefitPlan": "BONUS_DATA_6G"
+                },
+                {
+                    "plan": "TEST_DATA_8G",
+                    "benefitPlan": "BONUS_DATA_8G"
+                },
+                {
+                    "plan": "TEST_DATA_15G",
+                    "benefitPlan": "BONUS_DATA_15G"
+                },
+                {
+                    "plan": "TEST_DATA_40G",
+                    "benefitPlan": "BONUS_DATA_40G"
+                },
+                {
+                    "plan": "TEST_FDO_DATA_3G",
+                    "benefitPlan": "BONUS_DATA_3G"
+                },
+                {
+                    "plan": "TEST_FDO_DATA_6G",
+                    "benefitPlan": "BONUS_DATA_6G"
+                },
+                {
+                    "plan": "TEST_FDO_DATA_15G",
+                    "benefitPlan": "BONUS_DATA_15G"
+                },
+                {
+                    "plan": "TEST_FDO_DATA_40G",
+                    "benefitPlan": "BONUS_DATA_40G"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,156 @@
+{
+  "defaultEnvironment": "sbx1",
+  "defaultSystemId": "40ae44f2-3185-486e-9c62-b2629728afd0",
+  "allowSystemIdChange": true,
+  "defaultCountry": "SWEDEN",
+  "defaultLocale": "sv-SE",
+  "locales": [
+      "en-US",
+      "fr-CA",
+      "es-MX",
+      "sv-SE"
+  ],
+  "environments": [
+      "qa1",
+      "qa2",
+      "qa3",
+      "qa4",
+      "qa5",
+      "qa6",
+      "qa7",
+      "qa8",
+      "qa9",
+      "qa10",
+      "sbx1",
+      "sls1",
+      "sls2",
+      "tig1"
+  ],
+  "businessUnits": [
+      {
+          "id": "85788485-e411-48a9-b478-610c1285dc1a",
+          "name": "QA Full Suite",
+          "env": [
+              "qa1",
+              "qa2",
+              "qa3",
+              "qa4",
+              "qa5",
+              "qa6",
+              "qa7",
+              "qa8",
+              "qa9",
+              "qa10"
+          ]
+      },
+      {
+          "id": "1ce731f0-33a6-4caf-b535-586fcf3bda60",
+          "name": "QA Full Suite Deux",
+          "env": [
+              "qa1",
+              "qa2",
+              "qa3",
+              "qa4",
+              "qa5",
+              "qa6",
+              "qa7",
+              "qa8",
+              "qa9",
+              "qa10"
+          ]
+      },
+      {
+          "id": "28c9e059-4bd9-487e-8942-394d4caf45c7",
+          "name": "Playstation Vue",
+          "env": [
+              "qa1",
+              "qa2",
+              "qa3",
+              "qa4",
+              "qa5",
+              "qa6",
+              "qa7",
+              "qa8",
+              "qa9",
+              "qa10"
+          ]
+      },
+      {
+          "id": "586c9368-66ca-4c18-83cd-89adc20b3211",
+          "name": "Ascendon Americas Carrier",
+          "env": [
+              "sls2"
+          ]
+      },
+      {
+          "id": "9e9b523f-e3e1-4805-8e57-7f778f0826d4",
+          "name": "Ascendon BC&S",
+          "env": [
+              "sls2"
+          ]
+      },
+      {
+          "id": "fa510625-2b68-49b9-963f-710f090bd818",
+          "name": "Ascendon Carrier APAC",
+          "env": [
+              "sls2"
+          ]
+      },
+      {
+          "id": "c40e0af0-5f22-469f-8cc6-fecbce529329",
+          "name": "Ascendaon Carrier EMEA",
+          "env": [
+              "sls2"
+          ]
+      },
+      {
+          "id": "d1f56a11-8888-41ad-ac31-acc007755313",
+          "name": "Ascendon PM",
+          "env": [
+              "sbx1"
+          ]
+      },
+      {
+          "id": "85788485-e411-48a9-b478-610c1285dc1a",
+          "name": "Ascendon Sales",
+          "env": [
+              "sls2"
+          ]
+      },
+      {
+          "id": "e5ce3167-4e0b-4867-a8c3-c8f23aec5e71",
+          "name": "Media Mojo(UV)",
+          "env": [
+              "sls1"
+          ]
+      },
+      {
+          "id": "32ed6dbf-18b1-4f88-a0e3-8f8108a11b43",
+          "name": "Mojo Offers",
+          "env": [
+              "sls1"
+          ]
+      },
+      {
+          "id": "45d80d11-7198-432a-8a3e-dd23b8e6cc99",
+          "name": "Penny",
+          "env": [
+              "tig1"
+          ]
+      },
+      {
+          "id": "978689f0-d3e9-4efe-8353-5c8c08329559",
+          "name": "TST",
+          "env": [
+              "tig1"
+          ]
+      },
+      {
+          "id": "40ae44f2-3185-486e-9c62-b2629728afd0",
+          "name": "SBX Penny",
+          "env": [
+              "sbx1"
+          ]
+      }
+  ]
+}

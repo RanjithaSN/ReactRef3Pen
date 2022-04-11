@@ -1,0 +1,92 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-attribute {
+    padding-top: spacing(large);
+
+    &__main {
+        display: flex;
+        padding-bottom: spacing(small);
+    }
+
+    &-inline {
+        padding-top: spacing(large);
+        margin-top: 0;
+        display: flex;
+        justify-content: space-between;
+
+        .c-attribute__title {
+            text-transform: none;
+            margin-top: spacing(small);
+            margin-bottom: spacing(extra_small);
+            font-weight: weight(medium);
+        }
+
+        .c-attribute__description {
+            margin-bottom: 0;
+        }
+
+        .c-attribute__input {
+            margin-top: spacing(small);
+            width: initial;
+        }
+
+        .c-label {
+            text-transform: none;
+        }
+    }
+
+    &__icon {
+        display: none;
+        font-size: rhythm(alpha);
+        flex-shrink: 0;
+        color: general(accent, secondary);
+
+        svg {
+            height: rhythm(delta, em);
+            width: rhythm(delta, em);
+        }
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__title {
+        margin-bottom: spacing(small);
+        margin-top: spacing(small);
+        letter-spacing: 1px;
+        font-weight: weight(bold);
+    }
+
+    &__description {
+        margin-bottom: spacing(medium);
+        color: general(text, light);
+    }
+
+    &__input {
+        font-size: rhythm(delta);
+        width: 100%;
+    }
+
+    &__error {
+        padding-top: spacing(small);
+        color: general(system, error);
+    }
+
+    @media screen and (min-width: $mq-medium-start) {
+        .c-attribute__icon {
+            display: block;
+        }
+
+        .c-attribute__input {
+            font-size: rhythm(delta);
+        }
+
+        &-inline {
+            .c-attribute__input {
+                font-size: initial;
+            }
+        }
+    }
+
+}

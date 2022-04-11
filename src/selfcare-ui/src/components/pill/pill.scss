@@ -1,0 +1,22 @@
+@import '../../_variables.scss';
+
+.c-pill {
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    padding: spacing(extra_small) spacing(small);
+
+    // These don't work with IE11, but since we don't support IE11 we can use them. If we ever have to support IE11, these will need replaced. 
+    height: min-content;
+    width: fit-content;
+
+    &__inverted {
+        background: $canvas-white;
+        color: $text-dark;
+    }
+
+    &__primary {
+        background: $canvas-black;
+        color: $text-white;
+    }
+}

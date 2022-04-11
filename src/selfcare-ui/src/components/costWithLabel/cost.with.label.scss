@@ -1,0 +1,51 @@
+@import '../../_variables.scss';
+
+.c-cost-with-label {
+    .c-cost-with-label__main {
+        display: flex;
+        align-items: center;
+    }
+
+    &.c-cost-with-label--default {
+        .c-cost-with-label__main {
+            flex-direction: column;
+        }
+
+        .c-cost-with-label__cost {
+            padding-bottom: spacing(small);
+        }
+    }
+
+    &.c-cost-with-label--alternate {
+        .c-cost-with-label__main {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        .c-cost-with-label__cost {
+            margin-right: spacing(small);
+
+            &:after {
+                content: '/';
+                font-weight: weight(light);
+                margin-left: spacing(small);
+            }
+        }
+    }
+
+    &__before-discount, &__note {
+        color: general(text, light);
+    }
+
+    &__before-discount {
+        text-decoration: line-through;
+        margin-right: spacing(small);
+    }
+
+    &__quantity {
+        &::after {
+            content: '\2009\2715\2009';
+        }
+    }
+
+}

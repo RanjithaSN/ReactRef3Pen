@@ -1,0 +1,1 @@
+export const SSN_EXTERNAL_REFERENCE = 'SSN';

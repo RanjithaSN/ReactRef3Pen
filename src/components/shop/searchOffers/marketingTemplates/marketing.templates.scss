@@ -1,0 +1,32 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-marketingTemplates{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+
+    &__marketing-content {
+        width: 55%;
+        text-align: center;
+        margin: auto;
+    }
+
+    &__marketing-content-heading {
+        margin: spacing(large) 0;
+    }
+
+    &__item {
+        width: 100%;
+    }
+
+    &__zero-state {
+        width: 100%;
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        &__marketing-content {
+            width: 100%;
+        }
+    }
+}

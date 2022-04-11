@@ -1,0 +1,142 @@
+@import '../../_variables.scss';
+
+.c-filled-button {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: main(action, buttonRadius);
+    font-size: main(action, buttonSize);
+    font-weight: main(action, buttonWeight);
+    padding: spacing(small_plus) spacing(small);
+    transition: all 0.25s;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &.c-filled-button--standard {
+        background-color: main(action, standardMain);
+        border-color: main(action, standardMain);
+        color: main(action, standardComp);
+        
+        &:hover:not(:disabled) {
+            background-color: tint(main(action, standardMain), 25%);
+            border-color: tint(main(action, standardMain), 25%);
+        }
+
+        &:focus {
+            border-color: main(action, standardMain);
+            box-shadow: 0 0 0 1px main(action, standardMain);
+        }
+
+        &:active {
+            background-color: tint(main(action, standardMain), 20%);
+            border-color: tint(main(action, standardMain), 20%);
+        }
+    }
+
+    &.c-filled-button--high-contrast {
+        background-color: main(action, standardMain);
+        border-color: main(action, standardComp);
+        color: main(action, standardComp);
+
+        &:hover:not(:disabled) {
+            background-color: tint(main(action, standardMain), 25%);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 1px main(action, standardComp);
+        }
+
+        &:active {
+            background-color: tint(main(action, standardMain), 20%);
+        }
+    }
+
+    &.c-filled-button--subtle {
+        background-color: main(action, subtleMain);
+        border-color: main(action, subtleMain);
+        color: main(action, subtleComp);
+
+        &:focus {
+            border-color: main(form, activeColor);
+            box-shadow: 0 0 0 1px main(form, activeColor);
+        }
+
+        &:hover {
+            background-color: shade(main(action, subtleMain), 15%);
+        }
+    }
+
+    &.c-filled-button--info {
+        background-color: general(system, info);
+        border-color: general(system, info);
+        color: general(text, white);
+
+        &:hover:not(:disabled) {
+            background-color: shade(general(system, info), 15%);
+        }
+
+        &:focus {
+            border-color: general(system, info);
+            box-shadow: 0 0 0 1px general(system, info);
+        }
+    }
+
+    &.c-filled-button--success {
+        background-color: general(system, success);
+        border-color: general(system, success);
+        color: general(text, white);
+
+        &:hover:not(:disabled) {
+            background-color: shade(general(system, success), 15%);
+        }
+
+        &:focus {
+            border-color: general(system, success);
+            box-shadow: 0 0 0 1px general(system, success);
+        }
+    }
+
+    &.c-filled-button--warning {
+        background-color: general(system, warning);
+        border-color: general(system, warning);
+        color: general(text, white);
+
+        &:hover:not(:disabled) {
+            background-color: shade(general(system, warning), 15%);
+        }
+
+        &:focus {
+            border-color: general(system, warning);
+            box-shadow: 0 0 0 1px general(system, warning);
+        }
+    }
+
+    &.c-filled-button--error {
+        background-color: general(system, error);
+        border-color: general(system, error);
+        color: general(text, white);
+
+        &:hover:not(:disabled) {
+            background-color: shade(general(system, error), 15%);
+        }
+
+        &:focus {
+            border-color: general(system, error);
+            box-shadow: 0 0 0 1px general(system, error);
+        }
+    }
+
+    &.c-filled-button--short {
+        font-size: rhythm(delta);
+        padding: spacing(small) spacing(large);
+    }
+
+    &:disabled {
+        background-color: general(canvas, light);
+        border: general(canvas, light);
+        color: general(text, light);
+        border-width: 1px;
+        border-style: solid;
+    }
+}

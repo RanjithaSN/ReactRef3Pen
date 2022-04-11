@@ -1,0 +1,46 @@
+@import '~selfcare-ui/src/variables';
+
+.c-login__form-errors {
+    margin-bottom: spacing(medium);
+
+    .c-notice__body {
+        margin-top: 0 !important;
+    }
+}
+
+.c-login__error-link {
+    color: general(text, white);
+    text-decoration: underline;
+    vertical-align: inherit;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.c-login__form-success {
+    margin-bottom: spacing(medium);
+}
+
+.c-login__button-group {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.c-login__button-group--stacked {
+    flex-direction: column;
+
+    > * {
+        width: 100%;
+    }
+}
+
+.c-login__button {
+    margin-top: spacing(large);
+}
+
+.c-login__link {
+    margin-top: spacing(medium);
+}

@@ -1,0 +1,30 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-related-articles {
+  margin: spacing(extra_large) 0;
+
+  &__header {
+    margin: spacing(small) 0;
+  }
+
+  &__section {
+    margin: spacing(small) 0;
+  }
+
+  &__selection-card {
+    display: flex;
+    .c-card__body {
+      flex: 1 1 auto;
+    }
+    text-align: left;
+  }
+
+  &__card-body-icon {
+    display: flex;
+    align-items: center;
+    margin-right: spacing(medium);
+    svg {
+      fill: general(accent, secondary);
+    }
+  }
+}

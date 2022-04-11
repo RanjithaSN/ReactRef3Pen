@@ -1,0 +1,59 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-roaming-details {
+    &__information {
+        margin-bottom: spacing(extra_large);
+    }
+
+    &__main-selector {
+        width: 300px;
+        margin-bottom: spacing(medium);
+    }
+
+    &__sub-country-selector {
+        width: 200px;
+    }
+
+    &__table-header {
+        height: spacing(extra_extra_large);
+        display: flex;
+        align-items: center;
+
+        &-with-dropdown {
+            padding-right: spacing(small);
+        }
+    }
+
+    &__tables {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 30% 2.5% 35% 2.5% 30%;
+    }
+
+    &__table-info {
+        padding: spacing(extra_small) spacing(medium);
+        &-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: spacing(extra_small);
+            &:nth-child(2n) {
+                background-color: shade(general(canvas, white), 10%);
+            }
+        }
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        &__main-selector {
+            width: 100%;
+        }
+
+        &__table-header {
+            justify-content: center;
+        }
+
+        &__tables {
+            grid-template-columns: 100%;
+        }
+    }
+}

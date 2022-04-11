@@ -1,0 +1,6 @@
+export const isServerSide = () => {
+  return typeof window === 'undefined';
+};
+export const isClientSide = () => {
+  return typeof window !== 'undefined';
+};

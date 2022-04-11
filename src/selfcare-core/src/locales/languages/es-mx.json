@@ -1,0 +1,44 @@
+{
+    "address": {
+        "billing": "Facturación",
+        "home": "Casa",
+        "postal": "Postal",
+        "service": "Servicio",
+        "shipping": "Envío",
+        "work": "Trabajo"
+    },
+    "fault": {
+        "0": "Se ha producido un error inesperado. Lamentamos cualquier inconveniencia.",
+        "101": "El acceso a este usuario ha sido suspendido, póngase en contacto con el servicio al cliente.",
+        "117": "El nombre de usuario o contraseña no es válido",
+        "118": "Los valores introducidos no son válidos o faltan. Por favor corrija y trate de enviar de nuevo.",
+        "614": "No se ha podido encontrar el pedido de compra con un ID de pedido coincidente.",
+        "617": "La transacción financiera no se ha podido procesar.",
+        "1068": "Se detectaron configuraciones de servicio duplicadas. Vuelva a configurar los servicios seleccionados.",
+        "1149": "No se encontró la oferta seleccionada.",
+        "1083-108301": "La oferta seleccionada no es compatible con otras ofertas de la cuenta del suscriptor.",
+        "1124-112403": "Esta dirección se está utilizando actualmente para un método de pago y no se puede quitar.",
+        "117-11701": "El nombre de usuario o la contraseña no son válidos",
+        "117-11702": "El acceso a este usuario ha sido suspendido, póngase en contacto con el servicio al cliente.",
+        "117-11703": "La contraseña temporal no es válida.",
+        "1244-124401": "Combinación de ciudad y código postal no válida.",
+        "606-60603": "El número de enrutamiento no es válido",
+        "606-60616": "Número de tarjeta incorrecto proporcionado para el tipo de tarjeta seleccionado",
+        "9026-902615": "La oferta seleccionada no está disponible para el cliente debido a tipos de divisa conflictivos."
+    },
+    "general_error": "Se ha producido un error al procesar su solicitud.",
+    "select_placeholder": "Seleccione...",
+    "support_request": {
+        "description": "Descripción",
+        "device_name": "Nombre del dispositivo",
+        "device_number": "Número de dispositivo",
+        "dispute_amount": "Importe de la disputa",
+        "invoice_number": "Número de factura",
+        "statuses": {
+            "cancelled": "Cancelado",
+            "new": "Nuevo",
+            "open": "Abierto",
+            "resolved": "Resuelto"
+        }
+    }
+}

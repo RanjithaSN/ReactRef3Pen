@@ -1,0 +1,81 @@
+nameOverride: "penny"
+fullnameOverride: "penny"
+
+podAnnotations: {
+  iam.amazonaws.com/role: application-logging
+}
+
+ingress:
+  enabled: true
+  #annotations:
+    #alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:169707361408:certificate/36e254b8-e2de-4057-bd08-b7c150e12d22
+
+#Penny configuration
+penny:
+  image:
+    repository: ""
+    tag: ""
+  env: {
+    ENVIRONMENT_NAME: "",
+    CAN_SEE_ENVIRONMENT: true,
+    ADYEN_ORIGIN_KEY: "",
+    DEFAULT_LOCALE: "sv_SE",
+    RIGHT_TO_RETURN_DAYS: 14,
+    TROUBLESHOOTER_ENDPOINT: "",
+    DISMISS_NOTIFICATIONS_ENDPOINT: "",
+    IN_APP_NOTIFICATIONS_ENDPOINT: "",
+    SERVICE_URL: "",
+    METADATA_URL: "",
+    STUB_URL: "",
+    TELE2_AUTH_URL: "",
+    TELE2_URL: "",
+    CLOUD_SEARCH_ORIGIN_KEY: "",
+    CDN_API_URL: "",
+    APP_URL: "",
+    USE_RECAPTCHA: false
+  }
+  volumeMounts: {
+    app-logs: /var/log/containers
+  }
+  ports:
+    name: "http"
+    containerPort: "8002"
+  securityContext:
+    privileged: false
+    readOnlyRootFilesystem: false
+    allowPrivilegeEscalation: false
+
+# Fluentd configuration
+fluentd:
+  enabled: true
+  image: fluent/fluentd-kubernetes-daemonset:v1.9.3-debian-cloudwatch-1.0
+  applicationLoggingName: "fluentd-application-logging"
+  env: {
+    REGION: eu-central-1,
+    AWS_REGION: eu-central-1,
+    CLUSTER_NAME: tele2-nonprod,
+    CI_VERSION: k8s/1.0.1,
+  }
+  volumeMounts: {
+    fluentdconf: /fluentd/etc,
+    app-logs: /var/log/containers,
+  }
+  resources:
+    limits:
+      memory: 400Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
+
+#Logrotate configuration
+logrotate:
+  image: 'realz/logrotate'
+  env: {
+    CRON_EXPR: "*/15 * * * *",
+    LOGROTATE_LOGFILES: "/var/log/containers/*.log",
+    LOGROTATE_FILESIZE: "50M",
+    LOGROTATE_FILENUM: "2"
+  }
+  volumeMounts: {
+    app-logs: /var/log/containers
+  }

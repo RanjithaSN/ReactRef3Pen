@@ -1,0 +1,33 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-trusted-entities {
+  margin-top: spacing(extra_large);
+  display: flex;
+
+  .c-trusted-entities__badge:not(:first-child) {
+    margin-left: 24px;
+  }
+}
+
+@media screen and (max-width: $mq-medium-start) {
+  .c-trusted-entities {
+    flex-wrap: wrap;
+
+    .c-trusted-entities__badge {
+      flex-basis: auto;
+      margin-bottom: 24px;
+    }
+
+    .c-trusted-entities__badge {
+      margin-left: 24px;
+    }
+
+    .c-trusted-entities__badge:first-child {
+      margin-left: 0;
+    }
+
+    .c-trusted-entities__badge:nth-child(4) {
+      margin-left: 0;
+    }
+  }
+}

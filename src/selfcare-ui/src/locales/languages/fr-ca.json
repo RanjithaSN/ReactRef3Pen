@@ -1,0 +1,105 @@
+{
+    "cardinality": {
+        "exact": "Choisir {{number}}",
+        "no_min": "Choisissez jusqu'à {{number}}",
+        "range": "Choisissez au moins {{min}} et jusqu'à {{max}}"
+    },
+    "component_error": {
+        "description": "Composant n'a pas chargé en raison d'une erreur. Envisagez la page rafraîchissante",
+        "elevated_description": "Voir un problème persister ou avoir besoin de signaler quelque chose immédiatement?",
+        "elevated_next_step": "Appelez-nous à {{phoneNumber}}",
+        "unable_to_load": "Incapable de charger"
+    },
+    "confirmation_modal": {
+        "cancel": "Annuler",
+        "confirm": "Confirmer"
+    },
+    "continue": "Continuer",
+    "data_table": {
+        "per_page": "par page",
+        "results": "{{results}} Résultat (s)"
+    },
+    "expandable_section": {
+        "hide": "Cacher",
+        "show": "Montrer"
+    },
+    "form_errors": {
+        "heading": "Veuillez corriger les erreurs suivantes"
+    },
+    "main_menu": "Menu principal",
+    "na": "N/A",
+    "need_assistance": {
+        "chat": "bavarder",
+        "name": "Besoin d'aide"
+    },
+    "optional": "facultatif",
+    "page": "Page",
+    "prompt": {
+        "accept": "Accepter",
+        "apply": "faire une demande",
+        "cancel": "Annuler",
+        "confirm": "Confirmer"
+    },
+    "rich_stepper": {
+        "apply": "Appliquer",
+        "bulk_flat": "Tarification forfaitaire",
+        "bulk_unit": "Tarification unitaire",
+        "remaining": "{{number}} Restant",
+        "service_change": "Changement de plan ou de service"
+    },
+    "search_placeholder": "Recherche...",
+    "snack_bar": {
+        "add_ons": "Modules complémentaires",
+        "all_add_ons": "Tous les modules complémentaires",
+        "you_might_like": "Add-ons que vous pourriez aimer"
+    },
+    "statuses": {
+        "active": "actif",
+        "added_to_plan": "Ajouté à votre plan",
+        "cancelled": "Annulé",
+        "completed": "Terminé",
+        "expired": "Expiré",
+        "new": "Nouveau",
+        "open": "Ouvert",
+        "payment_complete": "Paiement complet",
+        "pending": "en instance",
+        "pending_activation": "Activation en attente",
+        "pending_active": "Actif en attente",
+        "pending_removal": "Retrait en attente",
+        "removed": "Enlevé",
+        "removed_from_plan": "Retiré de votre plan",
+        "resolved": "Résolu",
+        "suspended": "Suspendu"
+    },
+    "vertical_pager": {
+        "page_info": "{{start}} - {{end}} de {{max}}",
+        "single_page_info": "Affichage {{ start }} de {{max}}"
+    },
+    "with_docs": {
+        "code_sample": {
+            "toggle_code": "Code bascule"
+        },
+        "examples_heading": "Exemples",
+        "note": {
+            "heading": "Note"
+        },
+        "prop_types": {
+            "enum_description": "La valeur de cette propriété doit être l'une des valeurs suivantes:",
+            "heading": "Propriétés",
+            "no_props": "Aucune propriété",
+            "required": "Obligatoire"
+        },
+        "usage": {
+            "copied": "Copié",
+            "copy_to_clipboard": "Copier dans le Presse-papiers",
+            "heading": "Utilisation",
+            "message": "Ce composant peut être importé en utilisant la syntaxe ci-dessous:",
+            "relative_path_notice": "Le chemin d'accès ci-dessus est relatif au répertoire de travail de votre composant et peut nécessiter des modifications en fonction de l'utilisation."
+        }
+    },
+    "zero_state": {
+        "filtered": {
+            "title": "Il n’y {{ title }} a pas d’affichage"
+        }
+    }
+}

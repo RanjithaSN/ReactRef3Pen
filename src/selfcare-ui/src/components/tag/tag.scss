@@ -1,0 +1,23 @@
+@import '../../_variables.scss';
+
+.c-tag {
+    padding: spacing(small) spacing(small);
+    border-radius: radius(large);
+    font-weight: weight(bold);
+}
+
+.c-tag--info {
+    background-color: general(system, subtleInfo);
+}
+
+.c-tag--success {
+    background-color: general(system, subtleSuccess);
+}
+
+.c-tag--warning {
+    background-color: general(system, subtleWarning);
+}
+
+.c-tag--error {
+    background-color: general(system, subtleError);
+}

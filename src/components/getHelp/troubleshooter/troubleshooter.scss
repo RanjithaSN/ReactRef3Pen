@@ -1,0 +1,34 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-troubleshooter {
+    &__section {
+        margin-bottom: spacing(large);
+
+        &--heading {
+            margin-bottom: spacing(large);
+        }
+    }
+
+    &__answers,
+    &__image {
+        margin-bottom: spacing(large);
+    }
+
+    &__node-description {
+        white-space: pre-wrap;
+    }
+
+    &__nav-button {
+        width: fit-content;
+
+        @media screen and (max-width: $mq-medium-start) {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $mq-medium-start) {
+        .c-subscriber-information__nav-button {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+export const SECTION_IDS = {
+  CONFIGURE: 0,
+  DETAILS: 1,
+  PAYMENT: 2,
+  CONFIRMATION: 3
+};

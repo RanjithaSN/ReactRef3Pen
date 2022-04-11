@@ -1,0 +1,23 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-get-help-action-button-wrapper__outer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: layer(above);
+    pointer-events: none;
+}
+
+.c-get-help-action-button-wrapper__inner {
+    text-align: right;
+    margin: 0 auto;
+    padding: spacing(large);
+
+    @media screen and (max-width: $mq-large-start) {
+        padding: spacing(small);
+    }
+}
+
+.c-get-help-action-button {
+    pointer-events: auto;
+}

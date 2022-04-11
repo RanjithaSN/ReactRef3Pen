@@ -1,0 +1,35 @@
+@import '../../_variables.scss';
+.c-clickable-band {
+    display: flex;
+    width:100%;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    padding: spacing(medium) 0;
+    border-top: 1px solid general(accent,primary);
+    transition: 0.5s;
+
+    .c-clickable-band__description {
+        width: 70%;
+    }
+    .c-clickable-band__icon {
+        font-family: $font-brand;
+        margin-left: spacing(medium);
+        transition: 0.5s;
+    }
+
+    &:last-child {
+        border-bottom: 1px solid general(accent,primary);
+    }
+
+    &:hover{
+        color:tint(main(action, standardMain), 25%);
+
+        .c-clickable-band__icon{
+            margin-left:0;
+            margin-right:spacing(medium);
+        }
+
+    }
+
+}

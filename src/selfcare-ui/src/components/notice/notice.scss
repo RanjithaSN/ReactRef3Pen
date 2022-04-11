@@ -1,0 +1,89 @@
+@import '../../_variables.scss';
+
+.c-notice {
+
+    .c-notice__header,
+    .c-notice__header-main {
+        display: flex;
+        align-items: center;
+    }
+
+    .c-notice__header {
+        justify-content: space-between;
+    }
+
+    .c-notice__body {
+        margin-top: spacing(small);
+    }
+
+    .c-notice__heading {
+        margin-left: spacing(small);
+        &-zendesk__link{
+          color: general(text, white);
+          padding-left: spacing(small);
+        }
+    }
+
+    .c-notice__header-main__link {
+        color: white;
+    }
+
+    &.c-notice__inline {
+        &.c-notice__full-width > .c-notice__full-width__content{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: $spacing-max-width;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .c-notice__button {
+            margin-left: auto;
+        }
+        .c-notice__body {
+            margin-top: 0;
+        }
+    }
+
+    &.c-notice__full-width {
+        .c-notice__full-width__content {
+            width: 100%;
+            max-width: $spacing-max-width;
+            padding-right: spacing(small);
+            padding-left: spacing(medium);
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .c-notice__heading {
+            margin-left: 0;
+        }
+    }
+
+    &.is-error {
+        background-color: general(system, error);
+        color: general(text, white);
+    }
+
+    &.is-warning {
+        background-color: general(system, warning);
+        color: general(text, white);
+    }
+
+    &.is-info {
+        background-color: general(system, info);
+        color: general(text, dark);
+    }
+
+    &.is-success {
+        background-color: general(system, success);
+        color: general(text, white);
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        &__on-close {
+            margin-bottom: auto;
+        }
+    }
+
+}

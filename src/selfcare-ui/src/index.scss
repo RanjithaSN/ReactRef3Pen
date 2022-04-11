@@ -1,0 +1,55 @@
+@import './_variables.scss';
+@import './vendor/normalize.scss';
+@import './vendor/fonts/penny-display/_penny-display.scss';
+@import './vendor/fonts/penny-text/penny-text';
+
+@include embed-penny-display();
+@include embed-penny-text();
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; //16px
+}
+
+// Remove ugly blue box in chrome
+button:focus {outline:0;}
+
+html, body {
+    font-weight: $weight-regular;
+    font-family: $font-nonBrandSecondary;
+    color: general(text, dark);
+
+    a {
+        color: main(action, default);
+    }
+
+    button.unset-button-min-width {
+        min-width: unset;
+    }
+}
+
+body {
+    padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Please see https://a11yproject.com/posts/how-to-hide-content/ before using */
+.is-visuallyHidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.is-visuallyHidden a:focus,
+.is-visuallyHidden input:focus,
+.is-visuallyHidden button:focus {
+    position:static;
+    width:auto;
+    height:auto;
+}

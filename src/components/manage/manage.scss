@@ -1,0 +1,107 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-manage{
+
+    &__card-body{
+        margin: spacing(extra_large) 0;
+    }
+
+    & &__card-container {
+        justify-content: space-between;
+        padding-bottom: spacing(large);
+        
+        .c-manage__card-header {
+            margin-bottom: spacing(small);
+        }
+    }
+
+    & &__user-information-form__button,
+    & &__login-information-form__button {
+
+        @media screen and (min-width: $mq-large-start) {
+            min-width: $double-button-min-width;
+        }
+
+        @media screen and (max-width: $mq-large-start) {
+            flex-grow: 1;
+        }
+    }
+
+    & &__form-button-wrapper {
+        display: flex;
+        width: 100%;
+        padding-top: spacing(small);
+    }
+
+    & &__address-tags {
+        height: rhythm(alpha);
+        padding-right: spacing(small);
+
+        @media screen and (min-width: $mq-medium-start) {
+            padding-bottom: spacing(medium);
+            padding-top: spacing(medium);
+        }
+    }
+
+    & .c-tag {
+        margin-right: spacing(small);
+    }
+
+    & &__address-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        @media screen and (max-width: $mq-medium-start) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    & &__consent-heading {
+        display: flex;
+        flex-direction: column;
+
+        &-main {
+            margin-bottom: spacing(large);
+        }
+
+        &-link {
+            display: flex;
+            margin: spacing(small) 0 0;
+        }
+    }
+
+    & &__request-data-link {
+        display: flex;
+    }
+
+
+    & &__contact-preferences {
+        display: flex;
+        flex-direction: column;
+
+        &-main {
+            margin-bottom: spacing(large);
+        }
+
+        &-sub {
+            padding-bottom: spacing(medium);
+        }
+    }
+
+    &__remove-account {
+        display: flex;
+
+        @media screen and (max-width: $mq-large-start) {
+            justify-content: center;
+        }
+    }
+    &__edit-button,
+    &__remove-account-button {
+        margin-top: spacing(medium);
+
+        @media screen and (max-width: $mq-medium-start) {
+            width: 100%;
+        }
+    }
+}

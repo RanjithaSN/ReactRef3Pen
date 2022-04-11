@@ -1,0 +1,3 @@
+export const SEARCH_INVENTORY_CONSTANTS = {
+  MSISDN: 'MSISDN'
+};

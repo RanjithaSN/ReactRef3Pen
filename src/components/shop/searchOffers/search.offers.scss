@@ -1,0 +1,76 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-search-offers {
+    &--loading {
+        margin: auto 0;
+    }
+
+    .c-card-selection__primary-content {
+        margin-left: - spacing(medium);
+        margin-right: - spacing(medium);
+    }
+
+    & &__zero_state {
+        margin: spacing(medium) auto;
+    }
+
+    & &__main {
+        &-header {
+            padding-bottom: spacing(large);
+        }
+
+        &-description {
+            padding-bottom: spacing(large);
+        }
+    }
+
+    &__offer-summary--overlay-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__offer-summary--overlay {
+        border-width: 1px 1px 0 1px;
+        max-width: $spacing-max-width;
+
+        @media screen and (max-width: $spacing-max-width) {
+            border-width: 1px 0 0 0;
+        }
+    }
+
+    &__offer-product-more-information {
+        button {
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            font-size: 15px;
+            font-weight: normal;
+            letter-spacing: 0.16px;
+            line-height: 20px;
+
+            thead {
+                font-family: $font-brand;
+                font-size: 40px;
+                letter-spacing: 0px;
+                line-height: 16px;
+                text-align: left;
+            }
+
+            tbody tr {
+                td:nth-child(2) {
+                    text-align: right;
+                }
+            }
+        }
+
+        p {
+            font-family: $font-nonBrand;
+            font-size: 15px;
+            font-weight: normal;
+            letter-spacing: 0.16px;
+            line-height: 20px;
+            max-width: 470px;
+        }
+    }
+}

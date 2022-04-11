@@ -1,0 +1,13 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-cart-icon-with-badge {
+    position: relative;
+
+    &__badge {
+        position: absolute;
+        background-color: general(system, info);
+        border: none;
+        top: -35%;
+        right: -50%;
+    }
+}

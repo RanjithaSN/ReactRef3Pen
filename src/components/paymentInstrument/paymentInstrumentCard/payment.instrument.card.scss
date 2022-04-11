@@ -1,0 +1,135 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-payment-instrument-card {
+    outline: none;
+    &--active &__container {
+        border: 1px solid main(action, MAIN_Action_standardMain);
+        border-radius: radius(large);
+        box-shadow: 5px 5px 5px general(canvas, light);
+    }
+
+    &__container {
+        border: 1px solid main(action, MAIN_Action_standardMain);    
+        margin-bottom: spacing(small);    
+    }
+    
+    &__default , &__container:hover{
+        border: 1px solid main(action, MAIN_Action_standardMain);
+        background-color:general(canvas, red);
+        color: general(text, white);
+        .c-payment-instrument-card__descriptor {
+            color: general(text, white);
+            font-weight: weight(medium);
+            justify-content: space-between;
+            flex-grow: 1;
+            display: flex;
+        }
+        .c-payment-instrument-card__descriptor-and-expiration {
+            color: general(accent,tertiary);
+            .c-payment-instrument-card__descriptor {
+                color: general(accent,tertiary);
+            }
+        }
+        .c-payment-instrument-card__expiration {
+            color: general(text, white);;
+        }
+    }
+
+    &__container:hover:not(&__default) {
+        cursor: pointer;
+    }
+
+    &--selectable:hover:not(&--active) &__container {
+        border-color: general(canvas, red);
+        cursor: pointer;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__logo {
+        width: 66px;
+        height: 42px;
+        border: 1px solid general(border, light);
+        border-radius: radius(large);
+        margin-right: spacing(medium);
+        @media screen and (max-width: $mq-medium-start) {
+            max-width: 30px;
+            max-height: 19px;
+        }
+    }
+
+    &__icon {
+        width: 66px;
+        height: 42px;
+        color: general(text, light);
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+}
+
+.c-payment-instrument-card__descriptor-and-expiration {
+    @media screen and (max-width: $mq-medium-start) {
+        flex-direction: column;
+    }
+}
+
+.c-payment-instrument-card__descriptor {
+    color: general(text, dark);
+    font-weight: weight(medium);
+    justify-content: space-between;
+    flex-grow: 1;
+    display: flex;
+}
+
+.c-payment-instrument-card__address {
+    margin-left: spacing(medium);
+    flex-grow: 1;
+
+    @media screen and (max-width: $mq-medium-start) {
+        margin-top: spacing(small);
+    }
+}
+
+.c-payment-instrument-card__expiration {
+    color: general(accent,primary);
+    &--expired {
+        color: general(system, error);
+        font-weight: weight(regular);
+    }
+}
+
+.c-payment-instrument-card__tag {
+    margin-left: spacing(medium);
+    padding: spacing(extra_small);
+    background-color: general(canvas, red);
+    border-radius: 0;
+    color: general(text, white);
+    font-size: main(heading, minorQuietSize);
+    font-weight: $weight-regular;
+
+    @media screen and (max-width: $mq-medium-start) {
+        &:first-child{
+            margin-left: 0;
+        }
+
+    }
+
+    & + .c-payment-instrument-card__tag {
+        margin-left: spacing(small);
+    }
+}
+
+.c-payment-instrument-card-tags__container {
+  margin: auto 0 auto auto;
+}
+.c-payment-instrument-card__tags-row {
+    margin-top: spacing(small);
+    margin-bottom: spacing(small);
+}

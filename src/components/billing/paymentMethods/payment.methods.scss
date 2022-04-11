@@ -1,0 +1,36 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-payment-methods {
+    &__list {
+        margin: spacing(extra_large) 0;
+    }
+
+    &__item + .c-payment-methods__item {
+        margin-top: spacing(medium);
+    }
+
+    &__more-menu-button {
+        margin-left: spacing(small);
+
+        &:before {
+            content: "";
+            border-left: 1px solid general(border, light);
+            padding-top: 1px;
+            padding-bottom: 3px;
+        }
+    }
+
+    &__more-menu-icon {
+        height: rhythm(beta);
+        color: general(accent, secondary);
+    }
+
+    &__zero-state {
+        margin: 0;
+    }
+
+    &__add-form {
+        height: auto;
+    }
+
+}

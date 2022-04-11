@@ -1,0 +1,8 @@
+export default {
+    LOADED: 'LOADED',
+    LOADING: 'LOADING',
+    UNCOMMITTED: 'UNCOMMITTED',
+    UNLOADED: 'UNLOADED',
+    UPDATING: 'UPDATING',
+    UPDATED: 'UPDATED'
+};

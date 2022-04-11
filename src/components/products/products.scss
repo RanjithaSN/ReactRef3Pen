@@ -1,0 +1,68 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-products-overview {
+    .c-products-overview__activate-button, .c-products-overview__restore-button {
+        margin-top: spacing(small);
+    }
+
+    .c-products-overview__aside {
+        padding: 0;
+    }
+    
+    .c-products-overview__section {
+        margin-top: spacing(large);
+    }
+
+    .c-products-overview__service-information {
+        display: flex;
+        flex-direction: column;
+        padding-top: spacing(extra_small);
+    }
+
+    .c-products-overview__renews,
+    .c-products-overview__service-identifier,
+    .c-products-overview__campaign {
+        margin-right: spacing(small);
+        color: general(text,mid);
+    }
+
+    .c-products-overview__campaign:nth-of-type(2) {
+        margin-top: spacing(extra_small);
+        padding: spacing(extra_small);
+        border: 1px solid $border-dark;
+        width: fit-content;
+    }
+
+    .c-products-overview__notice {
+        margin-top: spacing(medium);
+    }
+    .product-selector__next {
+     display: none;
+    }
+    @media screen and (max-width: $mq-large-start) {
+        &__activate-button {
+            width: 100%;
+        }
+        .product-selector{
+            margin-top: spacing(large);
+            margin-bottom: spacing(medium);
+            &__bar {
+                border-bottom: 1px solid $border-light !important;
+                margin-right: spacing(large_plus);
+                &--active {
+                    position: relative;
+                    background-color: $accent-primary !important;
+                    height: 4px;
+                    top:3px;
+                }
+            }
+            &__next {
+                display: block;
+                float:right;
+                position: relative;
+                top:-13px;
+                cursor: pointer;
+            }
+        }       
+    }
+}

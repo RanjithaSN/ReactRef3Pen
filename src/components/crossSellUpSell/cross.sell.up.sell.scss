@@ -1,0 +1,42 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-cross-sell-up-sell {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  max-width: 100%;
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: general(text, white);
+  padding: spacing(extra_large);
+
+  &__main {
+    display:flex;
+    flex-direction:column;
+    flex-basis: $spacing-max-width;
+    max-width: $spacing-max-width;
+    padding: 0 spacing(medium);
+
+  p {
+    margin: 0;
+  }
+
+  &> *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__marketing-callout-link {
+    color: inherit;
+
+    &--icon {
+      margin-top: spacing(extra_small);
+      height: spacing(large);
+      width: spacing(large);
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

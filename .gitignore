@@ -1,0 +1,56 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+.node-version
+/node_modules
+selfcare-core/node_modules
+selfcare-ui/node_modules
+selfcare-ui/src/icons/react-icons
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+/dist-widget
+
+# misc
+.DS_Store
+
+# environment variables
+.env*
+!.env.example
+
+/.vscode
+.idea
+.history
+.nvmrc
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+package-lock.json
+src/manifest.json
+src/version.js
+
+#Terraform Ignores
+.terraform
+*.auto.tfvars
+*.tfplan
+cloudfront_route.js.zip
+selfcare_app_versions.tfvars
+terraform.tfstate.d
+
+#Miscellaneous Ignores
+.DS_Store
+
+# Mobile
+/ios
+/android
+
+# vim stuff
+.*.swp
+.swp
+.vscode/settings.json

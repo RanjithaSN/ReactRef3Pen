@@ -1,0 +1,34 @@
+@import '../../_variables.scss';
+
+.c-need-assistance {
+    display: flex;
+    align-items: center;
+
+    .c-need-assistance__actions {
+        display: flex;
+        align-items: center;
+        font-size: rhythm(delta);
+    }
+
+    .c-need-assistance__label {
+        margin-right: spacing(medium);
+        font-weight: weight(medium);
+    }
+
+    .c-need-assistance__action {
+        display: flex;
+        align-items: center;
+        margin-right: spacing(medium);
+        color: general(text, light);
+        font-weight: weight(regular); 
+
+        .c-need-assistance__facebook-messenger {
+            padding-right: spacing(small);
+
+            svg {
+                height: rhythm(delta);
+                width: rhythm(delta);
+            }
+        }
+    }
+}

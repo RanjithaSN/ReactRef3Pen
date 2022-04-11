@@ -1,0 +1,411 @@
+
+/** These are only to be used for the heading and paragraph component to handle font-family styling
+    If your component needs to utilize one of these families, it should import the Heading or
+    Paragraph component and use accordingly **/
+
+$font-brand: 'PennyDisplay';
+$font-nonBrand: 'PennyText';
+$font-nonBrandSecondary: 'PennyText';
+$penny-letter-spacing-small: 0.16px;
+$penny-letter-spacing-normal: 0.32px;
+
+// Line Heights
+$line-height-omega: 5.2;
+$line-height-alpha: 3.25;
+$line-height-beta: 2.25;
+$line-height-delta: 1.5;
+$line-height-gamma: 1.25;
+$line-height-theta: 1;
+$line-height: (
+    brand-loud: $line-height-omega,
+    brand-normal: $line-height-alpha,
+    brand-quiet: $line-height-beta,
+    major-normal: $line-height-delta,
+    major-quiet: $line-height-gamma,
+    minor-normal: $line-height-gamma,
+    minor-quiet: $line-height-theta
+) !default;
+@function line-height($size, $unit: rem) {
+    @return map-get($line-height, $size) + $unit;
+}
+
+$rhythm-omega: 6 !default; // Brand Loud
+$rhythm-alpha: 3.75 !default; // Brand Normal
+$rhythm-beta: 2.5 !default; // Brand Quiet
+$rhythm-eta: 2.25 !default; // Brand Quiet
+$rhythm-mu: 1.5 !default; // Major Normal
+$rhythm-delta: 1.25 !default; // Major Normal
+$rhythm-gamma: 0.9375 !default; // Major Quiet, Minor Normal
+$rhythm-theta: 0.75 !default; // Minor Quiet
+
+
+$rhythm: (
+    alpha: $rhythm-alpha,
+    beta: $rhythm-beta,
+    delta: $rhythm-delta,
+    gamma: $rhythm-gamma,
+    theta: $rhythm-theta,
+    omega: $rhythm-omega,
+    eta: $rhythm-eta,
+    mu: $rhythm-mu
+) !default;
+@function rhythm($size, $unit: rem) {
+    @return map-get($rhythm, $size) + $unit;
+}
+
+$single-button-min-width: 345px !default;
+$double-button-min-width: 165px !default;
+$selet-buton-min-width: 100px !default;
+
+$spacing-extra-small: 0.5 !default;
+$spacing-small-minus: 0.75;
+$spacing-small: 1 !default; //Penny's 2
+$spacing-small-plus: 1.019 !default;
+$spacing-medium: 1.5 !default; //Penny's 3
+$spacing-large: 2 !default; //Penny's 4
+$spacing-large-plus: 2.5 !default;
+$spacing-extra-large: 3 !default; //Penny's 6
+$spacing-extra-extra-large: 4 !default; //Penny's 8
+
+$spacing: (
+    extra_small: $spacing-extra-small,
+    small_minus: $spacing-small-minus,
+    small: $spacing-small,
+    small_plus: $spacing-small-plus,
+    medium: $spacing-medium,
+    large: $spacing-large,
+    large_plus: $spacing-large-plus,
+    extra_large: $spacing-extra-large,
+    extra_extra_large: $spacing-extra-extra-large
+) !default;
+@function spacing($size, $unit: rem) {
+    @return map-get($spacing, $size) + $unit;
+}
+
+$mq-medium-start: 560px !default;
+$mq-large-start: 960px !default;
+
+$hero-content-width: 600px;
+
+$image-default-width: 400px;
+
+$spacing-max-width: 1360px !default;
+
+$heading-max-width: 600px;
+
+$paragraph-max-width: 850px;
+
+$marketing-callout-min-height: 400px;
+$marketing-callout-content-width: 500px;
+$product-card-min-width-height: 330px;
+
+:export {
+    mqMediumStart: $mq-medium-start;
+    mqLargeStart: $mq-large-start;
+    mqMaxWidth: $spacing-max-width;
+}
+
+$radius-small: 2px !default;
+$radius-large: 4px !default;
+$radius-pill: spacing(large) !default;
+$radius-round: 50% !default;
+
+$radius: (
+    small: $radius-small,
+    large: $radius-large,
+    pill: $radius-pill,
+    round: $radius-round
+) !default;
+@function radius($size) {
+    @return map-get($radius, $size);
+}
+
+$weight-light: 300 !default;
+$weight-regular: 400 !default; // default
+$weight-medium: 500 !default;
+$weight-bold: 600 !default;
+
+$weight: (
+    light: $weight-light,
+    regular: $weight-regular,
+    medium: $weight-medium,
+    bold: $weight-bold
+) !default;
+@function weight($size) {
+    @return map-get($weight, $size);
+}
+
+$shadow-solid-light: 0px 1px 7px 0 rgb(235, 235, 235) !default;
+$shadow-solid-dark: 0px 1px 7px 0 rgb(42, 50, 72) !default;
+$shadow-light: 0px 0px 8px 2px rgba( 0, 0, 0, 0.2 ) !default;
+$shadow-mid-bottom: 0 3px 10px 0 rgba(0, 0, 0, 0.15) !default;
+$shadow-inset-bottom: inset 0 -4px 15px -7px rgba(0, 0, 0, 0.875) !default;
+
+$shadow: (
+    inset_bottom: $shadow-inset-bottom,
+    light: $shadow-light,
+    mid_bottom: $shadow-mid-bottom,
+    solid_light: $shadow-solid-light,
+    solid_dark: $shadow-solid-dark,
+) !default;
+@function shadow($size) {
+    @return map-get($shadow, $size);
+}
+
+$layer: (
+    under: -1,
+    default: 0,
+    above: 1,
+    nav: 10,
+    overlay: 100,
+    popout: 101,
+    loading: 1000
+) !default;
+@function layer($place) {
+    @return map-get($layer, $place);
+}
+
+$accent-primary: rgb(0,0,0) !default; // Black
+$accent-secondary: rgb(228,000,043) !default; // Penny Red
+$accent-tertiary: rgb(255,255,255) !default; // White
+
+$border-white: rgb(255, 255, 255) !default;
+$border-light: rgb(198,198,198) !default;
+$border-dark: rgb(0,0,0) !default;
+
+$canvas-black: rgb(0, 0, 0) !default;
+$canvas-dark: rgb(127, 127, 127) !default;
+$canvas-light: rgb(198,198,198) !default;
+$canvas-white: rgb(255, 255, 255) !default;
+$canvas-red: rgb(228,000,043) !default;
+
+$text-dark: rgb(0,0,0) !default;
+$text-light: rgb(127,127,127)!default;
+$text-white: rgb(255, 255, 255) !default;
+
+$info: rgb(239,239,238) !default;
+$success: rgb(65,173,80) !default;
+$error: rgb(228,000,043) !default;
+$warning: rgb(250,168,85) !default;
+
+// CUSTOMIZABLE
+
+$MARKETING_Marginal_navLinkColor: $text-white !default;
+$MARKETING_Marginal_navLinkWeight: $weight-regular !default;
+$MARKETING_Marginal_iconColor: $text-white !default;
+$MARKETING_Marginal_backgroundColor: $accent-tertiary !default;
+$MARKETING_Marginal_backgroundOpacity: null !default;
+$MARKETING_Marginal_borderColor: null !default;
+$MARKETING_Background_backgroundImage: $accent-primary !default;
+$marketing: (
+    marginal: (
+        backgroundColor: $MARKETING_Marginal_backgroundColor,
+        backgroundOpacity: $MARKETING_Marginal_backgroundOpacity,
+
+        borderColor: $MARKETING_Marginal_borderColor,
+
+        iconColor: $MARKETING_Marginal_iconColor,
+
+        navLinkColor: $MARKETING_Marginal_navLinkColor,
+        navLinkWeight: $MARKETING_Marginal_navLinkWeight
+    ),
+    background: (
+        color: $MARKETING_Background_backgroundImage
+    )
+)!default;
+@function marketing($group, $item) {
+    @return map-get(map-get($marketing, $group), $item);
+}
+
+$MAIN_Masthead_navLinkColor: $text-white !default;
+$MAIN_Masthead_navMobileLinkColor: $text-white !default;
+$MAIN_Masthead_navLinkWeight: $weight-regular !default;
+$MAIN_Masthead_iconColor: $accent-primary !default;
+$MAIN_Masthead_backgroundColor: $accent-secondary !default;
+$MAIN_Masthead_mobileBackgroundColor: $accent-secondary !default;
+$MAIN_Masthead_borderColor: $border-light!default;
+
+$MAIN_Heading_brandLoud: rhythm(omega) !default;
+$MAIN_Heading_brandNormal: rhythm(alpha) !default;
+$MAIN_Heading_brandQuiet: rhythm(beta) !default;
+
+$MAIN_Heading_majorNormal: rhythm(delta) !default;
+$MAIN_Heading_majorQuiet: rhythm(gamma) !default;
+
+$MAIN_Heading_minorNormal: rhythm(gamma) !default;
+$MAIN_Heading_minorQuiet: rhythm(theta) !default;
+
+$MAIN_Action_ctaMain: $accent-tertiary !default;
+$MAIN_Action_ctaCompliment: $text-white !default;
+
+$MAIN_Action_standardMain: $accent-primary !default;
+$MAIN_Action_standardCompliment: $text-white !default;
+
+$MAIN_Action_subtleMain: $canvas-light !default;
+$MAIN_Action_subtleCompliment: $text-dark !default;
+
+$MAIN_Action_buttonSize: rhythm(gamma) !default;
+$MAIN_Action_buttonRadius: 0;
+
+$MAIN_Action_linkColor: $accent-secondary !default;
+$MAIN_Action_linkWeight: $weight-regular !default;
+$MAIN_Action_linkDecoration: underline !default;
+
+$MAIN_Copy_color: $text-dark !default;
+$MAIN_Copy_weight: $weight-regular !default;
+$MAIN_Copy_size: rhythm(delta) !default;
+
+$MAIN_Form_inputBorderColor: $border-light !default;
+$MAIN_Form_inputActiveColor: $accent-secondary !default;
+$MAIN_Form_labelColor: $text-dark !default;
+$MAIN_Form_labelSize: rhythm(delta) !default;
+$MAIN_Form_labelWeight: $weight-regular !default;
+$MAIN_Form_legendColor: $text-light !default;
+$MAIN_Form_legendSize: rhythm(beta) !default;
+$MAIN_Form_legendWeight: $weight-medium !default;
+
+$MAIN_Footer_navLinkColor: $text-white !default;
+$MAIN_Footer_navLinkWeight: $weight-regular !default;
+$MAIN_Footer_backgroundColor: $accent-primary !default;
+$MAIN_Footer_borderColor: $accent-primary !default;
+
+$main: (
+    masthead:(
+        backgroundColor: $MAIN_Masthead_backgroundColor,
+        mobileBackgroundColor: $MAIN_Masthead_mobileBackgroundColor,
+
+        borderColor: $MAIN_Masthead_borderColor,
+
+        iconColor: $MAIN_Masthead_iconColor,
+
+        navLinkColor: $MAIN_Masthead_navLinkColor,
+        navMobileLinkColor: $MAIN_Masthead_navMobileLinkColor,
+        navLinkWeight: $MAIN_Masthead_navLinkWeight
+    ),
+    heading: ( // Rename/genericize elements?
+        brandLoudSize: $MAIN_Heading_brandLoud,
+        brandNormalSize: $MAIN_Heading_brandNormal,
+        brandQuietSize: $MAIN_Heading_brandQuiet,
+        majorNormalSize: $MAIN_Heading_majorNormal,
+        majorQuietSize: $MAIN_Heading_majorQuiet,
+        minorNormalSize: $MAIN_Heading_minorNormal,
+        minorQuietSize: $MAIN_Heading_minorQuiet,
+    ),
+    action: (
+        ctaMain: $MAIN_Action_ctaMain,
+        ctaComp: $MAIN_Action_ctaCompliment,
+
+        standardMain: $MAIN_Action_standardMain,
+        standardComp: $MAIN_Action_standardCompliment,
+
+        subtleMain: $MAIN_Action_subtleMain,
+        subtleComp: $MAIN_Action_subtleCompliment,
+
+        buttonSize: $MAIN_Action_buttonSize,
+        //buttonWeight: $MAIN_Action_buttonWeight,
+        buttonRadius: $MAIN_Action_buttonRadius,
+
+        default: $MAIN_Action_linkColor
+    ),
+    copy: (),
+    form: (
+        borderColor: $MAIN_Form_inputBorderColor,
+        activeColor: $MAIN_Form_inputActiveColor,
+        labelColor: $MAIN_Form_labelColor,
+        // $MAIN_Form_labelSize,
+        // $MAIN_Form_labelWeight,
+        legendColor: $MAIN_Form_legendColor,
+        // $MAIN_Form_legendSize,
+        // $MAIN_Form_legendWeight,
+    ),
+    footer: (
+        navLinkColor: $MAIN_Footer_navLinkColor,
+        // $MAIN_Footer_navLinkWeight,
+        backgroundColor: $MAIN_Footer_backgroundColor,
+        borderColor: $MAIN_Footer_borderColor
+    )
+)!default;
+@function main($group, $item) {
+    @return map-get(map-get($main, $group), $item);
+}
+
+$GENERAL_Accent_primary: $accent-primary !default;
+$GENERAL_Accent_secondary: $accent-secondary !default;
+$GENERAL_Accent_tertiary: $accent-tertiary !default;
+$GENERAL_Border_light: $border-light !default;
+$GENERAL_Border_dark: $border-dark !default;
+$GENERAL_Border_white: $border-white !default;
+$GENERAL_Canvas_white: $canvas-white !default;
+$GENERAL_Canvas_light: $canvas-light !default;
+$GENERAL_Canvas_dark: $canvas-dark !default;
+$GENERAL_Canvas_red: $canvas-red !default;
+$GENERAL_Text_white: $text-white !default;
+$GENERAL_Text_light: $text-light !default;
+$GENERAL_Text_mid: $text-light !default;
+$GENERAL_Text_dark: $text-dark !default;
+$GENERAL_System_info: $info !default;
+$GENERAL_System_success: $success !default;
+$GENERAL_System_error: $error !default;
+$GENERAL_System_warning: $warning !default;
+$general: (
+    accent: (
+        primary: $GENERAL_Accent_primary,
+        secondary: $GENERAL_Accent_secondary,
+        tertiary: $GENERAL_Accent_tertiary
+    ),
+    border: (
+        light: $GENERAL_Border_light,
+        dark: $GENERAL_Border_dark,
+        white: $GENERAL_Border_white
+    ),
+    canvas: (
+        black: $canvas-black,
+        white: $canvas-white,
+        dark: $GENERAL_Canvas_dark,
+        light: $GENERAL_Canvas_light,
+        red: $GENERAL_Canvas_red
+    ),
+    text: (
+        dark: $GENERAL_Text_dark,
+        light: $GENERAL_Text_light,
+        white: $GENERAL_Text_white
+    ),
+    system: (
+        info: $GENERAL_System_info,
+        subtleInfo: tint($GENERAL_System_info, 93%),
+
+        success: $GENERAL_System_success,
+        subtleSuccess: tint($GENERAL_System_success, 93%),
+
+        error: $GENERAL_System_error,
+        subtleError: tint($GENERAL_System_error, 93%),
+
+        warning: $GENERAL_System_warning,
+        subtleWarning: tint($GENERAL_System_warning, 93%)
+    ),
+    graph: (
+        primary: $GENERAL_Accent_secondary,
+        secondary: tint($GENERAL_Accent_secondary, 40%),
+        tertiary: tint($GENERAL_Accent_secondary, 70%),
+        alternative: tint($GENERAL_Accent_secondary, 90%)
+    )
+)!default;
+@function general($group, $item) {
+    @return map-get(map-get($general, $group), $item);
+}
+
+/**
+  * @name tint($color, $percent)
+  * @description  Add percentage of white to a color
+  * @type function
+  * @section functions.tint
+  *
+  * @param $color (String) - Color variable, color hex, or rgba
+  * @param $percent (integer) - Percentage to lighten
+  *
+  * @example tint(#dedede, 25%);
+  *
+  */
+@function tint($color, $percent){
+    @return mix(white, $color, $percent);
+}

@@ -1,0 +1,13 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-get-help {
+    .c-get-help__login {
+        margin-top: 0;
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        .c-get-help__login {
+            margin-top: -#{spacing(extra_extra_large)};
+        }
+    }
+}

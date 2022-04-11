@@ -1,0 +1,50 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-view-guide {
+    &__breadcrumb {
+        margin-bottom: spacing(small);
+        color: general(text, light);
+        display: block;
+    }
+
+    &__header {
+        margin: spacing(small) 0;
+    }
+
+    &__steps {
+        padding-top: spacing(medium);
+    }
+
+    &__outro {
+        padding-top: spacing(medium);
+        padding-bottom: spacing(small);
+    }
+
+    &__step {
+        display: flex;
+        padding: spacing(small) 0;
+
+        &-image {
+            width: $image-default-width;
+            flex-shrink: 0;
+            padding-bottom: spacing(small);
+            margin-right: spacing(medium);
+        }
+
+        &-text {
+            text-transform: none !important;
+        }
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        &__step {
+            flex-direction: column;
+
+            &-image {
+                width: 100%;
+                max-width: $image-default-width;
+                margin-right: 0;
+            }
+        }
+    }
+}

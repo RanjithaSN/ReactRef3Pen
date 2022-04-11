@@ -1,0 +1,22 @@
+@import '../../_variables.scss';
+
+.c-link {
+    color: main(action, default);
+    cursor: pointer;
+
+    &:hover:not(&--disabled) {
+        color: shade(main(action, default), 10%);
+    }
+
+    &--disabled {
+        color: tint(main(action, default), 60%);
+    }
+
+    &.c-link--inline {
+        text-decoration: underline;
+    }
+
+    &.c-link--standalone {
+        text-decoration: underline;
+    }
+}

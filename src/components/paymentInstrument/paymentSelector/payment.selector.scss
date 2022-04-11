@@ -1,0 +1,54 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-payment-selector {
+    &__space {
+        padding-bottom: spacing(large);
+        display: flex;
+    }
+
+    &__card {
+        margin-bottom: spacing(large);
+    }
+
+    &__date {
+        padding-left: spacing(small);
+        color: general(text, light);
+    }
+
+    &__radio {
+        padding: spacing(small);
+    }
+
+    &__submit-button {
+      margin-left: spacing(extra_small);
+    }
+
+    &__manage-payments {
+        margin-top: spacing(small);
+    }
+
+    &__space-wrapper{
+        display: flex;
+        width: 100%;
+     }
+
+    &__locked-change-notice {
+        font-size: 12px;
+        letter-spacing: 0px;
+        line-height: 24px;
+        margin-bottom: 36px;
+        margin-top: -24px;
+    }
+
+    & &__yesNO{
+        @media screen and (max-width: $mq-large-start) {
+            flex-grow: 1;
+        }
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        &__manage-payments {
+            width: 100%;
+        }
+    }
+}

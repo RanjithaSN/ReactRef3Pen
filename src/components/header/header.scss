@@ -1,0 +1,268 @@
+@import 'selfcare-ui/src/_variables.scss';
+@import '../../_variables.scss';
+
+$header-brandSizeWidth: rhythm(alpha, em);
+$header-iconSize: rhythm(delta, em);
+$header-avatarSize: rhythm(delta, em);
+
+.c-header {
+    font-size: rhythm(delta);
+
+
+    &-locale__icon {
+        height: rhythm(delta);
+        width: rhythm(delta);
+    }
+
+    .c-header-proper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 1;
+        min-height: $APP_Header_heightMqSmall;
+
+        &.c-header-proper--reduced:after {
+            content: "";
+            visibility: hidden;
+            flex: 1;
+        }
+    }
+
+    .c-header-listItem {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 spacing(small);
+    }
+
+    .c-header-main {
+        display: flex;
+        margin: spacing(medium);
+        align-items: flex-end;
+
+        .c-header-actions {
+            display: none;
+        }
+
+        @media screen and (min-width: $mq-large-start) {
+            margin: spacing(medium) 0 spacing(medium) spacing(medium);
+            width: 100%;
+        }
+    }
+
+    .c-header-ancillary {
+        .c-header-actions {
+            justify-content: flex-end;
+        }
+
+        .c-header-listItem:not(.is-visibleWhenSmall) {
+            display: none;
+        }
+    }
+
+
+    .c-header-actions {
+        display: flex;
+
+        .c-avatar {
+            font-size: $header-avatarSize;
+        }
+    }
+
+    .c-header-actionsLink {
+        display: block;
+
+        &:hover {
+            color: shade(main(action, default), 10%);
+        }
+
+        button {
+            white-space: nowrap;
+        }
+
+        svg {
+            height: $header-iconSize;
+            width: $header-iconSize;
+        }
+    }
+
+    .c-header-back-banner {
+        margin-top: 0;
+        border-bottom: 1px solid general(border, light);
+        padding: spacing(small);
+        background: general(canvas, white);
+
+        @media screen and (min-width: $mq-large-start) {
+            display: none;
+        }
+    }
+
+    .c-header-play-link {
+        display: none;
+    }
+
+    &__mobile {
+        .c-header-proper {
+            .c-header-main {
+                order: 2;
+                flex: 1;
+                justify-content: center;
+            }
+
+            .c-header-play-link {
+                display: flex;
+                margin-left: auto;
+                order: 3;
+                background-color: main(masthead, backgroundColor);
+                color: main(masthead, iconColor);
+                border: none;
+                width: $header-sideButtonSize;
+                font-size: unset;
+                justify-content: center;
+                /* Our simulator shows clicking -> navigating causes it to be 'hovered' on mobile */
+                &:hover {
+                    border: none;
+                    background-color: initial;
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .c-header-brandMark {
+                justify-content: center;
+            }
+
+            .c-header-ancillary {
+                order: 1;
+                display:flex;
+                justify-content: flex-start;
+                width: $header-sideButtonSize;
+            }
+
+            .c-header__brand-centering-div {
+                width: $header-sideButtonSize;
+            }
+
+            &.c-header-proper--sm{
+                background-color:general(canvas,red);
+            }
+        }
+    }
+
+    &__desktop {
+        .c-header-proper {
+            justify-content: space-between;
+
+            &:before,
+            &.c-header-proper--reduced:after {
+                content: none;
+            }
+        }
+
+        .c-header-main {
+            &:not(.is-searchOpen) .c-header-actions {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .c-header-ancillary {
+
+            .c-header-listItem,
+            .c-header-listItem:not(.is-visibleWhenSmall) {
+                display: inline-block;
+            }
+
+            &.c-header-ancillary--search {
+
+                &,
+                .c-header-actions,
+                .c-header-list {
+                    display: flex;
+                    flex-grow: 1;
+                }
+
+                .c-header-list {
+                    align-items: center;
+                    justify-content: flex-end;
+                }
+
+                .c-header-searchInput {
+                    display: none;
+                    padding-left: spacing(small);
+                }
+
+                .c-header-search.is-open {
+                    padding: spacing(small);
+                    background: general(canvas, light);
+                    border-radius: radius(small);
+
+                    &,
+                    .c-header-searchInput {
+                        display: flex;
+                        flex-grow: 1;
+                        align-items: center;
+                    }
+
+                    .c-header-searchClose {
+                        padding-left: spacing(small);
+                    }
+
+                    .c-input {
+                        padding-top: spacing(small);
+                        padding-bottom: spacing(small);
+                    }
+                }
+            }
+        }
+
+        .c-header-brand {
+            margin-right: spacing(medium);
+            flex-grow: 1;
+            max-width: 140px;
+        }
+    }
+
+    @media screen and (min-width: $mq-large-start) {
+        font-size: rhythm(delta)
+    }
+}
+
+.t-header {
+    &.c-header {
+        background-color: main(masthead, backgroundColor);
+
+        .c-header-search,
+        .c-header-searchClose {
+            color: main(masthead, iconColor);
+        }
+
+        .c-header-search .c-input {
+            background: general(canvas, light);
+            border: none;
+        }
+
+        .c-link,
+        .c-link-button {
+            color: main(masthead, navLinkColor);
+            text-decoration: none;
+
+            &:hover {
+                color: tint(main(masthead, backgroundColor), 75%);
+            }
+        }
+
+        @media screen and (max-width: $mq-large-start) {
+
+            .c-link,
+            .c-link-button {
+                color: main(masthead, navMobileLinkColor);
+
+                &:hover {
+                    color: tint(main(masthead, mobileBackgroundColor), 75%);
+                }
+            }
+
+        }
+    }
+}

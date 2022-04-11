@@ -1,0 +1,38 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-get-help-search {
+  margin-bottom: spacing(extra_large);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__section-content {
+    margin: spacing(small) 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__search-results {
+    margin-top: spacing(medium);
+  }
+  &__search-input {
+    padding-left: spacing(extra_small);
+    padding-top: spacing(extra_small);
+    color: general(text, light);
+    display: block;
+  }
+  &__input-wrapper {
+    display: flex;
+  }
+}

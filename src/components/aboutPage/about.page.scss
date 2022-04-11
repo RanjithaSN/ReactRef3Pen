@@ -1,0 +1,99 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-about-page {
+  &__information {
+    margin-bottom: spacing(extra_large);
+  }
+
+  &__section {
+    & .c-about-page__offer-details {
+      font-size: 3.75rem;
+      letter-spacing: 0px;
+      line-height: 1;
+      margin-bottom: 0;
+      padding: 0;
+
+      h1 {
+        font-size: 3.75rem;
+        letter-spacing: 0px;
+        line-height: 1;
+        margin: 0;
+        max-width: 100%;
+        padding: 0;
+        text-align: left;
+      }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__wrapper {
+    background-color: general(canvas, black);
+    color: general(canvas, white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 0;
+
+    & > *:first-child {
+      margin-bottom: 2.5rem;
+    }
+
+    & > *:not(:first-child) {
+      margin-bottom: 1rem;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section {
+    max-width: $spacing-max-width;
+    padding: 0 spacing(medium);
+    width: 100%;
+  }
+
+  &__zero-state-button {
+    margin-top: spacing(medium);
+  }
+
+  &__account-button {
+    margin-top: spacing(large);
+
+    @media screen and (max-width: $mq-medium-start) {
+      width: 100%;
+    }
+  }
+
+  &__article-button {
+    margin-top: spacing(small);
+
+    @media screen and (max-width: $mq-medium-start) {
+      width: 100%;
+    }
+  }
+
+  &__play_button {
+    margin-top: spacing(large);
+
+    @media screen and (max-width: $mq-medium-start) {
+      width: 100%;
+    }
+  }
+
+  &__mobile_badge {
+    &_header {
+      padding-top: spacing(medium);
+    }
+    &_text {
+      padding-top: spacing(small);
+    }
+  }
+
+  &__badges {
+    margin-top: spacing(small);
+  }
+}

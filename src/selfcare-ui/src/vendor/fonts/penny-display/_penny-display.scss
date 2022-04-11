@@ -1,0 +1,7 @@
+@mixin embed-penny-display() {
+    @font-face {
+        font-family: 'PennyDisplay';
+        src: url('./PennyDisplay-Display.woff2') format('woff2'),
+            url('./PennyDisplay-Display.woff') format('woff');
+    }
+}

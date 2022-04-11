@@ -1,0 +1,32 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-product-selection-template {
+    > div {
+      display: grid;
+    }
+    
+    &__arrow {
+        padding-right: spacing(extra_small);
+    }
+
+    .c-card-selection-card {
+        &__cost {
+          font-weight: 300;
+        }
+
+        &__body {
+          margin: 0;
+
+          & > *:not(:last-child) {
+            margin-bottom: 12px;
+          }
+        }
+
+        .c-unordered-list__item--description {
+          font-size: 16px;
+          font-weight: normal;
+          letter-spacing: 0px;
+          line-height: 20px;
+        }
+      }
+}

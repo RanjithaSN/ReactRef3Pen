@@ -1,0 +1,49 @@
+@import '../../_variables.scss';
+
+.c-flag {
+    display: flex;
+    align-items: center;
+    color: general(text, light);
+    text-decoration: none;
+
+    &:not(.c-flag--actionable):hover {
+        cursor: default;
+    }
+
+    &.c-flag--actionable:hover {
+        cursor: pointer;
+        color: main(action, default);
+    }
+
+    .c-flag__icon,
+    &:hover .c-flag__icon {
+        color: main(action, default);
+        margin-right: spacing(extra_small);
+        display: flex;
+        svg {
+            height: rhythm(gamma, em);
+            width: rhythm(gamma, em);
+        }
+    }
+
+    &.c-flag--reversed {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+
+        .c-flag__text {
+            margin-left: 0;
+            margin-right: spacing(small);
+        }
+    }
+
+    &.c-flag--emphasis {
+
+        .c-flag__text {
+            font-size: rhythm(gamma);
+        }
+    }
+
+    + .c-flag {
+        margin-top: spacing(small);
+    }
+}

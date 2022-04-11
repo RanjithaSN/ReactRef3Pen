@@ -1,0 +1,22 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-payment-details {
+
+    &__dispute-card {
+        max-width: $mq-medium-start;
+    }
+
+    &__dispute-card-body>*:not(:last-child) {
+        padding-bottom: spacing(medium);
+    }
+
+    &__dispute-button {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+
+        @media screen and (max-width: $mq-medium-start) {
+            width: 100%;
+        }
+    }
+}

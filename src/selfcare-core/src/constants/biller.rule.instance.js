@@ -1,0 +1,26 @@
+export const BILLER_RULE_INSTANCE_TYPES = {
+  RECURRING: 0,
+  USAGE: 1,
+  ONE_TIME: 2,
+  ENTITLEMENT: 3,
+  CUSTOM: 4,
+  ETF: 5,
+  SUBSCRIPTION: 6,
+  TRIGGER: 7,
+  FINANCE: 8
+};
+
+export const RECURRING_PERIOD_CODES = {
+  NO_RECURRENCE: '99'
+};
+
+export const BILLER_RULE_INSTANCE_BULK_TYPES = {
+  NONE: 0,
+  BULK_FLAT: 1,
+  BULK_UNIT: 2
+};
+
+export const CHARGE_TIMING_TYPES = {
+  ONE_TIME: 3,
+  RECURRING: 4
+};

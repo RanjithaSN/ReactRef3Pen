@@ -1,0 +1,44 @@
+{
+    "address": {
+        "billing": "Facturation",
+        "home": "Accueil",
+        "postal": "Postal",
+        "service": "Service",
+        "shipping": "Expédition",
+        "work": "Travail"
+    },
+    "fault": {
+        "0": "Une erreur inattendue s'est produite. Nous sommes désolés pour tout inconvénient.",
+        "101": "Accès pour cet utilisateur a été suspendu, s'il vous plaît contacter le service clientèle.",
+        "117": "Nom d’utilisateur ou mot de passe incorrect",
+        "118": "Les valeurs entrées sont non valides ou manquantes. S'il vous plaît corriger et essayer de soumettre à nouveau.",
+        "614": "Impossible de trouver un bon de commande avec un ID de commande correspondant.",
+        "617": "La transaction financière n'a pas été conclue.",
+        "1068": "Configurations de service dupliquées détectées. Veuillez reconfigurer vos services sélectionnés.",
+        "1149": "L'offre retenue n'a pas été trouvée.",
+        "1083-108301": "L'offre sélectionnée n'est pas compatible avec les autres offres du compte de l'abonné.",
+        "1124-112403": "Cette adresse est actuellement utilisée pour une méthode de paiement et ne peut pas être supprimée.",
+        "117-11701": "Nom d'utilisateur ou mot de passe non valide",
+        "117-11702": "Accès pour cet utilisateur a été suspendu, s'il vous plaît contacter le service clientèle.",
+        "117-11703": "Le mot de passe temporaire n'est pas valide.",
+        "1244-124401": "Combinaison ville/code postal invalide.",
+        "606-60603": "Le numéro de routage n'est pas valide",
+        "606-60616": "Numéro de carte inCorrect fourni pour le type de carte sélectionné",
+        "9026-902615": "L'offre sélectionnée n'est pas disponible pour le client en raison de types de devises contradictoires."
+    },
+    "general_error": "Une erreur s'est produite lors du traitement de votre demande.",
+    "select_placeholder": "Sélectionnez...",
+    "support_request": {
+        "description": "Description",
+        "device_name": "Nom du périphérique",
+        "device_number": "Numéro de l'appareil",
+        "dispute_amount": "Montant du litige",
+        "invoice_number": "Numéro de facture",
+        "statuses": {
+            "cancelled": "Annulé",
+            "new": "Nouveau",
+            "open": "Ouvert",
+            "resolved": "Résolu"
+        }
+    }
+}

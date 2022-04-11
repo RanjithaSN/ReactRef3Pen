@@ -1,0 +1,48 @@
+@import '../../_variables.scss';
+
+.c-card-list {}
+
+.c-card-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.c-card-list-body {
+    display: flex;
+    flex-direction: column;
+
+    &__carousel-content-wrapper {
+        border: 1px solid general(border, light);
+
+        &--simple {
+            border: none;
+        }
+    }
+
+    &__item,
+    &__clickable-item {
+        &+& {
+            margin-top: spacing(medium);
+        }
+    }
+
+    &__clickable-child {
+        cursor: pointer;
+        width: 100%;
+
+        &:hover,
+        &--selected {
+            border: 1px solid general(accent, secondary);
+        }
+    }
+
+    &--loading {
+        height: 300px;
+    }
+}
+
+.c-card-list-header+.c-card-list-body {
+    margin-top: spacing(medium);
+}

@@ -1,0 +1,47 @@
+@import '../../_variables.scss';
+
+.c-inputField {
+    & &-inner {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .c-labelAffix {
+        padding-bottom: spacing(extra_small);
+        position: relative;
+        .c-label {
+            color: general(text, light);
+            font-size: main(heading, minorQuietSize);
+            text-transform: initial;
+            font-family: $font-nonBrandSecondary;
+            font-weight: $weight-regular;
+        }
+        .c-labelAffix-right {
+            margin-left: auto;
+        }
+        svg {
+            fill: general(text, light);
+        }
+    }
+
+    .c-inputField-error {
+        padding-top: spacing(small);
+        color: general(system, error);
+    }
+
+    .c-inputField-info {
+        padding-left: spacing(extra_small);
+        padding-top: spacing(extra_small);
+        color: general(text, light);
+    }
+
+    &.is-disabled {
+        .c-labelAffix {
+            opacity: 0.5;
+        }
+    }
+    .c-inputField__description {
+        padding-top: spacing(small);
+    }
+}

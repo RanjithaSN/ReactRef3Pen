@@ -1,0 +1,49 @@
+@import '../../_variables.scss';
+
+.c-sidebar-menu__border {
+    width: 6px;
+}
+
+.c-sidebar-menu__border--active {
+    background-color: general(accent, primary);
+}
+
+.c-sidebar-menu__button {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    padding: spacing(small);
+    text-align: left;
+
+    &:hover {
+        color: tint(main(action, standardMain), 25%);
+    }
+}
+
+$check-mark-size: calc(#{spacing(small)} * 2 + #{main(heading, brandNormalSize)});
+
+.c-sidebar-menu__check-mark {
+    fill: general(accent, secondary);
+    height: $check-mark-size;
+    margin-right: spacing(small);
+    width: $check-mark-size;
+}
+
+.c-sidebar-menu__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.c-sidebar-menu__item {
+    display: flex;
+    flex: 1;
+}
+
+.c-sidebar-menu__item:not(:first-child) {
+    margin-top: -1px;
+}
+
+.c-sidebar-menu__select--no_items {
+    display: none;
+}

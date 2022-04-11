@@ -1,0 +1,27 @@
+@import '../../_variables.scss';
+@import './select.shared.scss';
+
+.c-select {
+    outline: none;
+    position: relative;
+    font-weight: inherit;
+    border-radius: radius(small);
+    padding: spacing(small);
+    @extend %select-appearance;
+    &:focus {
+        border-color: general(accent, primary);
+    }
+    .c-select__input {
+        
+        font-weight: inherit;
+
+        &:disabled {
+            + .c-select__arrow {
+                opacity: 0.5;
+            }
+        }
+    }
+}
+.c-select__arrow {
+    @extend %select-icon-appearance;
+}

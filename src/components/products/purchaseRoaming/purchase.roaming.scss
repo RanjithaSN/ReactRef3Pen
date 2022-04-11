@@ -1,0 +1,14 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-purchase-roaming {
+  padding: spacing(small);
+  margin-top: spacing(large);
+
+  &__button {
+        margin-top: spacing(medium);
+        @media screen and (max-width:$mq-medium-start) {
+                width: 100%;
+        }
+  }
+  
+}

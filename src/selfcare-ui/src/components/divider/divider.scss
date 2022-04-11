@@ -1,0 +1,80 @@
+@import '../../_variables.scss';
+
+.c-divider {
+    align-items: center;
+    display: flex;
+    margin-top: spacing(medium);
+    margin-bottom: spacing(medium);
+    width: 100%;
+
+    &.c-divider--horizontal {
+        flex-basis: 100%;
+
+        &:before,
+        &:after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            font-size: 0;
+            line-height: 0;
+        }
+    }
+
+    &.c-divider--vertical {
+        &:before, &:after {
+			position: absolute;
+			content: "";
+			width: 1px;
+			left: 50%;
+		}
+		&:before {
+			bottom: 50%;
+			top: 0;
+		}
+		&:after {
+			top: 50%;
+			bottom: 0;
+		}
+    }
+}
+
+.c-divider--descriptive {
+    font-size: rhythm(delta);
+    text-transform: uppercase;
+
+    &.c-divider--horizontal {
+        &:before,
+        &:after {
+            margin-left: spacing(small);
+            margin-right: spacing(small);
+        }
+    }
+
+    &.c-divider--vertical {
+        justify-content: center;
+
+        &:before,
+        &:after {
+            margin-top: spacing(small);
+            margin-bottom: spacing(small);
+        }
+    }
+}
+
+.c-divider--dark {
+    color: general(text, light);
+
+    &:before,
+    &:after {
+        background-color: general(border, dark);
+    }
+}
+
+.c-divider--light {
+    color: general(text, light);
+
+    &:before,
+    &:after {
+        background-color: general(border, light);
+    }
+}

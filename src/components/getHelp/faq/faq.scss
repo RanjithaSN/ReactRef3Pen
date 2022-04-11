@@ -1,0 +1,30 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-faq {
+  margin: spacing(extra_large) 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__section-content {
+    margin: spacing(small) 0;
+
+    &-brand {
+      padding-bottom: spacing(medium);
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}

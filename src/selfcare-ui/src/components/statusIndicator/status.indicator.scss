@@ -1,0 +1,30 @@
+@import '../../_variables.scss';
+
+.c-status-indicator {
+    .c-status-indicator_icon {
+        color: general(text, dark);
+    }
+
+    .c-status-indicator_icon--info {
+        svg {
+            color: general(system, info);
+        }
+    }
+
+    .c-status-indicator_icon--success {
+        svg {
+            color: general(system, success);
+        }
+    }
+
+    .c-status-indicator_icon--error {
+        svg {
+            color: general(system, error);
+        }
+    }
+    .c-status-indicator_icon--warning {
+        svg {
+            color: general(system, warning);
+        }
+    }
+}

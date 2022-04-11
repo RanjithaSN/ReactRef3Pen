@@ -1,0 +1,79 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-confirmation {
+    width: 100%;
+
+    &__main {
+        padding-right: spacing(medium);
+        padding-left: spacing(medium);
+    }
+
+    &__title {
+        padding-bottom: spacing(large);
+    }
+
+    &__play_button {
+        margin-top: spacing(large);
+    }
+
+    &__section {
+        padding-bottom: spacing(extra_large);
+    }
+
+    &__section-data {
+        padding-top: spacing(medium);
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-row-gap: spacing(medium);
+        grid-column-gap: spacing(small);
+    }
+
+    &__section-shipping {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__badges {
+        padding-top: spacing(small);
+    }
+
+    &__button {
+        margin-top: spacing(large);
+
+        @media screen and (max-width: $mq-medium-start) {
+            width: 100%;
+        }
+    }
+
+    &__button-article {
+        margin-top: spacing(large);
+
+        @media screen and (max-width: $mq-medium-start) {
+            width: 100%;
+        }
+    }
+
+    &__port-in {
+        background-color: general(system, info);
+        border-color: general(system, info);
+        margin-bottom: spacing(extra_large);
+    }
+
+    &__button-port-in {
+        @media screen and (max-width: $mq-medium-start) {
+            width: 100%;
+        }
+    }
+
+    &__port-in-error-body {
+        margin-left: spacing(small);
+    }
+
+    &__port-in-error-link {
+        color: $text-white;
+    }
+
+    &__order-notification {
+        margin-bottom: spacing(small);
+    }
+}

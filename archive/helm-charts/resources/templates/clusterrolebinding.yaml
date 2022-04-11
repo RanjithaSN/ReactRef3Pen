@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ .Values.fluentd.applicationLoggingName }}-role-binding-{{ .Release.Namespace }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ .Values.fluentd.applicationLoggingName }}-{{ .Release.Namespace }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "resource.fullname" . }}
+  namespace: {{ .Release.Namespace }}

@@ -1,0 +1,67 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-dashboard-hero {
+    position: relative;
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--light {
+        color: general(text, white);
+        background-color: general(canvas, black);
+    }
+
+    &--dark {
+        color: general(text, black);
+        background-color: general(canvas, white);
+    }
+
+    &__main {
+        @media screen and (min-width: $mq-large-start) {
+            width: $hero-content-width;
+        }
+
+        box-sizing: content-box;
+        display:flex;
+        flex-direction:column;
+        justify-content: flex-start;
+        padding-top: spacing(large);
+
+        &--icon {
+            margin-top: spacing(extra_small);
+            height: spacing(large);
+            width: spacing(large);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &--button {
+            margin-top: spacing(extra_small);
+            &:hover {
+                cursor: pointer;
+            }
+
+            @media screen and (max-width:  $mq-medium-start) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__children-spacing {
+        p {
+            margin: 0 0 1rem 0;
+        }
+        strong {
+            font-weight: inherit;
+            color: $accent-secondary;
+        }
+        .c-dashboard-hero__heading_container {
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media screen and (min-width: $mq-large-start) {
+        min-height: 500px;
+    }
+}

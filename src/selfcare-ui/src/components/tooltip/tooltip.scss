@@ -1,0 +1,80 @@
+@import '../../_variables.scss';
+
+$arrow-size: spacing(small);
+
+.c-tooltipAttachment {
+    cursor: pointer;
+}
+
+.c-tooltip {
+    position: relative;
+    padding: spacing(small) spacing(medium);
+    color: general(canvas, white);
+    background-color: general(canvas, dark);
+    border-radius: radius(large);
+
+    & &-arrow {
+        width: 0;
+        height: 0;
+        position: absolute;
+    }
+
+    &--light {
+        color: general(canvas, dark);
+        background-color: general(canvas, white);
+        box-shadow: shadow(solid_light);
+        padding: 0;
+    }
+}
+
+[x-placement*=bottom],
+[x-placement*=top] {
+    .c-tooltip .c-tooltip-arrow {
+        border-left: $arrow-size solid transparent;
+        border-right: $arrow-size solid transparent;
+    }
+}
+[x-placement*=bottom] {
+    .c-tooltip .c-tooltip-arrow {
+        bottom: 100%;
+        border-bottom: $arrow-size solid general(canvas, dark);
+    }
+    .c-tooltip--light .c-tooltip-arrow {
+        border-bottom: $arrow-size solid general(canvas, white);
+    }
+}
+[x-placement*=top] {
+    .c-tooltip .c-tooltip-arrow {
+        top: 100%;
+        border-top: $arrow-size solid general(canvas, dark);
+    }
+    .c-tooltip--light .c-tooltip-arrow {
+        border-top: $arrow-size solid general(canvas, white);
+    }
+}
+
+[x-placement*=left],
+[x-placement*=right] {
+    .c-tooltip .c-tooltip-arrow {
+        border-top: $arrow-size solid transparent;
+        border-bottom: $arrow-size solid transparent;
+    }
+}
+[x-placement*=left] {
+    .c-tooltip .c-tooltip-arrow {
+        left: 100%;
+        border-left: $arrow-size solid general(canvas, dark);
+    }
+    .c-tooltip--light .c-tooltip-arrow {
+        border-left: $arrow-size solid general(canvas, white);
+    }
+}
+[x-placement*=right] {
+    .c-tooltip .c-tooltip-arrow {
+        right: 100%;
+        border-right: $arrow-size solid general(canvas, dark);
+    }
+    .c-tooltip--light .c-tooltip-arrow {
+        border-right: $arrow-size solid general(canvas, white);
+    }
+}

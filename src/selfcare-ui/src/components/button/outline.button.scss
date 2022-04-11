@@ -1,0 +1,92 @@
+@import '../../_variables.scss';
+
+.c-outline-button {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: main(action, buttonRadius);
+    font-size: main(action, buttonSize);
+    font-weight: main(action, buttonWeight);
+    padding: spacing(small_plus) spacing(small);
+    transition: all 0.25s;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &.c-outline-button--inverted {
+        background-color: transparent;
+        border-color: main(action, standardComp);
+        color: main(action, standardComp);
+
+        &:hover:not(:disabled) {
+            border-color: tint(main(masthead, backgroundColor), 75%);
+            color: tint(main(masthead, backgroundColor), 75%);
+        }
+
+        &:focus {
+            border-color: main(action, standardComp);
+            box-shadow: 0 0 0 2px main(action, standardComp);
+        }
+
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+
+    &.c-outline-button--standard {
+        background-color: transparent;
+        border-color: main(action, standardMain);
+        color: main(action, standardMain);
+
+        &:hover:not(:disabled) {
+            background-color: tint(main(action, standardMain), 25%);
+            border-color: tint(main(action, standardMain), 25%);
+            color: general(text, white);
+        }
+
+        &:focus {
+            border-color: main(action, standardMain);
+            box-shadow: 0 0 0 2px main(action, standardMain);
+        }
+
+        &:disabled {
+            background-color: general(canvas, light);
+            border: general(canvas, light);
+            color: general(text, light);
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        &:active {
+            background-color: tint(main(action, standardMain), 20%);
+            border-color: tint(main(action, standardMain), 20%);
+        }
+
+    }
+
+    &.c-outline-button--simple {
+        background-color: transparent;
+        border-color: main(action, standardMain);
+        color: main(action, standardMain);
+
+        &:hover:not(:disabled) {
+            border-color: general(accent, secondary);
+        }
+
+        &:focus {
+            border-color: main(action, standardMain);
+            box-shadow: 0 0 0 2px main(action, standardMain);
+        }
+
+        &:disabled {
+            background-color: general(canvas, light);
+            border: general(canvas, light);
+            color: general(text, light);
+        }
+
+        &:active {
+            border-color: tint(main(action, standardMain), 20%);
+        }
+    }
+
+}

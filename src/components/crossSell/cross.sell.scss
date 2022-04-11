@@ -1,0 +1,36 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-cross-sell {
+    padding: spacing(medium);
+    color: general(text, white);
+    margin-top: spacing(medium);
+
+    &__description {
+        padding-top: spacing(large);
+    }
+
+    &__action {
+        margin-top: spacing(large);
+        width: 100%;
+    }
+
+    &-red {
+        background-color: general(accent, secondary);
+    }
+
+    &-black {
+        background-color: general(accent, primary);
+        &-hover-effect:hover:not(:disabled) {
+
+            border-color: general(canvas, light) !important ;
+            color: general(canvas, light) !important;
+        }
+
+    }
+
+    @media screen and (min-width: $mq-large-start) {
+        &__action {
+            width: fit-content;
+        }
+    }
+}

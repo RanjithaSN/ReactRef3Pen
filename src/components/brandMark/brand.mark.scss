@@ -1,0 +1,28 @@
+@import 'selfcare-ui/src/_variables.scss';
+@import '../../_variables.scss';
+
+$header-brandSizeWidth: rhythm(alpha, em);
+
+.c-header-brand {
+    display: flex;
+    align-items: center;
+
+    &Mark {
+        display: flex;
+        align-items: center;
+        line-height: 0;
+
+        img {
+            width: $header-brandSizeWidth;
+            height: $header-brandMarkImgHeight;
+            min-height: 1px; // Needed for webkit to have something to start with, otherwise logs disappears
+        }
+    }
+
+    &Text {
+        position: absolute !important;
+        height: 1px; width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+}

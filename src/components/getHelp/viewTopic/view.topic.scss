@@ -1,0 +1,17 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-view-topic {
+    &__breadcrumb {
+        padding-bottom: spacing(small);
+        color: general(text, light);
+        display: block;
+
+        :not(:last-child) {
+            cursor: pointer;
+        }
+    }
+
+    &__heading {
+        padding-bottom: spacing(small);
+    }
+}

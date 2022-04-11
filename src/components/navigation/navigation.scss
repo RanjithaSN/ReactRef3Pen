@@ -1,0 +1,137 @@
+@import 'selfcare-ui/src/_variables.scss';
+.c-navigation {
+    display: flex;
+    justify-content: flex-end;
+    font-size: rhythm(delta);
+
+    &__toggle {
+        z-index: layer(nav);
+
+        svg {
+            fill:  main(masthead, iconColor);
+            padding: 0 spacing(medium);
+            box-sizing: unset;
+        }
+        &--open {
+            svg {
+                fill: general(accent,tertiary);
+                padding: 0 spacing(medium);
+                box-sizing: unset;
+            }
+        }
+    }
+
+    &__brand {
+        display: flex;
+        align-items: center;
+   }
+
+   &__brandMark {
+        display: flex;
+        align-items: center;
+        width: 150px;
+        display: block;
+        padding: spacing(large);
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: layer(nav);
+        filter: invert(1) sepia(0) saturate(0) hue-rotate(0deg) brightness(1.2);
+   }
+
+    &__proper {
+        display: none;
+
+        &--open {
+            display: block;
+            position: fixed;
+            width: 100%;
+            top: 4.5rem;
+            bottom: 0;
+            right: 0;
+            overflow-y: auto;
+            background-color: main(masthead, mobileBackgroundColor);
+            z-index: layer(nav);
+            margin-top: env(safe-area-inset-top); // added margin for mobile app to not cut off logo - does nothing on desktop
+
+        }
+    }
+
+    &__page {
+        display: none;
+
+        &--active {
+            display: block;
+            padding: spacing(large);
+        }
+    }
+
+    &__heading {
+        text-transform: uppercase;
+        font-weight: weight(bold);
+        font-size: rhythm(beta, em);
+        padding-top: spacing(medium);
+        padding-bottom: spacing(medium);
+    }
+
+    &__search {
+        padding-top: spacing(small);
+        padding-bottom: spacing(small);
+        text-align: center;
+        margin-bottom: spacing(medium);
+    }
+
+    &__search-input {
+        text-align: center;
+        background-color: transparent;
+        color: inherit;
+        font-size: rhythm(beta, em);
+
+        &::placeholder {
+            color: general(text, white);
+        }
+    }
+
+    &__list-item {
+        position: relative;
+    }
+
+    &__list-item-link {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        padding-bottom: spacing(extra_small);
+        text-align: left;
+    }
+
+    &__back {
+        margin: spacing(medium) 0;
+    }
+
+    &__back-icon {
+        height: rhythm(beta, em);
+        width: rhythm(beta, em);
+    }
+
+    &__back-label {
+        margin-left: spacing(small);
+        font-size: rhythm(beta, em);
+    }
+
+    &__navigation-button {
+        margin-top: spacing(large);
+    }
+   
+
+    @media screen and (min-width: $mq-large-start) {
+        font-size: initial;
+    }
+
+    @media screen and (min-width: $spacing-max-width) {
+        margin: 0;
+    }
+}
+
+.c-mobile-navigation__login {
+  margin-top: 2rem;
+}

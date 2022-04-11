@@ -1,0 +1,40 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-product-usage {
+    &__heading {
+        padding-bottom: spacing(small);
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        padding-top: spacing(small);
+        padding-bottom: spacing(small);
+        align-items: center;
+
+        &--button {
+            .c-icon-button__icon {
+                svg {
+                    background-color: general(canvas, black);
+                    padding: spacing(extra_small);
+                    fill: general(text, white);
+                }
+            }
+
+            &:disabled {
+                .c-icon-button__icon {
+                    svg {
+                        background-color: general(canvas, light);
+                        padding: spacing(extra_small);
+                        fill: general(text, light);
+                    }
+                }
+            }
+        }
+    }
+
+    .c-product-usage__graph {
+        height: 13.5rem;
+        width: 100%;
+    }
+}

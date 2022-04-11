@@ -1,0 +1,9 @@
+@import '../../_variables.scss';
+
+.c-popper__default-control {
+    display: inline-block;
+}
+
+.c-popper__content {
+    z-index: layer(popout);
+}

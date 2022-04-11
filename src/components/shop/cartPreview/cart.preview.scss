@@ -1,0 +1,44 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-cart-preview {
+  box-shadow: shadow(light);
+  border: 1px solid general(border, dark);
+  background-color: general(canvas, white);
+
+  &__summary {
+    padding: spacing(medium);
+  }
+
+  &__actions {
+    border-top: 1px solid general(border, light);
+    background: general(canvas, light);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height: rhythm(alpha);
+
+    &-view-cart {
+      padding: spacing(small);
+    }
+  }
+}
+
+.c-cart-preview-modal {
+  .c-cart-preview-modal__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+  }
+
+  .c-cart-preview__actions-view-cart {
+    width: 100%;
+}
+
+  @media screen and (min-width: $mq-medium-start) {
+      .c-cart-preview-modal__content {
+          display: block;
+          height: auto;
+      }
+  }
+}

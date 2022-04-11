@@ -1,0 +1,49 @@
+@import '../../_variables.scss';
+
+.c-unordered-list {
+    text-align: left;
+    
+    .c-unordered-list__item {
+
+        .c-unordered-list__item--description {
+            color: general(text, light);
+        }
+    }
+
+    &.c-unordered-list--vertical {
+        list-style-type: disc;
+        padding-inline-start: 20px;
+
+        .c-unordered-list__item {
+            padding-bottom: spacing(medium);
+        }
+    }
+
+    &.c-unordered-list--horizontal {
+        list-style: none;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+
+        .c-unordered-list__item {
+            display: inline;
+            
+            &:not(:first-child):before {
+                content: '\2022';
+                margin-left: spacing(small);
+                margin-right: spacing(small);
+            }
+        }
+    }
+
+    &.c-unordered-list--condensed {
+        margin: 0;
+        .c-unordered-list__item {
+            padding-bottom: 0;
+            &--description {
+                font-weight: weight(regular);
+                color: inherit;
+            }
+        }
+    }
+}

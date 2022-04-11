@@ -1,0 +1,7 @@
+@import '../../_variables.scss';
+
+.c-checkbox-group {
+    &__checkbox + &__checkbox {
+        margin-top: spacing(small);
+    }
+}

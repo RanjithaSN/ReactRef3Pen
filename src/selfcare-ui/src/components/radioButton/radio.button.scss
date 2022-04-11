@@ -1,0 +1,94 @@
+@import '../../_variables.scss';
+
+$RB-bgColor: main(action, tertiaryBg);
+$RB-bgActiveColor: main(form, activeColor);
+$RB-fgColor: main(action, default);
+$RB-fgActiveColor: general(text, white);
+$RB-borderColor: general(border, dark);
+$RB-borderColor-active: main(form, activeColor);
+$RB-focus: 0 0 0 1px $RB-borderColor;
+$RB-boxShadow-active: 0 0 0 1px $RB-borderColor-active;
+$RB-statusSize: 28px;
+$RB-statusLoc: -12px;
+
+.c-radio-button {
+    position: relative;
+    flex: 1 1 auto;
+    border: 1px solid $RB-borderColor;
+    border-radius: radius(small);      
+
+    .c-radio-button__label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        padding: spacing(medium); // Change related variable in `radio.button.group.jsx` if modifying
+        min-height: rhythm(alpha);
+        background-color: $RB-bgColor;                      
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: $RB-focus;
+        }
+    }
+
+    .c-radio-button__input {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+
+        &:focus {
+            + .c-radio-button__label {
+                box-shadow: $RB-focus;
+            }
+        }
+
+        &:disabled {
+            &:not([readonly]) {
+                + .c-radio-button__label {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+
+                    &:hover {
+                        box-shadow: none;
+                    }
+                }
+            }
+            &[readonly] {
+                + .c-radio-button__label {
+                    cursor: default;
+
+                    &:hover {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        &:checked {
+            &:not([readonly]),
+            &[readonly] {
+                + .c-radio-button__label {
+                    border-color: $RB-borderColor-active;
+                    box-shadow: $RB-boxShadow-active;
+                    color: general(accent, tertiary);
+                    background-color: $RB-fgColor;
+                }
+            }
+        }
+
+        &[error],
+        &[error]:checked {
+            + .c-radio-button__label {
+                border-color: general(system, error);
+            }
+        }
+    }
+
+    .c-radio-button__content { // Change related variable in `radio.button.group.jsx` if modifying
+        text-align: center;
+    }
+}

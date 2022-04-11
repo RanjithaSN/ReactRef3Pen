@@ -1,0 +1,34 @@
+@import '../../_variables.scss';
+
+.c-modal {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    max-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    font-size: main(heading, minorNormalSize);
+    line-height: 1.25rem;
+
+    &.c-modal--mobile-viewport {
+        border-radius: 0;
+    }
+
+    @media screen and (min-width: $mq-medium-start) {
+        &.c-modal--small {
+            width: 460px;
+        }
+
+        &.c-modal--medium {
+            width: 650px;
+        }
+
+        &.c-modal--large {
+            width: 748px;
+        }
+
+        &.c-modal--mobile-viewport {
+            height: auto;
+        }
+    }
+}

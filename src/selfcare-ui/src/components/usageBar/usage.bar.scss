@@ -1,0 +1,24 @@
+@import '../../_variables.scss';
+
+$usageBar-height: spacing(small);
+$edge-radius: radius(pill);
+
+.c-usageBar {
+    width: 100%;
+    position: relative;
+    background-color: general(canvas, light);
+    margin: spacing(extra_small) 0;
+
+    &,
+    & &-used {
+        height: $usageBar-height;
+    }
+
+    & &-used {
+        background-color: general(canvas, light);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: general(canvas, black);
+    }
+}

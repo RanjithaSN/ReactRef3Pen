@@ -1,0 +1,159 @@
+@import '../../_variables.scss';
+
+.c-checkbox {
+    position: relative;
+    display: block;
+    padding-left: spacing(medium);
+    color: general(text, light);
+
+    &:hover {
+        & .c-checkbox-input {
+            &:not(:checked):not(:active):not(:disabled) {
+                + .c-checkbox-label {
+                    &:after {
+                        border-color: general(border, white);
+                    }   
+                }
+            }
+        }
+    }
+
+    & &-label {
+        display: inline-block;
+        font-size: main(heading, minorQuietSize);
+        padding-left: spacing(medium);
+        cursor: pointer;
+        $box-height: rhythm(eta);
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            border-style: solid;
+        }
+
+        &:before {
+            left: 0;
+            height: $box-height;
+            width: $box-height;
+            background-color: general(canvas, white);
+            border: 1px solid general(border, light);
+        }
+
+        &:after {
+            $check-line-size: 0.125rem;
+            $check-height: rhythm(gamma);
+            $check-width: calc(#{$check-height} / 2);
+
+            border-width: 0 $check-line-size $check-line-size 0;
+            border-color: transparent;
+            transform: rotate(45deg);
+            left: calc((#{$box-height} / 2) - (#{$check-width} / 2));
+            top: calc((#{$box-height} / 2) - #{$check-line-size});
+            height: $check-height;
+            width: $check-width;
+            margin-top: calc(-1 * (#{$check-height} / 2));
+        }
+    }
+
+    & &-input {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+
+        &:disabled {
+            &:not([readonly]) {
+                + .c-checkbox-label {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                    &:before {
+                        background-color: general(canvas, light);
+                        border-color: general(border, dark);
+                    }
+                }
+            }
+            &[readonly] {
+                + .c-checkbox-label {
+                    cursor: default;
+
+                    &:before {
+                        background-color: general(canvas, white);
+                        border-color: general(border, white);
+                    }
+                }
+            }
+
+            &:checked {
+                &:not([readonly]) {
+                    + .c-checkbox-label {
+                        &:after {
+                            background-color: general(canvas, white);
+                            border-color: general(border, white);
+                        }
+                    }
+                }
+            }
+        }
+
+        &:checked,
+        &:checked[readonly],
+        &:active:not(:disabled) {
+            + .c-checkbox-label {
+                &:before {
+                    border-color: general(border, red);
+                    background-color: general(canvas, red);
+                }
+                &:after {
+                    border-color: general(border, white);
+                }
+            }
+        }
+
+        &--error {
+            + .c-checkbox-label {
+                &:before {
+                    border-color: general(system, error);
+                }
+            }
+        }
+    }
+
+    + .c-checkbox {
+        margin-top: spacing(small);
+    }
+
+    &.c-checkbox--large {
+        margin-bottom: spacing(large);
+        margin-top: spacing(medium);
+        .c-checkbox-label {
+            margin-left: spacing(medium);
+            font-size: rhythm(delta);
+            &:before {
+                transform: scale(1.4, 1.4);
+                @media screen and (min-width: $mq-medium-start) {
+                    transform: scale(1.8, 1.8);
+                }
+            }
+            &:after {
+                left: spacing(small);
+                top: 0; /* Required in chrome */
+                height: spacing(medium);
+                width: spacing(small);
+            }
+            @media screen and (min-width: $mq-medium-start) { 
+                margin-left: spacing(large);
+                font-size: rhythm(beta);
+                &:before {
+                    left: spacing(small);
+                }
+                &:after {
+                    left: spacing(medium);
+                    height: rhythm(beta);
+                }
+            }
+        }
+    }
+}

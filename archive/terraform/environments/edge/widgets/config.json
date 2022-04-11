@@ -1,0 +1,125 @@
+{
+  "defaultEnvironment": "qa10",
+  "defaultSystemId": "85788485-e411-48a9-b478-610c1285dc1a",
+  "allowSystemIdChange": true,
+  "defaultCountry": "USA",
+  "defaultLocale": "en-US",
+  "locales": [
+    "en-US",
+    "fr-CA"
+  ],
+  "environments": [
+    "qa1",
+    "qa2",
+    "qa3",
+    "qa4",
+    "qa5",
+    "qa6",
+    "qa7",
+    "qa8",
+    "qa9",
+    "qa10",
+    "sbx1",
+    "sls1",
+    "sls2"
+  ],
+  "businessUnits": [
+    {
+      "id": "85788485-e411-48a9-b478-610c1285dc1a",
+      "name": "QA Full Suite",
+      "env": [
+        "qa1",
+        "qa2",
+        "qa3",
+        "qa4",
+        "qa5",
+        "qa6",
+        "qa7",
+        "qa8",
+        "qa9",
+        "qa10"
+      ]
+    },
+    {
+      "id": "1ce731f0-33a6-4caf-b535-586fcf3bda60",
+      "name": "QA Full Suite Deux",
+      "env": [
+        "qa1",
+        "qa2",
+        "qa3",
+        "qa4",
+        "qa5",
+        "qa6",
+        "qa7",
+        "qa8",
+        "qa9",
+        "qa10"
+      ]
+    },
+    {
+      "id": "28c9e059-4bd9-487e-8942-394d4caf45c7",
+      "name": "Playstation Vue",
+      "env": [
+        "qa1",
+        "qa2",
+        "qa3",
+        "qa4",
+        "qa5",
+        "qa6",
+        "qa7",
+        "qa8",
+        "qa9",
+        "qa10"
+      ]
+    },
+    {
+      "id": "cf4ebcad-156c-44a8-83ac-7e42fbe56c26",
+      "name": "Ascendon Americas Carrier",
+      "env": [
+        "sls2"
+      ]
+    },
+    {
+      "id": "9e9b523f-e3e1-4805-8e57-7f778f0826d4",
+      "name": "Ascendon BC&S",
+      "env": [
+        "sls2"
+      ]
+    },
+    {
+      "id": "fa510625-2b68-49b9-963f-710f090bd818",
+      "name": "Ascendon Carrier APAC",
+      "env": [
+        "sls2"
+      ]
+    },
+    {
+      "id": "c40e0af0-5f22-469f-8cc6-fecbce529329",
+      "name": "Ascendaon Carrier EMEA",
+      "env": [
+        "sls2"
+      ]
+    },
+    {
+      "id": "d1f56a11-8888-41ad-ac31-acc007755313",
+      "name": "Ascendon PM",
+      "env": [
+        "sbx1"
+      ]
+    },
+    {
+      "id": "85788485-e411-48a9-b478-610c1285dc1a",
+      "name": "Ascendon Sales",
+      "env": [
+        "sls2"
+      ]
+    },
+    {
+      "id": "e5ce3167-4e0b-4867-a8c3-c8f23aec5e71",
+      "name": "Media Mojo(UV)",
+      "env": [
+        "sls1"
+      ]
+    }
+  ]
+}

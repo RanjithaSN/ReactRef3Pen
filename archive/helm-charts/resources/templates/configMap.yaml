@@ -1,0 +1,70 @@
+{{- if .Values.fluentd.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.fluentd.applicationLoggingName }}-config-{{ .Release.Namespace }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ include "resource.fullname" . }}
+    k8s-app: {{ include "resource.fullname" . }}
+data:
+  fluent.conf: |
+    @include containers.conf
+    <match fluent.**>
+      @type null
+    </match>
+  containers.conf: |
+    <source>
+      @type tail
+      @id in_tail_container_logs
+      @label @containers
+      path /var/log/containers/*.log
+      pos_file /usr/local/fluentd-containers.log.pos
+      tag *
+      read_from_head true
+      <parse>
+        @type "json"
+        time_key "field_time"
+        time_format "%Y-%m-%d %H:%M:%S"
+        time_type string
+      </parse>
+    </source>
+
+    <label @containers>
+      <filter **>
+        @type kubernetes_metadata
+        @id filter_kube_metadata
+      </filter>
+
+      <filter **>
+        @type concat
+        key log
+        multiline_start_regexp /^\S/
+        separator ""
+        flush_interval 5
+        timeout_label @NORMAL
+      </filter>
+
+      <match **>
+        @type relabel
+        @label @NORMAL
+      </match>
+    </label>
+
+    <label @NORMAL>
+      <match **>
+        @type cloudwatch_logs
+        @id out_cloudwatch_logs_containers
+        region {{ .Values.region }}
+        log_group_name "/aws/containerinsights/{{ .Values.clusterName }}/{{ .Release.Namespace }}"
+        log_stream_name {{ .Release.Namespace }}-{{ now | date "2006-01-02" }}
+        auto_create_stream true
+        <buffer>
+          flush_interval 5
+          chunk_limit_size 2m
+          queued_chunks_limit_size 32
+          retry_forever true
+        </buffer>
+      </match>
+    </label>
+{{- end }}

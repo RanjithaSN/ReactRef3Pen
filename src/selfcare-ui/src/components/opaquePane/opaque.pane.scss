@@ -1,0 +1,19 @@
+@import '../../_variables.scss';
+
+.c-opaque-pane {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: layer(above);
+
+    &.c-opaque-pane--dark {
+        background-color: rgba(general(canvas, dark), 0.8);
+    }
+
+    &.c-opaque-pane--light {
+        background-color: rgba(general(canvas, white), 0.8);
+    }
+}

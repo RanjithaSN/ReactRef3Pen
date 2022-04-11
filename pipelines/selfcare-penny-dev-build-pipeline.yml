@@ -1,0 +1,133 @@
+# Selfcare Penny build pipeline
+# The pipeline performs following below 5 tasks in a sequential order
+#  1. Build docker image.
+#  2. Push image to non prod ECR repository. The image is tagged with build id.
+#  3. Push image to prod ECR repository. The image is tagged with build id.
+#  4. Archive environment variable files which are checked in to repository.
+#  5. Publish archive as artifact to be used in release pipeline.
+# https://aka.ms/yaml
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - develop
+  paths:
+    exclude:
+      - pipelines/*
+
+# Variables
+variables:
+  imageName: 'penny'
+  regionName: 'eu-central-1'
+  environmentFilesRootFolder: 'pipelines/env-variables'
+  env: 'tst'
+  AWSCredentials: 'selfcare-tst'
+  ecrRepositoryName: 'tele2-nonprod-ecr-repository'
+  bucketName: 'tele2-ssrenv-nonprod-eu-central-1-kyapgxnfotxrgjhs'
+  taskFamilyName: 'nonprodssrtasks-tst-Tasks-XMO3U7EXRBOL-TaskDefinition-SOjzklROuATe'
+  ecsClusterName: 'tele2-nonprod-ecs-cluster-tst'
+  serviceName: 'tele2-nonprod-ssr-service-tst'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  # Task 1 to create docker image
+  - script: |
+      echo Starting docker build
+      docker build -f Dockerfile --build-arg buildId=$(Build.BuildId) -t $(imageName):$(Build.BuildId) .
+    displayName: Build Docker Image
+
+  # Task 2 to push docker image to non prod repository
+  - task: ECRPushImage@1
+    displayName: Push docker image to non prod
+    inputs:
+      awsCredentials: '$(AWSCredentials)'
+      regionName: '$(regionName)'
+      imageSource: 'imagename'
+      sourceImageName: '$(imageName)'
+      sourceImageTag: '$(Build.BuildId)'
+      repositoryName: '$(ecrRepositoryName)'
+      pushTag: '$(Build.BuildId)'
+      autoCreateRepository: true
+
+  # Task 3 to populate the template with all environment variable values
+  - task: replacetokens@3
+    displayName: Replace environment tokens
+    inputs:
+      targetFiles: '$(environmentFilesRootFolder)/*.env'
+      encoding: 'auto'
+      writeBOM: true
+      actionOnMissing: 'warn'
+      keepToken: false
+      tokenPrefix: '#{'
+      tokenSuffix: '}#'
+      useLegacyPattern: false
+      enableTransforms: false
+      enableTelemetry: true
+
+  # Task 4 to upload environment file to S3
+  - task: S3Upload@1
+    inputs:
+      awsCredentials: '$(AWSCredentials)'
+      regionName: '$(regionName)'
+      bucketName: '$(bucketName)'
+      sourceFolder: '$(environmentFilesRootFolder)'
+      globExpressions: '**'
+      targetFolder: '$(env)'
+
+  # Task 5 to update the task definition in the ECS cluster
+  - task: AWSShellScript@1
+    inputs:
+      awsCredentials: '$(AWSCredentials)'
+      regionName: '$(regionName)'
+      scriptType: 'inline'
+      inlineScript: |
+        set -e
+
+        #Get Account ID
+        ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+
+        #Create new image name
+        ECR_IMAGE="${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/$(ecrRepositoryName):$(Build.BuildId)"
+
+        echo ""
+        echo "############ New Image Name ####################"
+        echo $ECR_IMAGE
+        echo ""
+
+        #Get current task definition
+        CURRENT_TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition $(taskFamilyName) --region $AWS_REGION)
+
+        echo "############ Current Task Definition ####################"
+        echo $CURRENT_TASK_DEFINITION
+        echo ""
+        echo "############ Current Task Revision ####################"
+        echo $CURRENT_TASK_DEFINITION | jq '.taskDefinition.revision'
+        echo ""
+
+        #Update task definition with new image
+        NEW_TASK_DEFINITION=$(echo $CURRENT_TASK_DEFINITION | jq --arg IMAGE $ECR_IMAGE --arg BUILD_ID $(Build.BuildId) '.taskDefinition | .containerDefinitions[0].image = $IMAGE | .containerDefinitions[0].environment = [] | .containerDefinitions[0].environment += [{"name": "BUILD_ID", "value" : $BUILD_ID}] | del(.taskDefinitionArn) | del(.revision) | del(.status) | del(.requiresAttributes) | del(.compatibilities) | del(.registeredAt) | del(.registeredBy)')
+
+        echo "############ New Task Definition ####################"
+        echo $NEW_TASK_DEFINITION
+        echo ""
+
+        #Register new task definition
+        NEW_TASK_INFO=$(aws ecs register-task-definition --cli-input-json "$NEW_TASK_DEFINITION" --region $AWS_REGION)
+
+        echo "TASK SUCCESSFULLY REGISTERED"
+        echo "############ Updated Task Definition Revision Number ####################"
+        echo $NEW_TASK_INFO | jq '.taskDefinition.revision'
+        echo ""
+
+        #Get updated revision number
+        UPDATED_REVISION_NUMBER=$(echo $NEW_TASK_INFO | jq '.taskDefinition.revision')
+
+        #Update service with new revision. This will also do a new rollout.
+        echo "######## Update service started ##############"
+
+        aws ecs update-service --cluster $(ecsClusterName) --service $(serviceName) --task-definition $(taskFamilyName):$UPDATED_REVISION_NUMBER
+
+        echo "######## Update service success ##############"

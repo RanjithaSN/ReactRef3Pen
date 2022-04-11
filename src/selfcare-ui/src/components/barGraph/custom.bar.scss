@@ -1,0 +1,34 @@
+@import "../../variables";
+
+.recharts-bar-rectangle {    
+    .c-bar {
+        &--primary {
+            fill: general(graph, primary);
+        }
+        &--secondary {
+            fill: general(graph, secondary);
+        }
+        &--alternative {
+            fill: general(graph, alternative);
+        }
+        &--tertiary {
+            fill: general(graph, tertiary)
+        }
+    }
+}
+
+.recharts-bar-label-list {
+    text-transform: initial;
+    font-family: $font-nonBrandSecondary;
+    font-weight: $weight-regular;
+    font-size: main(heading, minorQuietSize);
+    fill: general(text, dark);
+}
+.recharts-cartesian-axis-tick-value {
+    margin-top: spacing(small);
+    text-transform: initial !important;
+    font-family: $font-nonBrandSecondary !important;
+    font-weight: $weight-regular !important;
+    font-size: main(heading, minorQuietSize) !important;
+    fill: general(text, light);
+}

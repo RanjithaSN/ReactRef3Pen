@@ -1,0 +1,51 @@
+{
+  "defaultEnvironment": "sls2",
+  "defaultSystemId": "85788485-e411-48a9-b478-610c1285dc1a",
+  "allowSystemIdChange": true,
+  "defaultCountry": "USA",
+  "defaultLocale": "en-US",
+  "locales": [
+    "en-US",
+    "fr-CA"
+  ],
+  "environments": [
+    "sls2"
+  ],
+  "businessUnits": [
+    {
+      "id": "586c9368-66ca-4c18-83cd-89adc20b3211",
+      "name": "Ascendon Americas Carrier",
+      "env": [
+        "sls2"
+      ]
+    },
+    {
+      "id": "9e9b523f-e3e1-4805-8e57-7f778f0826d4",
+      "name": "Ascendon BC&S",
+      "env": [
+        "sls2"
+      ]
+    },
+    {
+      "id": "fa510625-2b68-49b9-963f-710f090bd818",
+      "name": "Ascendon Carrier APAC",
+      "env": [
+        "sls2"
+      ]
+    },
+    {
+      "id": "c40e0af0-5f22-469f-8cc6-fecbce529329",
+      "name": "Ascendaon Carrier EMEA",
+      "env": [
+        "sls2"
+      ]
+    },
+    {
+      "id": "85788485-e411-48a9-b478-610c1285dc1a",
+      "name": "Ascendon Sales",
+      "env": [
+        "sls2"
+      ]
+    }
+  ]
+}

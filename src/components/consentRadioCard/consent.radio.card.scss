@@ -1,0 +1,26 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-consent-radio-card {
+
+  &__consent-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: spacing(large);
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-label {
+      margin-bottom: spacing(small);
+    }
+
+    &-description {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__radio-buttons {
+    padding-top: spacing(small);
+  }
+}

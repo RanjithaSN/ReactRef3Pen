@@ -1,0 +1,28 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-guided-shopping-selection {
+  .c-card-selection-card {
+    @media screen and (min-width: $mq-large-start){
+      min-width: $product-card-min-width-height;
+    }
+
+    &__cost {
+      font-weight: 300;
+    }
+
+    &__body {
+      margin: 0;
+
+      & > *:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+
+    .c-unordered-list__item--description {
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: 0px;
+      line-height: 20px;
+    }
+  }
+}

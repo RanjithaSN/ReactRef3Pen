@@ -1,0 +1,24 @@
+@import '../../_variables.scss';
+
+.c-sidebar-menu-item {
+    align-items: center;
+    display: flex;
+    flex: 1;
+}
+
+.c-sidebar-menu-item__subtext {
+    margin-top: spacing(extra_small);
+}
+
+.c-sidebar-menu-item__text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.c-sidebar-menu-item__thumbnail {
+    flex: 0;
+    height: 50px;
+    width: auto;
+    padding-right: spacing(small);
+}

@@ -1,0 +1,1 @@
+export const ALLOW_COS_MINUTES_BEFORE_RENEWAL = 30;

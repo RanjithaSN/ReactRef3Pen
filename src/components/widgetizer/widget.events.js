@@ -1,0 +1,8 @@
+const widgetEvents = {
+  FAULT: 'FAULT',
+  PROCEED_TO_CHECKOUT: 'PROCEED_TO_CHECKOUT',
+  ORDER_COMPLETE: 'ORDER_COMPLETE',
+  WIDGET_INITIALIZED: 'WIDGET_INITIALIZED'
+};
+
+export default widgetEvents;

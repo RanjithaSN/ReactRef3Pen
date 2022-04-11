@@ -1,0 +1,39 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-add-payment-method {
+
+  &__default-checkbox {
+    margin: spacing(small) 0 spacing(large);
+    color: general(text, dark);
+  }
+
+  &__default-checkbox-label {
+    line-height: rhythm(beta);
+    color: general(text, dark);
+  }
+
+  &__force-default {
+    margin-bottom: spacing(small);
+  }
+
+  &__button-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  @media screen and (max-width: $mq-large-start) {
+    &__button {
+      &-wrapper {
+        display: grid;
+        grid-template-columns: 48% 48%;
+        column-gap: 4%;
+      }
+
+      width: 100%;
+    }
+  }
+}
+
+.c-add-payment-information__section {
+  padding-bottom: spacing(large);
+}

@@ -1,0 +1,48 @@
+@import '../../_variables.scss';
+
+.c-micro-button {
+    background: rgba(general(canvas, white), 0.2);
+    width: rhythm(beta);
+    height: $radius-large;
+    transition: background 0.15s ease-in-out;
+    position: relative;
+    padding: 0;
+    border: none;
+
+    &.is-inverted {
+        background: rgba(main(action, standardMain), 0.2);
+    }
+
+    @media screen and (min-width: $mq-medium-start) {
+        width: rhythm(alpha);
+    }
+
+    @media screen and (min-width: $mq-large-start) {
+        width: 2rem;
+    }
+
+    // Expand the hitbox: the sizing for this button is far too small, especially for mobile
+    &:before{
+        content: " ";
+        position: absolute;
+        top: -50%;
+        left: -25%;
+        width: 150%;
+        height: 200%;
+    }
+
+    &:hover:not(.is-current):not(:disabled) {
+        background-color: shade(general(canvas, white), 15%);
+        &.is-inverted {
+            background-color: shade(main(action, standardMain), 15%);
+        }
+    }
+
+    &.is-current {
+        background: general(canvas, white);
+        &.is-inverted {
+            background: main(action, standardMain);
+        }
+        cursor: default;
+    }
+}

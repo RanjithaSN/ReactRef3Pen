@@ -1,0 +1,62 @@
+@import '../../_variables.scss';
+
+.c-zero-state {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .c-zero-state__icon {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+
+        svg {
+            height: 12rem;
+            width: 12rem;
+        }
+    }
+    .c-zero-state__title {
+        padding-bottom: spacing(small);
+    }
+    .c-zero-state__description {
+        font-weight: weight(light);
+        text-align: left;
+        width: 65%;
+        padding-bottom: spacing(small);
+    }
+    .c-zero-state__call-to-action {
+        padding-bottom: spacing(large);
+    }
+    .c-zero-state__elevated-dialog-box {
+        text-align: left;
+        border: 1px solid general(accent, primary);
+        border-radius: radius(large);
+        padding: spacing(medium) spacing(large);
+    }
+    .c-zero-state__elevated-description {
+        font-weight: weight(light);
+    }
+    .c-zero-state__elevated-next-step {
+        padding-top: spacing(small);
+        font-weight: weight(medium);
+    }
+
+    &.c-zero-state--standard {
+        .c-zero-state__icon {
+            color: general(text, light);
+        }
+        .c-zero-state__description {
+            color: general(text, dark);
+        }
+        .c-zero-state__elevated-description {
+            color: general(text, light);
+        }
+    }
+
+    &.c-zero-state--error {
+        .c-zero-state__icon {
+            color: general(system, error);
+        }
+    }
+}

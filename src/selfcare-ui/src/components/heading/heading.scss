@@ -1,0 +1,84 @@
+@import '../../_variables.scss';
+
+@for $index from 1 through 6 {
+    h#{$index}{
+        display: block;
+        margin: 0;
+        max-width: $heading-max-width;
+        font-weight: $weight-regular;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-family: $font-brand;
+    letter-spacing: 0px;
+}
+
+h1 {
+    font-size: main(heading, brandLoudSize);
+    line-height: line-height(brand-loud);
+
+    /* Everywhere that Brand Loud is being used, have it appear as Brand Normal on Mobile */
+    @media screen and (max-width: $mq-medium-start) {
+        font-size: main(heading, brandNormalSize);
+        line-height: line-height(brand-normal);
+    }
+
+}
+
+h2 {
+    font-size: main(heading, brandNormalSize);
+    line-height: line-height(brand-normal);
+}
+
+h3 {
+    font-size: main(heading, brandQuietSize);
+    line-height: line-height(brand-quiet);
+    text-align: left;
+}
+
+h4, h5 {
+    font-family: $font-nonBrand;
+    letter-spacing: 0px;
+}
+
+h4 {
+    font-size: main(heading, majorNormalSize);
+    line-height: line-height(major-normal);
+}
+
+h5 {
+    font-size: main(heading, majorQuietSize);
+    letter-spacing: $penny-letter-spacing-small;
+    font-weight: $weight-bold;
+    line-height: line-height(major-quiet);
+}
+
+h6,
+.c-heading--minor-quiet {
+    text-transform: initial;
+    font-family: $font-nonBrandSecondary;
+    font-weight: $weight-regular;
+    letter-spacing: $penny-letter-spacing-small;
+}
+
+h6 {
+    font-size: main(heading, minorNormalSize);
+    line-height: line-height(minor-normal);
+}
+
+.c-heading--minor-quiet {
+    font-size: main(heading, minorQuietSize);
+    letter-spacing: $penny-letter-spacing-normal;
+    line-height: line-height(minor-quiet);
+}
+
+.c-heading--no-max-width {
+  max-width: 100%;
+}
+
+.c-heading--bold {
+  font-weight: bold;
+}

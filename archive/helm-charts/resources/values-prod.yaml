@@ -1,0 +1,96 @@
+nameOverride: "penny"
+fullnameOverride: "penny"
+podAnnotations: {
+  iam.amazonaws.com/role: application-logging
+}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 15
+  targetMemoryUtilizationPercentage: 40
+
+#Penny configuration
+penny:
+  image:
+    repository: "963044170191.dkr.ecr.eu-central-1.amazonaws.com/tele2-penny"
+    tag: "349"
+  env: {
+    ENVIRONMENT_NAME: "prod",
+    CAN_SEE_ENVIRONMENT: true,
+    ADYEN_ORIGIN_KEY: "",
+    TROUBLESHOOTER_ENDPOINT: "",
+    DISMISS_NOTIFICATIONS_ENDPOINT: "",
+    IN_APP_NOTIFICATIONS_ENDPOINT: "",
+    SERVICE_URL: "",
+    METADATA_URL: "",
+    STUB_URL: "",
+    TELE2_AUTH_URL: "",
+    TELE2_URL: "",
+    CLOUD_SEARCH_ORIGIN_KEY: "",
+    CDN_API_URL: "",
+    APP_URL: http://localhost:8002,
+    USE_RECAPTCHA: true
+  }
+  resources:
+    limits:
+      memory: 800Mi
+      cpu: 400m
+    requests:
+      cpu: 200m
+      memory: 400Mi
+  volumeMounts: {
+    app-logs: /var/log/containers
+  }
+  ports:
+    name: "http"
+    containerPort: "8002"
+  securityContext:
+    privileged: false
+    readOnlyRootFilesystem: false
+    allowPrivilegeEscalation: false
+
+# Fluentd configuration
+fluentd:
+  enabled: true
+  image: fluent/fluentd-kubernetes-daemonset:v1.9.3-debian-cloudwatch-1.0
+  applicationLoggingName: "fluentd-application-logging"
+  env: {
+    REGION: eu-central-1,
+    AWS_REGION: eu-central-1,
+    CLUSTER_NAME: tele2-prod,
+    CI_VERSION: k8s/1.0.1,
+  }
+  volumeMounts: {
+    fluentdconf: /fluentd/etc,
+    app-logs: /var/log/containers,
+  }
+  resources:
+    limits:
+      memory: 300Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
+
+#Logrotate configuration
+logrotate:
+  image: 'realz/logrotate'
+  env: {
+    CRON_EXPR: "*/15 * * * *",
+    LOGROTATE_LOGFILES: "/var/log/containers/*.log",
+    LOGROTATE_FILESIZE: "50M",
+    LOGROTATE_FILENUM: "2"
+  }
+  volumeMounts: {
+    app-logs: /var/log/containers
+  }
+  resources:
+    limits:
+      memory: 300Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
+
+
+

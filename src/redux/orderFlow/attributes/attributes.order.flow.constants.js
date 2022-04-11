@@ -1,0 +1,15 @@
+export const DISPLAY_ORDER_FOR_SIM_SWAP = 1010;
+export const DISPLAY_ORDER_OSS = 15;
+export const DISPLAY_ORDER_ADDRESS = 1000;
+export const DISPLAY_ORDER_UNIT_NUM = 1005;
+export const DISPLAY_ORDER_SERVICE_ID = 1100;
+export const DISPLAY_ORDER_COS_PAYLOAD_ENABLER = 1200;
+export const DISPLAY_ORDER_FOR_PORT_IN_INTENT = 2;
+export const DISPLAY_ORDER_FOR_PORT_IN_NUMBER = 45;
+export const DISPLAY_ORDER_FOR_TELEPHONE_NUMBER = 40;
+
+export const DISPLAY_ORDER_FOR_ACTIVATION_DATE = 1400;
+export const DISPLAY_ORDER_FOR_PORT_IN_DATE = 1300;
+
+export const REQUIRED_FIELDS = ['Behåll nummer', 'Nytt nummer'];
+export const HIDDEN_NUMBER_BUTTONS = ['Nej', 'Ja'];

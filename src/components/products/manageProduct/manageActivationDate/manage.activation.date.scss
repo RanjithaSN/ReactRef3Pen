@@ -1,0 +1,37 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-manage-activation-date {
+    &__heading {
+        margin-bottom: spacing(medium);
+    }
+
+    &__notice {
+        margin-bottom: spacing(medium);
+    }
+
+    &__text {
+        margin-bottom: spacing(medium);
+    }
+
+    &__dateinput {
+        margin-bottom: spacing(medium);
+    }
+
+    &__label {
+        margin-bottom: spacing(extra_small);
+        color: general(text, light);
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__left {
+        margin-right: spacing(extra_small);
+    }
+
+    &__right {
+        margin-left: spacing(extra_small);
+    }
+}

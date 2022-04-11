@@ -1,0 +1,188 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-attributes-display {
+    &__button-primary svg {
+        margin-left: spacing(small);
+    }
+
+    &__button-secondary svg {
+        margin-right: spacing(small);
+    }
+
+    &__divider {
+        width: auto;
+        font-weight: weight(medium);
+    }
+
+    &__required {
+        margin: spacing(small) 0;
+    }
+
+    &__content {
+        display: flex;
+        height: 100%;
+    }
+
+    &__content--has-navigation {
+        flex-direction: row-reverse;
+    }
+
+    &__filler {
+        margin-top: spacing(large);
+    }
+
+    &__navigation {
+        display: none;
+        width: 30%;
+        overflow-y: auto;
+        background-color: general(canvas, light);
+        border-left: 1px solid general(border, light);
+    }
+
+    &__main {
+        width: 100%;
+
+        &-inline {
+            padding: 0;
+        }
+    }
+
+    &__more-info {
+        font-size: initial;
+        padding-bottom: spacing(small);
+    }
+
+    &__radio-button {
+        &-content {
+            display:flex;
+            align-items: center;
+            svg {
+                margin-right: spacing(small);
+            }
+        }
+    }
+
+    &__subtitle {
+        padding-top: spacing(large);
+    }
+
+    &__date-title{
+        padding-bottom: spacing(small);
+    }
+
+    &__date-description{
+        padding-bottom: spacing(large);
+    }
+
+    @media screen and (min-width: $mq-medium-start) {
+        &__radio-button-group {
+            grid-template-columns: repeat(2, minmax(256px, 256px)) !important;
+            .c-attributes-display__radio-button:nth-child(2n){
+               border-left: none;
+            }
+            .c-attributes-display__radio-button:nth-child(n){
+                border-top: none;
+             }
+             .c-attributes-display__radio-button:nth-child(1){
+                border-top: 1px solid general(border, dark);
+             }
+             .c-attributes-display__radio-button:nth-child(2){
+                border-top: 1px solid general(border, dark);
+             }
+             
+        }
+        .c-attributes-display--has-navigation {
+            flex-direction: row-reverse;
+        }
+        .c-attributes-display {
+            display: block;
+        }
+        .c-attributes-display:not(.c-attributes-display--has-navigation) {
+            padding: spacing(large);
+        }
+        .c-attributes-display--has-navigation {
+            width: 70%;
+            padding: spacing(large);
+        }
+    }
+
+    @media screen and (max-width: $mq-medium-start) {
+        &__radio-button-group {
+            grid-template-columns: repeat(1, minmax(auto, auto)) !important;
+
+            .c-attributes-display__radio-button:nth-child(n){
+                border-bottom: none;
+             }
+             .c-attributes-display__radio-button:last-child{
+                border-bottom: 1px solid general(border, dark);
+             }
+             
+        }
+        &__main {
+            padding: 0;
+        }
+    }
+}
+
+.c-attributes-display:not(.c-attributes-display--has-navigation) {
+    max-width: 630px;
+    margin: 0 auto;
+}
+
+.c-completion-tab {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid general(border, light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: spacing(large);
+
+    &:hover {
+        background-color: general(canvas, light);
+    }
+
+    &.c-completion-tab--active:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: spacing(small);
+        background-color: main(action, default);
+    }
+
+    &__content{
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    &__name {
+        font-weight: weight(bold);
+    }
+
+    &__meta {
+        margin-top: spacing(small);
+        font-size: rhythm(delta);
+        color: general(text, light);
+    }
+
+    &__indicator {
+        flex-shrink: 0;
+        width: rhythm(beta);
+        height: rhythm(beta);
+        background-color: rgba(general(canvas, black), 0.2);
+        border-radius: radius(round);
+
+        &.c-completion-tab__indicator--valid {
+            background-color: transparent;
+            color: general(system, success);
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

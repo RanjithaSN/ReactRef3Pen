@@ -1,0 +1,77 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-authenticationLayout {
+    position: relative;
+    background-color: general(canvas, white);
+
+    .c-authenticationLayout-content {
+        width: 100%;
+    }
+
+    .c-authenticationLayout-marketingColumn {
+        display: none;
+    }
+
+    .c-authenticationLayout-panelColumn {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .c-authenticationPanel {
+        width: 100%;
+    }
+
+    @media screen and (min-width: $mq-medium-start) {
+        .c-header {
+            background-color: marketing(marginal, backgroundColor);
+        }
+
+        .c-navigation {
+            display: none;
+        }
+
+        .c-authenticationLayout-content {
+            display: flex;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        .c-authenticationLayout-panelColumn {
+            padding: spacing(extra_extra_large) spacing(large);
+        }
+
+        .c-authenticationPanel {
+            width: 400px;
+
+            .c-authenticationPanel-card {
+                min-height: 430px;
+            }
+        }
+    }
+
+    @media screen and (min-width: $mq-large-start) {
+        .c-authenticationLayout-marketingColumn {
+            display: block;
+            background: general(canvas, white);
+            width: 50%;
+            padding-left: spacing(extra_large);
+            text-align: center;
+        }
+
+        .c-authenticationLayout-panelColumn {
+            width: 50%;
+        }
+    }
+
+    .c-authenticationLayout-marketingMessage {
+        color: general(accent, secondary);
+
+        &.c-authenticationLayout-marketingMessage--secondary {
+            color: general(text, dark);
+            width: 80%;
+            margin: spacing(small) auto; 
+            margin-top: spacing(small);
+        }
+    }
+}

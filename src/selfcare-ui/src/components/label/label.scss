@@ -1,0 +1,39 @@
+@import '../../_variables.scss';
+
+$label-required-position: 4px;
+
+.c-label {
+    display: block;
+    color: main(form, labelColor);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.c-labelAffix {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    & &-optional {
+        color: general(text, light);
+        padding-left: spacing(small);
+    }
+
+    & &-help {
+        margin-left: auto;
+        line-height: 0;
+
+        svg {
+            fill: main(action, default);
+            width: rhythm(delta, em);
+            height: rhythm(delta, em);
+        }
+    }
+
+    .c-labelAffix-right {
+        display: flex;
+        align-items: center;
+    }
+}

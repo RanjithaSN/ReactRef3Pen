@@ -1,0 +1,32 @@
+@import 'selfcare-ui/src/_variables.scss';
+
+.c-products {
+    width: 100%;
+
+    & &__header {
+        padding-bottom: spacing(small);
+    }
+
+    & &__list {
+        display: grid;
+        grid-gap: spacing(large);
+        grid-auto-rows: minmax(100px, auto);
+        margin: 0;
+    }
+
+    @media screen and (min-width: $mq-large-start) {
+        & &__list {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media screen and (max-width: $mq-large-start) {
+        & &__header {
+            padding-top: spacing(large);
+        }
+
+        & &__list {
+            grid-template-columns: 1fr;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@import '../../_variables.scss';
+
+.c-external-image {
+    object-position: center;
+
+    &__max-width {
+        object-fit: contain;
+        width: 100%;
+    }
+
+    &__max-height {
+        object-fit: contain;
+        height: 100%;
+    }
+}

@@ -1,0 +1,63 @@
+@import '../../_variables.scss';
+
+.c-definition-list {
+    height: 100%;
+
+    .c-definition-list__definitions {
+        width: 100%;
+        margin: spacing(large) 0;
+        
+        .c-definition-list__definition:last-child{
+            padding-bottom: 0;
+
+            .c-definition-list__value{
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .c-definition-list__definition {
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        padding-bottom: spacing(small);
+    }
+
+    &.c-definition-list--flush {
+        .c-definition-list__definitions {
+            width: 100%;
+            margin: 0;
+        }
+
+        .c-definition-list__definition:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    .c-definition-list__definition--stacked {
+        flex-direction: column;
+
+        .c-definition-list__label {
+            width: 100%;
+        }
+        .c-definition-list__value {
+            width: 100%;
+            padding: spacing(extra_small) 0 spacing(small);
+        }
+    }
+
+    .c-definition-list__label {
+        width: 30%;
+        padding-right: spacing(medium);
+        color: general(text, light); 
+    }
+
+    .c-definition-list__value {
+        width: 70%;
+    }
+
+    dd.c-definition-list__value {
+        margin-left: 0px;
+    }
+}

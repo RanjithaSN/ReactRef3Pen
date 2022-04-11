@@ -1,0 +1,32 @@
+@import '../../../_variables.scss';
+
+.c-modal-header-1 {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    &:before {
+      content: "";
+      width: rhythm(delta); // for centering of second element (the brand mark)
+    }
+
+    .c-header-brand {
+      font-size: rhythm(delta);
+    }
+
+    .c-modal-header__close {
+        &-icon {
+            color: main(form, labelColor);
+            height: rhythm(delta);
+            width: rhythm(delta);
+        }
+    }
+}
+
+.c-modal-header__title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 spacing(medium) 0 spacing(medium);
+    flex-shrink: 0;
+}

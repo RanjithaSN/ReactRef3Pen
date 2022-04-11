@@ -1,0 +1,15 @@
+@import '../../_variables.scss';
+
+.c-radio-group {
+    &__radio + &__radio {
+        margin-top: spacing(medium);
+    }
+
+    &-inline {
+        display: flex;
+        .c-radio-group__radio + .c-radio-group__radio {
+            margin-top: 0;
+            margin-left: spacing(small);
+        }
+    }
+}

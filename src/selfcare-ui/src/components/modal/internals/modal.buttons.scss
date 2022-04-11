@@ -1,0 +1,7 @@
+@import '../../../_variables.scss';
+
+.c-modal-button__button {
+    @media screen and (max-width: $mq-large-start) {
+        flex-grow: 1;
+    }
+}

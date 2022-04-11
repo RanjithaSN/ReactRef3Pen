@@ -1,0 +1,23 @@
+{
+  "defaultEnvironment": "sls1",
+  "defaultSystemId": "e5ce3167-4e0b-4867-a8c3-c8f23aec5e71",
+  "allowSystemIdChange": true,
+  "defaultCountry": "USA",
+  "defaultLocale": "en-US",
+  "locales": [
+    "en-US",
+    "fr-CA"
+  ],
+  "environments": [
+    "sls1"
+  ],
+  "businessUnits": [
+    {
+      "id": "e5ce3167-4e0b-4867-a8c3-c8f23aec5e71",
+      "name": "Media Mojo(UV)",
+      "env": [
+        "sls1"
+      ]
+    }
+  ]
+}
